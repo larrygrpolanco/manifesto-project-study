@@ -1,5 +1,9 @@
 # --- Data (too large for git; raw downloads, subsets, codebook sources) -----
-data/
+# Anchored to repo root so it does NOT match pilot-1/data/ (pilot data is tracked).
+/data/
+
+# --- Pilot-1 cached raw API responses (regenerable; predictions.csv is tracked)
+pilot-1/results/raw/
 
 # --- Secrets ----------------------------------------------------------------
 # Manifesto Project API key (the .example template stays tracked)
