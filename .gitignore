@@ -1,0 +1,23 @@
+# --- Data (too large for git; raw downloads, subsets, codebook sources) -----
+data/
+
+# --- Secrets ----------------------------------------------------------------
+# Manifesto Project API key (the .example template stays tracked)
+code/R/manifesto_apikey.txt
+*.env
+.env
+
+# --- R ----------------------------------------------------------------------
+.Rhistory
+.RData
+.Rdata
+.Rproj.user/
+
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- OS / editor ------------------------------------------------------------
+.DS_Store

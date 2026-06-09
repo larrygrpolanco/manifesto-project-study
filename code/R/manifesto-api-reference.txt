@@ -1,0 +1,192 @@
+
+Logo_trans_v3_2
+
+    INFO
+    DATA
+    CORPUS & DOCUMENTS
+    manifestoR
+    manifestata
+    API
+    manifestoberta
+    PUBLICATIONS & TUTORIALS
+
+API
+
+Provides programmable access to coded election programmes from the Manifesto Corpus and to the Manifesto Project's Main Dataset. The API returns JSON and you don't need to specify ".json" at the end of an API URL. All functions (except for list_core_versions, list_metadata_versions, get_core_codebook, get_core_citation, get_corpus_citation) must provide a valid API Key either as api_key parameter value, API_KEY header value or Authentication header value (e.g. "Authorization: Bearer " or "Authorization: Token ").
+Prerequisites
+
+    Manifesto Project Database Account (simply sign up on this webpage)
+    Manifesto Project Database API Key (simply login to your account, go to your profile page and generate an API key)
+
+Functions
+
+    list_core_versions: list all core dataset versions
+        optional parameter: kind (can be "south_america" to get the south american datasets (but only available until version 2022a as afterwards south america has been integrated directly into the main dataset. To enhance backward scripts compatibility an dummy version refering to an empty dataset is returned as its latest version.))
+    list_metadata_versions: list all corpus metadata versions
+        optional parameter: tag (can be "true" to separate version numbers (e.g. "20150522123537") and version tags (e.g. "2015-1") into two different attributes "name" and "tag" for each version)
+        optional parameter: details (can be "true" to get also - if existing - the release notes as an additional attribute "description" for each version; this parameter ignores the provided value for the tag parameter and automatically sets the tag parameter to "true")
+    get_core: get core dataset
+        parameter: key (e.g. "key=MPDS2015a")
+        optional parameter: kind (can be dta, xlsx or sav); the binary content of these files is base64 encoded in the content-node of the json; depending on the availability of further application-version specific datasets on the download page (e.g. stata14 for MPDS2016a) you can also query these files (by using their names, which in the example would be stata14)
+        optional parameter: raw (can be true, all other values are treated as false); sends the file directly without wrapping in json
+    get_parties: get list of parties
+        parameter: key (e.g. "key=MPDS2023a")
+        optional parameter: list_form (can be "short" (default) or "long")
+        optional parameter: raw (can be true, all other values are treated as false); sends the file directly without wrapping in json
+        hint: the list of parties is not available for all of the past datasets. You can check the availability by going to the datasets page and check for specific datasets whether they have party lists in the following formats "List – Short (CSV)" or "List – Long (CSV)" available. There you can also find the codebooks with details for these list of parties.
+    metadata: get corpus metadata for a list of parties in elections
+        parameter: keys (e.g. "keys[]=41320_200909&keys[]=41320_200509"); valid key values are provided by get_core, but you need to combine the party and the date column
+        parameter: version (e.g. "version=2015-3"); valid values are provided by list_metadata_versions
+        hint: the list of metadata attributes can be found in the Manifesto Corpus documentation.
+        hint: the response contains a list "items" with the successfully retrieved metadata and a second list "missing_items" that contains all the requested keys for which no metadata could be found.
+    texts_and_annotations: get texts and annotations of the coded manifestos:
+        parameter: keys (e.g. keys[]=41320_200909); valid key values are provided by the "manifesto_id" properties of metadata responses (hint: this key value returned by metadata can be different to the key initially used to query metadata)
+        parameter: version (e.g. "version=2015-3"); valid values are provided by list_metadata_versions
+        optional parameter: translation (e.g. "en"); returns the translated text instead of the text in original language (for original languages that are already the desired translation language the original text is returned); valid values are currently en (for english); not setting the parameter results in receiving the original language text
+        hint: the response contains a list "items" with the successfully retrieved texts and a second list "missing_items" that contains all the requested keys for which no texts could be found. The latter can happen, as we do not have machine readable texts, digital annotations, or english translations for all of our data points, but you can simply use the metadata information for querying the availability of such data for a specific document beforehand.
+    get_core_codebook: get codebook (chapter) for core dataset; esp. get codes, labels and detailed definitions for all the coded categories.
+        parameter: key (e.g. "key=MPDS2017b"); version of the core dataset (currently only codebooks from MPDS2017b onwards are available)
+        optional parameter: kind (can be categories); which part of the codebook should be retrieved (currently only the categories part is implemented)
+    get_core_citation: get citation for core dataset
+        parameter: key (e.g. "key=MPDS2015a")
+    get_corpus_citation: get citation for corpus dataset
+        parameter: key (e.g. "key=2015-3")
+
+Access
+
+    All functions are rooted below https://manifesto-project.wzb.eu/api/v1/, thus the API is basically versioned but so far only version 1 is existing.
+    Examples of API-requests can be found in the examples section below.
+
+Hints
+
+    Version Names: Keep in mind that we have two different version naming systems in place and that some of the functions require the one for the dataset (e.g. MPDS2015a) or others the one for the corpus (e.g. 2015-3).
+    GET Request Limits: To avoid problems with regard to the size of your GET requests you can also use POST requests for the two possibly parameter-heavy API functions metadata and texts_and_annotations.
+    Quota: There are daily API request quota in place.
+
+Workflows
+
+Using the API functions described above the common workflow to query corpus texts would likely be around the following steps:
+
+    get the core dataset (get_core)
+    filter the desired observations from this dataset and construct a list of queryable keys following the scheme <party>_<date> (e.g. 41320_200909)
+    query the corpus metadata (metadata) for these keys
+    filter availability of specific data (machine-readable texts, digital annotations, english translations) using the metadata information (e.g. "annotations" is true) and construct a list of queryable keys by using the "manifesto_id" metadata property
+    query the corpus texts and annotations (texts_and_annotations) for these keys
+
+You can find much more details on the general data structure, workflows, examples etc. in the vignette of our manifestoR R-package (PDF) which – even though it's focussed on the package and the R language – should provide you with valuable (context) information.
+Changelog
+
+    2025-07-15: added possibility to provide api-key as API_KEY header value or Authentication header value (e.g. "Authorization: Bearer " or "Authorization: Token ")
+    2024-05-08: added optional translation parameter for texts_and_annotations to enable receiving english translations instead of the original language text
+    2024-03-22: added get_parties function
+    2023-08-29: to enhance scripts backward compatibility list_core_versions(kind = "south_america"), get_core, and get_core_citation also contain a technical empty dummy dataset MPDSSA9999a as the latest version for the separate South America dataset (which has been directly integrated in the main dataset from version 2023a onwards)
+    2021-05-27: the kind value of items of texts_and_annotations responses is changed to an empty string as document metadata should generally be queried directly via metadata instead of being indirectly exposed by the text retrieval functions (and so far the kind value was also wrong for documents without annotations)
+    2021-02-01: changed default api root to https://manifesto-project.wzb.eu/api/v1/ (which is a 1-to-1 copy of the old one at https://manifesto-project.wzb.eu/tools/ only the prefix api_ of all api-functions has been removed and the .json suffix is now optional)
+    2018-07-04: added details parameter for list_metadata_versions
+    2018-03-23: added get_core_codebook function
+    2016-04-21: added raw parameter for get_core
+    2016-03-01: added kind parameter for get_core
+    2015-09-14: initial stable API release
+
+Examples
+
+    https://manifesto-project.wzb.eu/api/v1/list_core_versions?api_key=<key>
+    https://manifesto-project.wzb.eu/api/v1/list_metadata_versions?api_key=<key>
+    https://manifesto-project.wzb.eu/api/v1/metadata?api_key=<key>&keys[]=41320_200909&keys[]=41320_200509&version=2015-3
+    https://manifesto-project.wzb.eu/api/v1/texts_and_annotations?api_key=<key>&keys[]=41320_2009&version=2015-3
+    https://manifesto-project.wzb.eu/api/v1/texts_and_annotations?api_key=<key>&keys[]=41320_2009&translation=en&version=2024-1
+
+supported by:
+ 
+ 
+
+Imprint & Data Protection
+
+
+
+Logo_trans_v3_2
+
+    INFO
+    DATA
+    CORPUS & DOCUMENTS
+    manifestoR
+    manifestata
+    API
+    manifestoberta
+    PUBLICATIONS & TUTORIALS
+
+manifestoR
+
+ManifestoR is a free package for the open source statistical software R. It provides access to coded election programmes from the Manifesto Corpus and to the Manifesto Project's Main Dataset. The Manifesto Corpus contains the collected and annotated election programmes as tibble/data.frame or in the Corpus format of the package 'tm' to enable easy use of text processing and text mining functionality. Specific functions for scaling of coded political texts are included. For information on how to use the manifestoR package check its Vignette: Working with the manifestoR package and for recent changes to the package have a look below.
+Functions
+
+    provides access to the Manifesto Corpus
+    provides access to the English translations in the Manifesto Corpus
+    transforms downloaded documents into corpus format (by tm package)
+    downloads and loads the main dataset in R
+    downloads and loads the parties datasets in R
+    recodes new categories from handbook 5 into handbook 4 categories
+    allows using/browsing the category labels, abbreviations, and descriptions
+    Functions related to the main dataset:
+        rile (Laver & Budge 1992)
+        median voter (Kim & Fording 1998)
+        vanilla scaling (Gabel & Huber 2000)
+        Logration scaling (Lowe et al. 2011)
+        left-right positions (Franzmann & Kaiser 2006)
+        bootstrapped confidence-intervals (Benoit et al. 2009)
+        programmatic clarity (Giebler et al. 2015)
+        effective number of manifesto issues (Greene 2015)
+        two different measures of a party's nicheness (Bischof 2015, Meyer & Miller 2013)
+    Extensions (by others)
+        manifestoEnhanceR (by Hauke Licht): "The manifestoEnhanceR package implements functionality to enhance manifestoR data objects. This includes functions to convert manifestoR data objects to tidy data frames, and a function to convert tidy manifesto data frames to XML documents."
+
+Prerequisites
+
+    R - Project for Statistical Computing
+    Manifesto Project Database Account (sign up on this webpage)
+    Manifesto Project Database API Key (login to your account, go to your profile page and generate an API key)
+
+Installation
+
+    install.packages("manifestoR")
+    library(manifestoR)
+
+Documentation
+
+    Vignette: Working with the manifestoR package
+    Reference Manual
+    NEWS
+
+Main Recent Changes
+
+    Preface: for a more detailed list of changes also check the manifestoR NEWS file.
+    Version 1.6.0 (2024-05-16)
+        added functions to access english translations (mp_corpus(translation = "en"), mp_corpus_df(translation = "en"), mp_corpus_df_bilingual(translation = "en"))
+        added functions to access parties datasets (mp_parties)
+        added function to directly receive the corpus as tibble/data.frame (mp_corpus_df)
+        adaptations for the integration of the south america dataset into the normal dataset
+        some improvements and clarifications
+        multiple bugfixes
+    Data Changes (2023-08-29)
+        to enhance scripts backward compatibility mp_coreversions(kind = "south_america") and mp_maindataset(south_america = TRUE) contain a technical empty dummy dataset MPDSSA9999a as the latest version for the separate South America dataset (which has been directly integrated in the main dataset from version 2023a onwards)
+    Version 1.5.0 (2020-11-29)
+        some refactorings and bugfixes
+    Version 1.4.0 (2020-04-20)
+        added mp_dedication
+    Version 1.3.0 (2018-05-22)
+        added codebook interface (mp_codebook etc.)
+        some smaller changes and bugfixes
+
+Links
+
+    CRAN
+    Github
+
+Contribute
+
+You would like to contribute to the development of the package, eg. by integrating your preferred scaling procedure, fork manifestoR on github and/or get in touch with us.
+supported by:
+ 
+ 
+
+Imprint & Data Protection

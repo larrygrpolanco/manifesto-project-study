@@ -1,0 +1,301 @@
+*WORKING DRAFT*
+ 
+**Does Task Decomposition Change How LLMs Classify Political Text?**
+ 
+**Hierarchical Prompting and Error Structure on the Manifesto Project Coding Scheme**
+ 
+*[Working Title — Subject to Change]*
+ 
+Larry Grullon-Polanco
+ 
+Draft Date: March 2026 (Revised)
+ 
+*Note to self: This draft prioritizes the WHY over the WHAT. The research design will adapt as reading and piloting continue. Blue annotations mark the reasoning thread. Brown annotations mark design decisions. Red annotations mark open questions. The thread connecting everything: Does decomposing a complex classification task into hierarchical stages change the structure of LLM errors in ways that matter for downstream political analysis?*
+ 
+# **The Thread**
+ 
+This paper tests whether task decomposition — breaking a complex classification decision into hierarchical stages — changes how LLMs classify political text. The test case is the Manifesto Project coding scheme, the most challenging benchmark in the codebook-LLM literature (Halterman & Keith, 2026), with 56 main categories across 7 policy domains, short quasi-sentences (median 16 tokens), and definitional boundaries that punish surface-level matching. Human coders agree at approximately 50% on individual codes (Mikhaylov et al., 2012; Merz et al., 2016).
+ 
+Prior work has established two things. First, off-the-shelf LLMs perform poorly on this task: Halterman and Keith (2026) found only 11% zero-shot accuracy and 45% non-compliance rates with small open-weight models. Second, the errors are not random — they reflect lexical overlap heuristics and failures to attend to exclusion criteria, suggesting that models default to surface-level pattern matching rather than applying codebook definitions. But this work used 7–12B parameter models in flat classification setups. Nobody has systematically tested whether structuring the decision — classify the domain first, then the category within that domain — changes not just accuracy but the structure of errors.
+ 
+The structure of errors matters because the Manifesto Project’s most common downstream use is aggregate-level estimation: calculating left–right positions, issue salience scores, and cross-party comparisons. Merz et al. (2016) showed that even with 42% item-level accuracy, aggregate correlations reached r = 0.88. If hierarchical prompting makes errors more random (less systematically biased toward certain categories), that could improve downstream analyses even without large accuracy gains. Conversely, if decomposition introduces systematic error propagation — wrong domain cascading to wrong category — that would be worse than random error for aggregate estimation.
+ 
+This study tests four prompting conditions forming a gradient of increasing structure, examines error patterns at three levels (compliance, domain, category), and connects classification performance to downstream measurement validity. The applied linguistics perspective this paper brings is attention to the relationship between coding scheme design and classification behavior — a concern central to both content analysis traditions and genre analysis in applied linguistics, where the fit between analytical categories and textual features has long been recognized as a methodological challenge (Swales, 1990; Biber & Conrad, 2009).
+ 
+# **1. Introduction**
+ 
+***WHY THIS SECTION: ****Establish the specific gap: we know LLMs struggle with complex codebooks, we know hierarchical classification helps in NLP generally, but nobody has tested hierarchical LLM prompting with structured codebook definitions on the Manifesto scheme, and nobody has examined whether decomposition changes error structure in ways that matter for downstream political measurement.*
+ 
+Large language models are increasingly used as measurement tools in political science, classifying text according to human-designed codebooks (Halterman & Keith, 2026; Gilardi et al., 2023; Ziems et al., 2024). The appeal is clear: LLMs promise to scale labor-intensive content analysis while preserving the conceptual precision of expert-designed coding schemes. For some tasks, this promise is being realized. Gilardi et al. (2023) showed ChatGPT outperforming crowd workers on stance detection. Le Mens et al. (2025) demonstrated that simply asking LLMs to position manifesto sentences on policy dimensions and averaging responses achieves correlations above .90 with expert benchmarks — outperforming supervised classifiers at a fraction of the cost. Choi, Peskoff, and Stewart (2026) found that fine-tuned LLMs can replicate expert-level coding on complex political concepts better than trained human coders.
+ 
+However, these successes mask a fundamental limitation that emerges on harder tasks. When coding schemes involve many categories with overlapping surface features and explicit exclusion criteria, off-the-shelf LLMs break down. Halterman and Keith (2026) found that on the Manifesto Project dataset — with 142 categories and short quasi-sentences — zero-shot accuracy reached only 11% and 45% of outputs were non-compliant. Their error analysis revealed that models relied on lexical overlap heuristics, selecting labels whose words appeared in the input text rather than applying codebook definitions. For instance, a sentence about education funding was labeled “welfare positive” despite an explicit codebook exclusion. These are not random errors; they reflect systematic failures to engage with definitional boundaries.
+ 
+This finding connects to a well-documented pattern in NLP. LLMs are known to exploit surface-level statistical cues as “shortcuts” for classification, achieving inflated benchmark scores while lacking robustness on out-of-distribution samples (Du et al., 2023; Levy et al., 2023). The question for political science is not whether LLMs use shortcuts in general — they do — but whether specific prompting strategies can mitigate these shortcuts for specific measurement tasks, and whether the resulting error patterns are acceptable for the downstream analyses researchers actually conduct.
+ 
+One promising strategy is task decomposition: breaking a complex classification decision into smaller, staged decisions. The hierarchical text classification (HTC) literature has shown that decomposing flat classification into coarse-to-fine stages improves performance across domains (Glavaš et al., 2018; Chen et al., 2025; Payberah et al., 2025). Glavaš et al. (2018) demonstrated this specifically for manifesto analysis, proposing a two-stage model for fine-to-coarse classification that outperformed flat approaches across twelve countries. More recently, cascade-of-thought methods have decomposed hierarchical classification into rationale generation, confidence scoring, and decision ranking stages (CSOT; Li et al., 2025). 
+ 
+This study tests classification performance on the Manifesto Project coding scheme (56 main categories across 7 domains) under four prompting conditions that progressively increase structural scaffolding, using current open-weight LLMs of varying sizes. The central manipulation is between flat classification (all categories at once) and hierarchical classification (domain first, then category within domain), with the codebook formatted to include the definitional and exclusion criteria that prior work has shown LLMs tend to ignore. Beyond accuracy, the study examines whether hierarchical prompting changes the structure of classification errors — specifically, whether it shifts errors from systematic (biased toward particular categories due to lexical overlap) to random (uniformly distributed), a distinction that matters enormously for aggregate-level estimation in the Manifesto Project tradition.
+ 
+This paper contributes to an emerging interdisciplinary space between applied linguistics and political science. Both fields share a concern with how analytical categories map onto textual features, but they approach this concern from different traditions. Applied linguistics has developed rich frameworks for analyzing how coding scheme design affects classification behavior, particularly in genre analysis (Swales, 1990; Biber & Conrad, 2009) and automated discourse analysis (Eguchi & Kyle, 2023; Cotos & Şenel, 2024). Political science has developed sophisticated methods for content analysis of political texts but has been slower to interrogate the linguistic assumptions embedded in its coding schemes. This paper bridges the two traditions by treating the Manifesto Project codebook not just as a political science instrument but as a set of linguistic category definitions whose structure can be optimized for automated classification.
+ 
+# **2. Literature Review**
+ 
+***WHY THIS SECTION: ****Three streams converge: (1) LLMs as political text measurement tools — what works and what fails, (2) hierarchical and structured classification — the decomposition strategy and its precedents, (3) error structure and downstream validity — why the pattern of errors matters more than raw accuracy for Manifesto Project applications. An applied linguistics thread runs through all three.*
+ 
+## **2.1 LLMs as Measurement Tools for Political Text**
+ 
+The use of LLMs for political text classification has progressed rapidly along two tracks. The first track treats LLMs as scalable replacements for human coders, evaluating whether they can match human accuracy at lower cost. Results here are encouraging for simpler tasks: Gilardi et al. (2023) found that ChatGPT outperformed crowd workers on stance detection and topic classification. Mellon et al. (2024) reported similar accuracy to human annotators when coding open-ended survey responses. Ornstein et al. (2025) demonstrated strong LLM performance across sentiment analysis, ideology scaling, and topic classification of political texts, including manifesto scaling that correlated highly with crowd-coded benchmarks at dramatically lower cost.
+ 
+The second track examines whether LLMs faithfully apply the precise operationalizations defined in research codebooks — not just whether they get the right answer, but whether they get it for the right reasons. Halterman and Keith (2026) proposed a five-stage evaluation framework and found that even when given complete codebooks, LLMs exhibited lexical overlap heuristics, non-compliance with output instructions, and sensitivity to the order in which categories were presented. Atreja et al. (2025) showed that prompt design substantially affects classification performance across social science tasks, with both task characteristics and prompt components mattering. Burnham (2025) found that detailed definitions and broader context improved LLM classification, and Thalken et al. (2023) showed that even state-of-the-art LLMs struggled with a three-category legal reasoning codebook.
+ 
+A third, emerging line of work demonstrates that supervised fine-tuning can bridge the gap. Choi, Peskoff, and Stewart (2026) showed that fine-tuned LLMs outperformed lightly trained workers, crowdworkers, and zero-shot LLMs in distinguishing difficult-to-separate political concepts. Halterman and Keith (2026) similarly found that instruction-tuning improved performance by up to 55% on their codebook datasets. Bosley (2025) achieved human-comparable inter-rater reliability on the complex Discourse Quality Index through prompt engineering with 25–50 in-context learning examples — demonstrating that intensive prompting, not just fine-tuning, can work for complex measurement tasks.
+ 
+The present study sits between the zero-shot and fine-tuning approaches. It asks: before investing in fine-tuning (which requires labeled training data and significant compute), how far can structured prompting go on the hardest benchmark in the literature? And critically, even if accuracy gains are modest, does structured prompting change the error patterns in ways that matter for downstream use?
+ 
+## **2.2 The Manifesto Project as a Classification Challenge**
+ 
+The Manifesto Project has been a cornerstone of comparative political science for decades, providing standardized content analysis of electoral programs across countries and time periods (Volkens et al., 2015; Merz et al., 2016). The coding scheme assigns each quasi-sentence to one of 56 main categories organized across 7 policy domains: External Relations, Freedom and Democracy, Political System, Economy, Welfare and Quality of Life, Fabric of Society, and Social Groups. The task is inherently difficult: quasi-sentences are short (median 16 whitespace tokens), categories have overlapping surface features, and definitional boundaries often rely on exclusion criteria that require careful reading. Human inter-coder agreement at the individual code level is approximately 0.5 (Mikhaylov et al., 2012; Lacewell & Werner, 2013).
+ 
+The coding scheme, as many codebooks do, has a natural hierarchical structure which can be integrated into the LLM prompting approach. The 7 domains represent distinct policy areas; the categories within each domain represent finer-grained distinctions. A human coder likely processes these texts in a roughly hierarchical way — first identifying the broad policy area, then discriminating among categories within that area. This is particularly important for categories with explicit exclusion criteria that reference sibling categories. For example, “Welfare State Expansion” explicitly excludes education, which falls under a different domain. A flat classifier sees all 56 labels simultaneously and must implicitly learn these boundaries; a hierarchical classifier can be explicitly guided to attend to them.
+ 
+Early automated efforts using SVMs achieved 42% agreement with human coders on 56 categories (Merz et al., 2016), though aggregate-level correlations were much higher (Pearson’s r = 0.88). This pattern — poor item-level accuracy but acceptable aggregate estimation — is characteristic of the Manifesto Project literature and motivates the present study’s attention to error structure. If errors are randomly distributed across categories, they cancel out in aggregation; if they are systematically biased (e.g., welfare-related sentences consistently misclassified as social group references), they distort downstream analyses of party positioning and issue salience.
+ 
+***DESIGN NOTE: ****Using 56 main categories rather than the full 142. This is directly comparable to the SVM baseline from Merz et al. (2016), maps cleanly onto the 7-domain hierarchy for Condition 4, avoids context-window problems with smaller models, and focuses the contribution on the decomposition question rather than the number of categories. Can report domain-level results (7 categories) as an additional granularity.*
+ 
+## **2.3 Hierarchical Text Classification and Task Decomposition**
+ 
+The idea that complex classification benefits from decomposition is well established in NLP. Hierarchical text classification (HTC) methods decompose flat classification into coarse-to-fine stages aligned with a label taxonomy, improving performance across domains from e-commerce product categorization to medical coding (Chen et al., 2025; Payberah et al., 2025). The general finding is that reducing the decision space at each stage allows models to make more discriminative comparisons among semantically similar categories.
+ 
+For manifesto analysis specifically, Glavaš et al. (2018) proposed a two-stage hierarchical structured deep model that predicted fine- and coarse-grained positions, outperforming flat approaches across twelve countries in ten languages. However, this work used traditional deep learning architectures, not generative LLMs with codebook-style prompts. More recently, TELEClass (Xiao et al., 2024) demonstrated that LLMs can be used for hierarchical classification with minimal supervision by using textual entailment for top-down taxonomy traversal. TaxMorph (Rücker & Akbik, 2026) showed that LLMs can even refine the taxonomy itself, producing hierarchies that yield better classification than human-curated ones.
+ 
+The cascade-of-thought (CSOT) approach is particularly relevant to the present study. CSOT decomposes hierarchical classification into rationale generation, confidence scoring, and decision ranking — each implemented via structured prompts (Li et al., 2025). This mirrors the logic of the present study’s Condition 4, but CSOT was designed for multimodal classification with generic taxonomies, not for political science codebooks with domain-specific exclusion criteria and definitional boundaries. The present study adapts the decomposition idea to the specific structure of the Manifesto Project codebook, using Halterman and Keith’s (2026) semi-structured format at each stage.
+ 
+From an applied linguistics perspective, this decomposition strategy parallels established practices in genre analysis and move analysis. Swales’ (1990) move-step framework decomposes textual analysis into hierarchical levels — identifying the broad rhetorical function (move) before classifying the specific strategy (step). Cotos and Şenel (2024) tested ChatGPT’s ability to perform this hierarchical annotation, finding that prompt design critically affected classification quality. The parallel to manifesto coding is direct: domains are analogous to moves (broad functional categories) and specific codes are analogous to steps (fine-grained realizations within those categories). The key insight from both traditions is that hierarchical decomposition does not merely reduce computational complexity — it structures the classification decision to mirror the analytical logic embedded in the coding scheme.
+ 
+## **2.4 Temperature, Reliability, and Prior Work**
+ 
+Grullon-Polanco (2026) demonstrated that sampling temperature affects annotation reliability without affecting classification accuracy, showing a decoupling between getting the right answer and getting the same answer consistently. Li et al. (2025) extended this finding across six capabilities and multiple model sizes, showing that temperature effects are skill-specific and that larger models are more robust. Together, these studies establish that low temperature settings optimize reliability and that temperature is not a meaningful lever for improving classification accuracy. This motivates the present study’s decision to fix temperature and focus on prompting structure as the primary manipulation.
+ 
+***DESIGN NOTE: ****Temperature is set to 0.0 based on Grullon-Polanco (2026). A small reliability check (inter-iteration agreement on a subset) is reported as methodological hygiene but is not a focus. Temperature was the last paper; prompting structure is this paper.*
+ 
+## **2.5 Error Structure and Downstream Measurement Validity**
+ 
+A crucial but underexplored question in the codebook-LLM literature is whether classification errors matter equally for all downstream uses. Most evaluations report aggregate accuracy metrics (F1, accuracy) without examining the distributional properties of errors. But for the Manifesto Project, the most common downstream analyses involve aggregation: computing the proportion of quasi-sentences in each category to estimate party positions, issue salience, or left–right scores (Budge et al., 2001; Klingemann et al., 2006).
+ 
+For aggregate estimation, the structure of errors matters more than their frequency. Random misclassification adds noise but does not systematically bias position estimates; systematic misclassification — where certain categories consistently absorb errors from related categories — distorts the signal. Egami et al. (2023) formalized this insight, showing that even when LLMs achieve decent labeling accuracy, using noisy labels in downstream analysis can induce severe bias and coverage issues. Knox et al. (2022) similarly demonstrated that proxy measurement error requires correction in downstream inference.
+ 
+This motivates the present study’s focus on error structure alongside accuracy. If hierarchical prompting reduces systematic bias in misclassification (e.g., by reducing cross-domain confusion) even without large accuracy gains, it may still improve the quality of downstream political analyses. Conversely, if hierarchical prompting introduces new systematic errors through error propagation (wrong domain → wrong category), this would be a cautionary finding for the decomposition approach.
+ 
+# **3. Research Questions**
+ 
+***WHY THIS SECTION: ****Three RQs forming a progression: what works (RQ1), does scale matter (RQ2), and how do errors change (RQ3). RQ3 is what elevates this beyond a benchmark comparison. Note RQ3 is no longer about 'reasoning vs. pattern matching' but about error structure — something that can be operationalized and measured.*
+ 
+RQ1: How does prompting strategy affect LLM classification accuracy on the Manifesto Project coding scheme? Specifically, does hierarchical classification (domain → category) outperform flat classification with an equivalent amount of codebook information?
+ 
+RQ2: How does model size interact with prompting strategy? Do larger models benefit more from structured prompts (a leverage effect), or do smaller models benefit more (a catching-up effect)?
+ 
+RQ3: Does hierarchical prompting change the structure of classification errors? Specifically, does it reduce systematic cross-domain confusion relative to flat classification, and what are the implications for aggregate-level estimation?
+ 
+***DESIGN NOTE: ****RQ3 is now operationalizable: compare the confusion matrices from flat vs. hierarchical conditions. Systematic error = off-diagonal concentration in specific cells. Random error = diffuse off-diagonal distribution. This can be quantified using entropy of the confusion matrix rows, concentration ratios, or comparison of aggregate category distributions against gold standard.*
+ 
+***NEW/CHANGED: ****Dropped the original RQ3 about CoT and 'reasoning.' CoT analysis is retained as a supplementary diagnostic (Section 4.4) but is no longer carrying the paper's theoretical weight. The error structure question is both more tractable and more consequential.*
+ 
+# **4. Method**
+ 
+***WHY THIS SECTION: ****Every methodological decision should be traceable to the thread. We fix temperature because it is a solved question (prior work). We choose open-weight models because reproducibility matters. We choose the Manifesto data because it is the hardest benchmark. We choose 4 prompting conditions because they form a clean gradient. We analyze error structure because that is what matters for downstream use.*
+ 
+## **4.1 Dataset**
+ 
+The study uses the English-language subset of the Manifesto Project corpus (Lehmann et al., 2017; Merz et al., 2016), accessed via the manifestoR package. Quasi-sentences are the unit of analysis. Classification targets are the 56 main categories organized within 7 policy domains. The dataset is split into training (for few-shot example selection) and test sets, following Halterman and Keith’s (2026) 70-15-15 split to maintain comparability.
+ 
+***DESIGN NOTE: ****Restricting to English removes multilingual variation as a confound, consistent with Halterman **&** Keith (2026). Using 56 main categories is directly comparable to Merz et al.’s (2016) SVM baseline and maps cleanly onto the 7-domain hierarchy. Future work can extend to other languages and the full 142-category scheme.*
+ 
+## **4.2 Models**
+ 
+The study tests open-weight LLMs spanning three size categories: small (7–8B parameters), medium (12–14B), and large (40–70B+). All models are instruction-tuned variants from leading open-weight families. The specific model selection will be finalized based on availability and compute constraints, but should include models from at least three families (e.g., Llama, Mistral/Mixtral, Qwen) to avoid family-specific effects.
+ 
+***OPEN QUESTION: ****Specific model selection to be finalized during piloting. Priority: at least 2 models per size category, 6–8 models total. Consider including one current reasoning model (e.g., DeepSeek-R1 or Qwen3 in thinking mode) as an exploratory comparison — reasoning models may interact differently with hierarchical decomposition. Also consider whether to include one commercial API model (e.g., GPT-4o-mini) as a ceiling reference, or keep everything open-weight for the reproducibility argument.*
+ 
+***NEW/CHANGED: ****Dropped the 1–4B 'small' category from the original draft. Halterman **&** Keith already showed these models fail on this task. Starting at 7–8B establishes a meaningful baseline and keeps compute tractable.*
+ 
+## **4.3 Prompting Conditions**
+ 
+Four prompting conditions are tested, forming a gradient of increasing scaffolding:
+ 
+**Condition 1: Zero-Shot Labels Only. **The model receives the quasi-sentence and a list of valid category labels (no definitions, no examples). This serves as the minimal baseline and tests whether label names alone carry enough semantic information for classification. This replicates the simplest setup from prior work.
+ 
+**Condition 2: Zero-Shot Full Codebook. **The model receives the quasi-sentence and the complete codebook for all 56 categories, formatted following Halterman and Keith’s (2026) semi-structured format with definitions, clarifications, and exclusion criteria. This tests whether providing the codebook improves performance without any demonstration of how to apply it.
+ 
+**Condition 3: Few-Shot Full Codebook (Flat). **Same as Condition 2, plus a stratified sample of labeled examples (2–3 per category, drawn from the training split). The model sees the full codebook, example quasi-sentences with their correct labels, and the target quasi-sentence. All 56 categories are presented simultaneously. This is the strongest flat-classification condition.
+ 
+**Condition 4: Few-Shot Hierarchical. **The classification is decomposed into two stages. Stage 1: the model receives the quasi-sentence and the 7 domain definitions with examples, and selects a domain. Stage 2: the model receives the quasi-sentence and only the category definitions and examples within the selected domain, and selects a category. The codebook content is identical to Condition 3 — the only difference is the decomposition of the decision.
+ 
+***WHY THIS SECTION: ****Each condition adds exactly one variable. Condition 1 → 2 adds the codebook. Condition 2 → 3 adds examples. Condition 3 → 4 restructures the decision from flat to hierarchical. The key comparison is Condition 3 vs. 4: same information, different structure. If performance changes, the change is attributable to decomposition, not information.*
+ 
+***DESIGN NOTE: ****Few-shot examples are selected by stratified random sampling from the training split. Example selection strategy (prototypical vs. random vs. boundary cases) is acknowledged as a future direction following Liu **&** Shi (2024), who developed automatic prompt optimization and dynamic exemplar selection for political science classification. This is not manipulated here to keep the design focused on the decomposition question.*
+ 
+## **4.4 Chain-of-Thought Diagnostic Analysis**
+ 
+After the main experiment, a supplementary chain-of-thought (CoT) analysis is conducted on a strategic subset of items: specifically, items where the flat condition (Condition 3) and hierarchical condition (Condition 4) disagree in their classifications. For these items, the best-performing model is re-run with an instruction to explain its reasoning step by step before providing a classification.
+ 
+The CoT outputs are analyzed qualitatively along two dimensions. First, codebook engagement: does the explanation reference specific definitions, clarifications, or exclusion criteria from the codebook, or does it rely on surface features (keywords, label name overlap)? Second, error localization: when the hierarchical approach misclassifies, does the error originate at Stage 1 (wrong domain) or Stage 2 (right domain, wrong category)? This distinction speaks to whether decomposition helps with coarse-grained discrimination while leaving fine-grained distinctions unresolved.
+ 
+***DESIGN NOTE: ****CoT is a supplementary diagnostic, not a main condition. The interpretive weight it can bear is limited by well-documented concerns about faithfulness of LLM-generated explanations (Jacovi **&** Goldberg, 2020; Lyu et al., 2024). The CoT analysis provides illustrative texture for the quantitative error structure findings; it does not independently support causal claims about internal processing.*
+ 
+***NEW/CHANGED: ****Downgraded from a theoretical centerpiece (original draft) to a supplementary diagnostic. The original framing asked CoT to answer whether LLMs 'reason' — a question it cannot reliably answer. Now CoT serves a supporting role: illustrating patterns that the quantitative error analysis identifies.*
+ 
+## **4.5 Error Structure Analysis**
+ 
+The primary analytical contribution of this study is the error structure analysis, which goes beyond aggregate accuracy metrics to examine the distributional properties of classification errors. For each prompting condition, the following are computed:
+ 
+(a) Confusion matrices at both domain level (7×7) and category level (56×56), comparing flat vs. hierarchical conditions.
+ 
+(b) Error concentration: for each true category, the entropy of the predicted distribution across all categories. High entropy indicates diffuse (random) errors; low entropy indicates concentrated (systematic) errors directed at specific incorrect categories.
+ 
+(c) Cross-domain vs. within-domain error rates: the proportion of misclassifications that land in a different domain vs. the correct domain. Hierarchical classification should reduce cross-domain errors by design; the question is whether this comes at the cost of increased within-domain errors.
+ 
+(d) Aggregate estimation accuracy: for each condition, category proportions (the percentage of quasi-sentences assigned to each category) are computed and compared to gold-standard proportions. This directly measures whether classification errors cancel out or compound in aggregation, using correlation and mean absolute deviation as metrics.
+ 
+***NEW/CHANGED: ****Entirely new section. This operationalizes RQ3 and provides the paper’s most distinctive contribution. No prior study has systematically compared flat vs. hierarchical LLM prompting on the Manifesto scheme with this level of error analysis.*
+ 
+## **4.6 Temperature and Reliability**
+ 
+Sampling temperature is fixed at T = 0.0 for all conditions, based on prior findings that low temperatures optimize inter-iteration reliability without affecting classification accuracy (Grullon-Polanco, 2026). A subset of 200 items is run 3 times to confirm output stability at this temperature setting, reported as inter-iteration agreement (Krippendorff’s α). This is reported briefly as a methodological hygiene check.
+ 
+## **4.7 Evaluation Metrics**
+ 
+Classification performance is assessed using weighted F1 score to account for class imbalance, consistent with Halterman and Keith (2026). Compliance rate (proportion of outputs containing a valid label) is reported given the high non-compliance rates in prior work. Three-level reporting provides a complete picture: (1) compliance rate, (2) domain-level accuracy (7 domains), and (3) category-level accuracy (56 categories). The error structure metrics described in Section 4.5 complement these standard metrics.
+ 
+# **5. Anticipated Results and Analysis Plan**
+ 
+***WHY THIS SECTION: ****This section is speculative and will be replaced by actual results. Thinking through expected patterns clarifies what the study is testing and how different outcomes would be interpreted.*
+ 
+If the theoretical argument holds, the following pattern should emerge:
+ 
+**Compliance** should improve from Condition 1 to Condition 2, with the biggest gains when the codebook is introduced. The 45% non-compliance rate found by Halterman and Keith was with 7–12B models; current models with better instruction-following should reduce this. If non-compliance remains high even with full codebook and examples, that itself constrains the usefulness of prompting-only approaches.
+ 
+**Category-level accuracy** should improve from Condition 1 through Condition 3 as information is added. The key test is Condition 3 vs. 4 (flat vs. hierarchical with identical information). Based on the HTC literature, I expect modest accuracy gains from hierarchical classification, but the magnitude is an open question. Glavaš et al. (2018) found consistent improvements from hierarchical approaches on manifesto data, but with different model architectures.
+ 
+**Error structure** is where the most diagnostic findings should emerge. Hierarchical classification should substantially reduce cross-domain errors by constraining Stage 2 to within-domain categories. The critical question is whether total error rates decrease or whether within-domain confusion increases to compensate. If hierarchical prompting merely redirects errors from cross-domain to within-domain while preserving overall accuracy, this still matters for aggregate estimation — within-domain errors are less consequential for left–right scaling than cross-domain errors.
+ 
+**Model size effects** should show larger models outperforming smaller ones across all conditions. The interaction between model size and prompting condition is the empirical question: if larger models benefit proportionally more from hierarchical prompting, this suggests that decomposition benefits require sufficient model capability to leverage. If smaller models benefit more, this has practical implications for resource-constrained research.
+ 
+**Aggregate estimation accuracy** should be the bottom-line finding. Even if item-level accuracy gains from hierarchical prompting are modest, improvements in aggregate estimation (lower MAD, higher correlation with gold-standard distributions) would validate the approach for the Manifesto Project’s primary use case.
+ 
+***OPEN QUESTION: ****What if hierarchical classification performs WORSE than flat? Error propagation from Stage 1 (wrong domain) could cascade to wrong category. If this happens, the paper becomes about the costs and benefits of decomposition, documenting when the approach fails and why. This is still publishable and important — it would caution against naïve decomposition and motivate future work on confidence-gated hierarchical approaches where uncertain domain classifications trigger fallback to flat classification.*
+ 
+# **6. Discussion Preview**
+ 
+***WHY THIS SECTION: ****Even in draft form, thinking about the discussion keeps the thread visible. The contribution is not 'method X works better than Y' but 'here is what decomposition does and does not do to error structure on the hardest benchmark, and here is what that means for downstream political measurement.'*
+ 
+The broader implication of this work depends on the results pattern. If hierarchical prompting improves aggregate estimation accuracy even with modest item-level gains, this validates task decomposition as a practical strategy for researchers using LLMs to code political texts — and suggests that the field should pay more attention to error structure than aggregate accuracy metrics.
+ 
+If improvements are concentrated at the domain level (models correctly identify the policy area but still struggle with fine-grained categories), this suggests a natural boundary for prompting-only approaches and motivates targeted fine-tuning for within-domain discrimination, following Choi et al. (2026). If hierarchical prompting fails entirely due to error propagation, this is an important negative finding for the growing HTC literature and motivates more sophisticated approaches like confidence-gated cascades.
+ 
+The connection to the Manifesto Project literature deserves emphasis. Automated classification of political text is increasingly used to study party competition, populist communication (Zehnter, 2025), policy framing, and coalition dynamics. The reliability of these analyses depends on measurement quality at the classification stage. This study does not just test a prompting strategy; it evaluates whether that strategy produces errors that are benign or malignant for the specific downstream analyses the political science community actually conducts.
+ 
+From an applied linguistics perspective, this study contributes to the growing literature on LLM-assisted discourse analysis and automated annotation. The finding that how you structure a classification decision matters — independent of how much information you provide — resonates with long-standing insights from genre analysis about the relationship between analytical frameworks and classification behavior. If hierarchical prompting works, it works because it mirrors the logic of the coding scheme, not because it gives the model more data.
+ 
+# **7. Scope and Boundaries**
+ 
+***WHY THIS SECTION: ****Being explicit about what this paper is and is not prevents scope creep and sets up future work.*
+ 
+**This paper IS about: **the effect of task decomposition (hierarchical vs. flat prompting) on LLM classification accuracy and error structure for the Manifesto Project coding scheme, and what error patterns mean for downstream aggregate estimation.
+ 
+**This paper is NOT about: **temperature effects (solved in prior work), supervised fine-tuning (a different intervention with different requirements — see Choi et al. 2026 and Halterman & Keith 2026 Stage 4 for this approach), automatic prompt optimization (see Liu & Shi 2024 for this approach), multilingual performance (future work), or maximum accuracy engineering (the goal is understanding error structure, not leaderboard performance).
+ 
+**Future work threads set up by this paper: **(1) combining hierarchical prompting with automatic exemplar selection (Liu & Shi, 2024); (2) confidence-gated hierarchical classification where uncertain domain predictions trigger fallback to flat classification; (3) fine-tuning with hierarchically structured training data; (4) cross-lingual extension to the Manifesto Project’s multilingual corpus; (5) application to other complex codebooks with hierarchical structure; (6) integration with downstream bias correction methods (Egami et al., 2023).
+ 
+# **References**
+ 
+*[Placeholder — to be populated during writing. Key references organized by contribution area:]*
+ 
+**LLMs as political text measurement tools:**
+ 
+Atreja et al. (2025) — prompt design effects on social science tasks
+ 
+Bosley (2025) — DQI prompt engineering, ICL strategies for complex measurement
+ 
+Burnham (2025) — detailed definitions improve LLM classification
+ 
+Choi, Peskoff & Stewart (2026) — fine-tuned LLMs replicate expert coding
+ 
+Gilardi et al. (2023) — LLMs vs. crowd workers
+ 
+Halterman & Keith (2026) — codebook-LLM evaluation framework (primary interlocutor)
+ 
+Le Mens et al. (2025) — LLM scaling of political texts, ask-and-average approach
+ 
+Liu & Shi (2024) — PoliPrompt: automatic prompt optimization for political science
+ 
+Mellon et al. (2024) — LLM accuracy comparable to human annotators
+ 
+Ornstein et al. (2025) — LLMs for political text, manifesto scaling replication
+ 
+Thalken et al. (2023) — LLMs on legal reasoning codebooks
+ 
+Ziems et al. (2024) — LLMs for computational social science benchmarks
+ 
+**Manifesto Project and political measurement:**
+ 
+Budge et al. (2001) — Mapping Policy Preferences
+ 
+Egami et al. (2023) — noisy labels and downstream bias
+ 
+Klingemann et al. (2006) — Mapping Policy Preferences II
+ 
+Knox et al. (2022) — proxy measurement error in causal inference
+ 
+Lehmann et al. (2017) — Manifesto Project data
+ 
+Merz et al. (2016) — Manifesto Corpus, SVM baseline
+ 
+Mikhaylov et al. (2012) — human coder reliability
+ 
+Volkens et al. (2015) — Manifesto Data Collection
+ 
+Zehnter (2025) — populist group references in manifestos
+ 
+**Hierarchical text classification and task decomposition:**
+ 
+Chen et al. (2025) — taxonomy-guided consistency in multi-level classification
+ 
+Glavaš et al. (2018) — hierarchical model for manifesto text analysis
+ 
+Li et al. (2025, CSOT) — cascade-of-thought for hierarchical classification
+ 
+Payberah et al. (2025) — single-pass hierarchical classification with LLMs
+ 
+Rücker & Akbik (2026) — TaxMorph: LLM-refined taxonomies
+ 
+Xiao et al. (2024) — TELEClass: taxonomy enrichment for hierarchical classification
+ 
+**NLP shortcuts and LLM behavior:**
+ 
+Du et al. (2023) — shortcut learning survey in CACM
+ 
+Jacovi & Goldberg (2020) — faithfulness of interpretable NLP
+ 
+Levy et al. (2023) — lexical overlap heuristics in LLMs
+ 
+Lyu et al. (2024) — survey of faithfulness in NLP explanations
+ 
+**Applied linguistics and genre analysis:**
+ 
+Biber & Conrad (2009) — Register, Genre, and Style
+ 
+Cotos & Şenel (2024) — ChatGPT for move analysis
+ 
+Eguchi & Kyle (2023) — custom NLP tools for discourse annotation
+ 
+Swales (1990) — Genre Analysis: English in academic and research settings
+ 
+**Temperature and reliability:**
+ 
+Grullon-Polanco (2026) — temperature and reliability (own prior work)
+ 
+Li et al. (2025) — temperature effects across abilities and model sizes
+ 
+**Prompting and chain-of-thought:**
+ 
+Wei et al. (2022) — chain-of-thought prompting
