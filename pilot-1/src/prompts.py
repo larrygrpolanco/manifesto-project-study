@@ -50,8 +50,9 @@ def build_single_messages(condition, item, cb):
 
 def build_hier2_stage1_messages(item, cb):
     """HIER2 stage 1: pick a domain."""
-    intro = ("Below are the policy domains of the coding scheme, each followed by "
-             "the categories it contains. Decide which single domain best fits the "
+    intro = ("Below are the policy domains of the coding scheme. Each domain is "
+             "shown as `number — name: definition`, followed by the categories it "
+             "contains as examples. Decide which single domain best fits the "
              "quasi-sentence.\n\nDOMAINS:")
     answer = ('Respond with JSON of the form {{"domain": <domain number>}} using one '
               "of the domain numbers listed above.")

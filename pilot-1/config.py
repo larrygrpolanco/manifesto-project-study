@@ -52,20 +52,21 @@ CATCH_ALL_CODES = {"000", "408", "303", "305", "705", "706"}
 # Exact Groq model IDs. Edit freely; the pipeline loops over whatever is listed.
 MODELS = [
     "llama-3.1-8b-instant",
-    "openai/gpt-oss-20b",
     "qwen/qwen3-32b",
-    "llama-3.3-70b-versatile",
     "openai/gpt-oss-120b",
 ]
 
 # --- Conditions -------------------------------------------------------------
-# Four conditions. Information axis: LABELS vs FULL. Structure axis (at full
-# information): FULL vs HIER1 vs HIER2. Each comparison changes exactly one thing.
-CONDITIONS = ["LABELS", "FULL", "HIER1", "HIER2"]
+# Three conditions, all at full codebook information; the manipulation is purely
+# structural. FULL = flat. HIER1 = same codebook grouped by domain in one call
+# ("fused" hierarchy). HIER2 = two calls: pick a domain, then a category within
+# it ("split" hierarchy). FULL vs HIER1 isolates presentation; HIER1 vs HIER2
+# isolates the two-call split itself. LABELS dropped: label-only failure is
+# already established and contributes little to the error-structure question.
+CONDITIONS = ["FULL", "HIER1", "HIER2"]
 
 # Pairwise comparisons the significance tests focus on (label, a, b).
 COMPARISONS = [
-    ("info: LABELS vs FULL", "LABELS", "FULL"),
     ("structure: FULL vs HIER1", "FULL", "HIER1"),
     ("structure: FULL vs HIER2", "FULL", "HIER2"),
     ("structure: HIER1 vs HIER2", "HIER1", "HIER2"),
