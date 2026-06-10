@@ -1,0 +1,2 @@
+{"model": "google/gemma-4-26b-a4b-it", "condition": "WINDOW", "item_id": "51320_200106-209", "gold_code": "504", "gold_domain_code": 5, "pred_code": "504", "pred_domain_code": 5, "stage1_domain": null, "compliant": true, "raw1": "{\"code\": \"504\"}", "raw2": "", "error": ""}
+{"model": "google/gemma-4-26b-a4b-it", "condition": "WINDOW", "item_id": "51320_200106-151", "gold_code": "408", "gold_domain_code": 4, "pred_code": "414", "pred_domain_code": 4, "stage1_domain": null, "compliant": true, "raw1": "{\"code\": \"414\"}", "raw2": "", "error": ""}

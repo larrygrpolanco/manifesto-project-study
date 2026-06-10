@@ -1,0 +1,12 @@
+pos_code,neg_code,domain,label
+101,102,External Relations,Foreign Special Relationships
+104,105,External Relations,Military
+108,110,External Relations,European Community/Union
+203,204,Political System,Constitutionalism
+406,407,Economy,Protectionism
+504,505,Welfare and Quality of Life,Welfare State
+506,507,Welfare and Quality of Life,Education
+601,602,Fabric of Society,National Way of Life
+603,604,Fabric of Society,Traditional Morality
+607,608,Fabric of Society,Multiculturalism
+701,702,Social Groups,Labour Groups

@@ -1,0 +1,13 @@
+model,condition,item_id,gold_code,gold_domain_code,pred_code,pred_domain_code,stage1_domain,compliant,error
+deepseek/deepseek-v4-flash,BASE,51320_200106-151,408,4,414,4,,True,
+deepseek/deepseek-v4-flash,BASE,51320_200106-209,504,5,504,5,,True,
+deepseek/deepseek-v4-flash,FULLDOC,51320_200106-151,408,4,414,4,,True,
+deepseek/deepseek-v4-flash,FULLDOC,51320_200106-209,504,5,504,5,,True,
+deepseek/deepseek-v4-flash,WINDOW,51320_200106-151,408,4,414,4,,True,
+deepseek/deepseek-v4-flash,WINDOW,51320_200106-209,504,5,504,5,,True,
+google/gemma-4-26b-a4b-it,BASE,51320_200106-209,504,5,303,3,,True,
+google/gemma-4-26b-a4b-it,BASE,51320_200106-151,408,4,414,4,,True,
+google/gemma-4-26b-a4b-it,FULLDOC,51320_200106-151,408,4,414,4,,True,
+google/gemma-4-26b-a4b-it,FULLDOC,51320_200106-209,504,5,504,5,,True,
+google/gemma-4-26b-a4b-it,WINDOW,51320_200106-209,504,5,504,5,,True,
+google/gemma-4-26b-a4b-it,WINDOW,51320_200106-151,408,4,414,4,,True,

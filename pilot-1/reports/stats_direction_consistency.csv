@@ -1,0 +1,4 @@
+comparison,models,b>a,b<a,significant(Holm)
+structure: FULL vs HIER1,3,3,0,1
+structure: FULL vs HIER2,3,1,2,1
+structure: HIER1 vs HIER2,3,1,2,3
