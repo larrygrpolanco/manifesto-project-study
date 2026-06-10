@@ -1,165 +1,185 @@
-# Pilot-3 — task ambiguity as the denominator: do LLMs fail where humans disagree?
+# Does LLM error track human disagreement? A matched item-level test on CMP coding
 
-A self-contained pilot that pivots the question behind [`../pilot-1`](../pilot-1) and
-[`../pilot-2`](../pilot-2). See also [`../docs/error_as_spine.md`](../docs/error_as_spine.md)
-and [`../docs/messy-draft.txt`](../docs/messy-draft.txt).
+A self-contained study built on the one place in the Manifesto/CMP world where the
+same sentences were coded by many humans: the Mikhaylov, Laver & Benoit (2012)
+reliability experiment. Every sentence in that experiment carries a *distribution* of
+human codes, which means it carries a measurable **ambiguity score**. We run current
+LLMs over the exact same sentences and ask one question.
 
-> **Status:** planning / refinement. No runs yet. The design below is a candidate —
-> the point of writing it now is to make the refinement concrete. Sections marked
-> **OPEN** are the decisions we still need to make.
+> **Status:** design locked, data verified on disk, no LLM runs yet. The human side is
+> fully in hand (texts + gold + per-sentence human distributions, alignment confirmed).
+> The next step is the LLM collection described below.
 
-## The turn
+## The question
 
-Pilots 1–2 chased the field's reflex: **accuracy**. Both found that the levers we pull
-(prompt structure, document context) move the *rate* of errors a little but barely
-touch their *structure* — and the dominant error type (cross-domain, ~65% of all
-errors) is sticky across every condition and every model.
+The Manifesto coding scheme is a task where trained human coders disagree constantly:
+Mikhaylov, Laver & Benoit (2012) report Fleiss's κ of **0.31–0.36** at the category
+level and median coder-vs-gold Cohen's κ of **0.43–0.54**. A large share of what any
+accuracy metric scores as "LLM error" on this task may therefore be **irreducible task
+ambiguity** — category boundaries that expert humans themselves cross — rather than
+model deficiency.
 
-Accuracy treats **every disagreement with the gold label as a model failure**. But the
-Manifesto scheme is a task where *trained human coders agree only ~50% of the time at
-the code level* (Mikhaylov et al. 2012). So a large share of what we score as "LLM
-error" may not be model deficiency at all — it may be **irreducible task ambiguity**:
-category boundaries that even expert humans cross. If that's true, the right question
-isn't "how close to 100% is the model" but **"how close to the human ceiling is it, and
-does it fail on the same things humans find hard?"**
+**Central question.** *Does the structure of LLM error align, sentence by sentence,
+with the structure of human coder disagreement?*
 
-**Central question.** *Does the structure of LLM error align with the structure of
-human coder disagreement?* Two outcomes, both publishable, decided in advance:
+The unit of analysis is the **sentence**. For each of the 179 experiment sentences we
+have, from the human side, a distribution over codes (hence an entropy / disagreement
+score), and from the LLM side, a distribution over codes across models and runs. The
+two distributions are directly comparable because they describe the *same sentence*.
 
-- **Aligned** → LLM errors concentrate where humans disagree. The "low accuracy" is
-  largely a property of the *instrument* (the codebook's porous boundaries), not the
-  model. This is a measurement-validity finding, and it ages independently of which
-  model is current. It reframes the whole codebook-LLM literature's accuracy obsession.
-- **Misaligned** → LLMs fail in places humans agree. That residual is genuine model
-  defect, and it's the part prompting/fine-tuning should target. Equally useful, and it
-  tells you *where* to spend effort.
+Two outcomes, both publishable, fixed in advance:
 
-Either way, the dependent variable stops being accuracy and becomes **error structure
-and its alignment with human disagreement.** That's the thread worth scaling.
+- **Aligned** → LLMs err where humans disagree. The low headline accuracy is largely a
+  property of the *instrument* (porous codebook boundaries), not the models. This is a
+  measurement-validity result that ages independently of which model is current.
+- **Misaligned** → LLMs fail on sentences humans agree on. That residual is genuine
+  model defect and is exactly where prompting / fine-tuning effort should go.
 
-## The data we already have
+The dependent variable is **error structure and its alignment with human disagreement**,
+not accuracy against gold.
 
-The replication archive for Mikhaylov, Laver & Benoit (2012) is in
-[`../data/codebook/coder_reliability/`](../data/codebook/coder_reliability) — the raw
-human coding experiment, **full 56-category scheme, English**:
+## Why this design (and what it drops)
 
-| document | coders | sentences | (coder→gold) pairs |
-|---|---:|---:|---:|
-| Britain (`codes.log` + `master-codersGB.txt`)    | 32 | 107 | ~3,400 |
-| New Zealand (`codesNZ.log` + `master-codersNZ.txt`) | 23 | 72  | ~1,650 |
+This is a *matched, paired* design from the start: same sentences, human and machine.
+We deliberately do **not** compare against earlier unmatched confusion matrices from
+unrelated runs — different sentences, different setup, and different category coverage
+make any geometric "rhyme" between them unfalsifiable. The paired item-level test is
+the contribution, so it is the whole study.
 
-Each `*.log` row is one coder: columns 1–8 are metadata (ip, date, time, id, name,
-email, institution, experience), **columns 9+ are the code that coder gave to
-quasi-sentence 1, 2, 3, …** in fixed order. The `master-*.txt` files hold the gold
-("MASTER") code for the same sentence sequence. `CMP_reliability_replication.R` is the
-original recipe (incl. which low-quality coders the authors dropped).
+## The data (verified on disk)
 
-**The crown jewel:** because ~30/~23 coders coded *the same* 179 sentences, every
-sentence has a **distribution of human codes** → a measurable **per-sentence ambiguity
-score** (entropy / disagreement), not just an aggregate reliability number.
+The source for the sentence texts is **Volkens (2002), *Manifesto Coding Instructions
+(Second Revised Edition)*, WZB Discussion Paper FS III 02-201**, Section 5 ("Coding
+Exercise"), pp. 19–24. Both experiment texts appear there fully unitized (quasi-sentence
+boundaries marked with `/`) with the gold CMP code printed against each quasi-sentence.
 
-## Two phases
+| document | source (pp.) | sentences | human coders (raw) | (coder→gold) pairs |
+|---|---|---:|---:|---:|
+| GB: Liberal/SDP Alliance 1983, "Working together for Britain" | App. §5, pp. 19–20 | 107 | 32 | 3,424 |
+| NZ: National Party 1972 | App. §5, pp. 20–24 | 72 | 23 | 1,656 |
 
-### Phase A — structural, no API, data in hand (answers "is this real?")
+Verification done: the gold vectors in `master-codersGB.txt` (107 codes, leading
+`0 0 0 305 305 606 305 410 408 …`) and `master-codersNZ.txt` (72 codes,
+`414 414 414 414 414 408 408 402 …`) match the printed appendix codes in coding order,
+and every coder row in `codes.log` (32 coders) and `codesNZ.log` (23 coders) has exactly
+107 / 72 code columns. Alignment of text → gold → human distribution is therefore
+mechanical, not inferred.
 
-Build, from the reliability archive alone:
+**The crown jewel.** Because ~30 / ~23 coders coded the *same* sentences, every sentence
+carries a full distribution of human codes → a per-sentence ambiguity score (entropy /
+modal-share), not just an aggregate reliability number. This is what makes the item-level
+test possible and is not reproducible from any other CMP data.
 
-1. **Human confusion matrix** (coder→gold) at 56-category and 7-domain levels.
-2. **Human inter-coder agreement** (coder→coder): pairwise agreement and Krippendorff's
-   α overall and per category — the achievable ceiling per category.
-3. **Per-sentence human ambiguity**: entropy / modal-share of the ~30 human codes on
-   each of the 179 sentences.
-4. **Per-category reliability ranking**: which categories humans themselves can't
-   apply consistently, and which cells absorb the disagreement (do humans also dump
-   into 408 / 305 / 606?).
+### Coding scheme: use the period-correct 56-category frame
 
-Then compare the *geometry* of the human confusion matrix to the **LLM confusion
-matrices we already have** from pilots 1–2 (different sentences, so this is a
-distributional comparison, not item-level):
+The texts were coded under the original **56-category (v1–v4) frame**, which is the frame
+the Volkens (2002) handbook documents in full (Table 1 + §7 definitions). Do **not**
+source codes or a codebook from the current MARPOR corpus: version 5 split several
+categories (e.g. 202→202/202_2, 605→605/605_2, 703→703/703_2) and the modern releases
+recombine them for back-comparability. Sourcing from anywhere but the contemporaneous
+handbook risks v5-split codes that do not line up with the 2008-era gold. The handbook's
+56-category list and definitions go straight into `data/codebook.csv` with the 7-domain
+map.
 
-- cross-domain share of off-diagonal mass — human vs LLM (is the human number also ~65%?)
-- correlation of per-category recall: do LLMs and humans struggle on the same categories?
-- do the heavy off-diagonal cells coincide (cosine / correlation of off-diagonal mass)?
+### Coverage is a boundary condition, not a caveat
 
-If the geometries already look alike, the avenue is real and we commit to Phase B.
+The two texts exercise only ~20 of 57 categories (19 in GB, +1 unique in NZ). This is the
+full extent of the only multiply-coded CMP data in existence; it bounds the study to those
+categories and we state that up front. Per-category claims live or die on those ~20.
 
-### Phase B — matched, item-level (the strong test; needs the sentence texts)
+### The codebook already predicts where ambiguity lives
 
-Run the same models/conditions over **the exact 179 GB/NZ sentences** the humans coded,
-giving a paired design:
+The handbook's own tie-break rules (§4.2.2) tell us in advance which boundaries are porous
+— a prior we test against both the human distributions and the LLM distributions:
+- **DR5:** specific policy beats Domain-7 group codes (except 703) → group codes bleed.
+- **DR6:** specific policy beats 305 (Political Authority) → 305 is a dumping ground.
+- **DR7:** specific policy beats 408 (General Economic Goals) → 408 is a dumping ground.
+These are testable predictions about *where* both humans and models should scatter.
 
-- **Item-level alignment:** is the LLM more likely to err on high-human-entropy
-  sentences? (logit of LLM-error on human-disagreement, per item.)
-- **Disagreement vs disagreement:** does *cross-model* LLM disagreement track
-  *cross-coder* human disagreement on the same sentence? (Do machines and humans find
-  the same sentences hard?)
-- **Human-ceiling-relative scoring:** report LLM accuracy *against the human agreement
-  rate per category*, not against 100%.
+## Plan
 
-This requires locating the 179 sentence **texts**, which the logs don't contain — see
-Data wrangling below.
+### Step 1 — Human ambiguity profile (no API; data in hand)
 
-## Data wrangling (the "take a while" part)
+From the logs + gold alone, build the reference layer every later step depends on:
 
-- The logs give codes, not text, and don't name the manifesto/election. We need to
-  identify **which** British and NZ manifestos these are (MLB 2012 used specific test
-  documents) and pull their quasi-sentence text **in coding order** to align with the
-  107/72 columns.
-- The full corpus CSV is **~1.8M rows** — do **not** load it whole. Filter to the
-  candidate country/party/date first, then match on sentence order/count (107 and 72
-  are strong fingerprints). Confirm alignment by spot-checking a few sentences against
-  their gold codes.
-- **OPEN:** confirm the exact source documents before any extraction. Until matched,
-  Phase A stands on its own.
+1. **Per-sentence human distribution** over the 56 categories and over the 7 domains,
+   for all 179 sentences.
+2. **Per-sentence ambiguity score:** normalized Shannon entropy of the human codes, and
+   (1 − modal share). Report both; decide `000`/uncoded handling explicitly (see Open).
+3. **Per-category human reliability:** Fleiss's κ per category, and raw human agreement
+   per category — the achievable human ceiling, category by category.
+4. **Human confusion matrix** (coder→gold) at 56-category and 7-domain levels, plus the
+   reduced 3×3 Rile matrix, to characterize *where* humans send their disagreement.
 
-## Metrics (candidate — needs refinement)
+Apply the MLB coder-quality screen so results are comparable to the paper: the original
+`CMP_reliability_replication.R` lists exactly which coders were dropped (17 retained GB,
+12 retained NZ). Compute everything **twice** — full pool (a realistic "crowd" ceiling)
+and the trained/retained subset (the expert ceiling) — and report both.
 
-- **Ambiguity score per sentence:** normalized Shannon entropy of human codes, and/or
-  (1 − modal share). **OPEN:** which, and how to handle the `000`/uncoded codes.
-- **Reference for "truth":** the `master` gold is itself one authority's coding, *not*
-  ground truth. **OPEN:** treat gold as the reference (accuracy framing), or treat
-  coder-vs-coder agreement as the ambiguity measure and drop the privileged gold? Lean:
-  report both — gold-relative for comparability with the literature, coder-consensus for
-  the honest ambiguity story.
-- **Matrix comparison:** per-category recall correlation (human vs LLM); off-diagonal
-  cosine; cross-domain off-diagonal share.
-- **Alignment (Phase B):** item-level error ~ human entropy; model-disagreement ~
-  coder-disagreement.
+### Step 2 — Fresh LLM collection over the same 179 sentences
 
-## Caveats baked in
+Run current models over the exact 179 GB/NZ sentences, producing, per sentence, a
+distribution of LLM codes across models × runs (multiple samples per model so the
+machine side has its own *disagreement* measure, mirroring the humans).
 
-- **Two English manifestos, one era.** Small and unrepresentative — fine for a pilot
-  that asks whether the *relationship* exists, not to estimate its size for the field.
-- **Gold is not ground truth.** It's one expert's codes; "accuracy against gold"
-  inherits gold's own errors. This is exactly why the human-disagreement framing is the
-  point, not a nuisance.
-- **Coder pool quality.** The archive mixes trained coders and trainees; MLB dropped
-  some. **OPEN:** compute everything both with all coders (a realistic "crowd" ceiling)
-  and with their trained subset (the expert ceiling).
-- **Phase A is unmatched** (different sentences than pilots 1–2). It can show the
-  geometries rhyme; only Phase B can show item-level alignment.
+- **Conditions:** hold the prompt design fixed and vary only what the question needs —
+  at minimum sentence-only vs sentence-in-document-context, since context is exactly what
+  a human coder uses to resolve an ambiguous quasi-sentence (handbook §4.2.2c).
+- **Sampling:** N samples per (model, sentence, condition) at non-zero temperature, to
+  estimate cross-run model disagreement per sentence.
+- **Models:** a current frontier set; record exact model strings + dates for reproducibility.
 
-## Planned layout
+### Step 3 — Alignment tests (the paper)
+
+Paired, item-level, on the matched 179:
+
+1. **Error ~ human ambiguity.** Logistic regression of LLM-error (vs gold) on per-sentence
+   human entropy, with model + condition effects. Aligned ⇒ positive slope.
+2. **Disagreement ~ disagreement.** Does *cross-model* LLM disagreement track *cross-coder*
+   human disagreement on the same sentence? (Correlation of the two per-sentence entropies.)
+   This is the cleanest version of the question and needs no privileged gold.
+3. **Human-ceiling-relative scoring.** Report LLM accuracy per category against the *human
+   agreement rate* for that category, not against 100%.
+4. **Where the mass goes.** Do LLMs dump off-diagonal into the same cells humans do
+   (305 / 408 / group codes, per DR5–7)? Compare off-diagonal structure of the human and
+   LLM confusion matrices on the shared ~20 categories.
+
+## Open decisions
+
+- **`000`/uncoded.** Treat as a 57th class, or exclude? It is both common and unreliable
+  in the human data (the paper flags β≈0.55 for uncoded), so it is substantively
+  interesting — lean toward keeping it as a class and reporting with/without.
+- **Gold is one authority, not ground truth.** Report alignment tests both gold-relative
+  (comparable to the literature) and gold-free (coder-consensus vs model-consensus, test 2
+  above), and treat the gold-free version as the honest headline.
+- **Sampling budget.** N per (model, sentence, condition) — pick N so the per-sentence LLM
+  entropy is stable; pilot a few sentences first.
+
+## Layout
 
 ```
-pilot-3/
+study/
   README.md              # this plan
-  config.py              # models/conditions reused from pilot-2; ambiguity + matching params
+  config.py              # models, conditions, sampling N, codebook + scheme params
   data/
-    human_reliability/   # copied from ../data/codebook/coder_reliability (self-contained)
-    codebook.csv         # 56-category codebook + domain map (shared with pilot-2)
+    human/               # codes.log, codesNZ.log, master-codersGB.txt, master-codersNZ.txt
+    sentences.csv        # 179 quasi-sentence texts + gold, aligned (from handbook §5)
+    codebook.csv         # 56-category frame + 7-domain map (from handbook §7)
   src/
-    human_matrix.py      # Phase A: parse logs -> human confusion, α, per-sentence entropy
-    compare_matrices.py  # Phase A: human-vs-LLM geometry (uses pilot-1/2 confusion outputs)
-    match_sentences.py   # Phase B: locate + align the 179 texts from the 1.8M-row corpus
-    run_experiment.py    # Phase B: reuse pilot-2 runner over the matched sentences
-    evaluate_alignment.py# Phase B: item-level error ~ human disagreement
-  reports/               # human reliability profile, geometry comparison, alignment, summary.md
+    extract_sentences.py # parse handbook §5 -> sentences.csv; assert match to gold vectors
+    human_profile.py     # Step 1: per-sentence entropy, per-category κ, human confusion
+    run_llms.py          # Step 2: collect LLM code distributions over the 179
+    alignment.py         # Step 3: error~entropy, disagreement~disagreement, ceiling scoring
+  reports/               # human profile, alignment results, summary.md
 ```
 
 ## Immediate next step
 
-Build `src/human_matrix.py` (Phase A, step 1–4) and the geometry comparison against the
-pilot-1/2 confusion matrices. That's an evening on data already on disk, and it tells us
-whether the alignment thread is real **before** we spend any compute or go hunting
-through 1.8M rows for sentence texts.
+Two things that need no API and unblock everything:
+1. `extract_sentences.py` — pull the 179 quasi-sentences from the handbook §5 text, pair
+   each to its gold code, and **assert** the resulting gold vector equals the master files
+   (length 107 / 72, exact order). This makes the text→gold→human alignment a checked
+   invariant rather than a trust.
+2. `human_profile.py` — Step 1 in full. It is an evening on data already on disk and tells
+   us the shape of human ambiguity (and the DR5–7 dumping-ground prediction) *before* any
+   compute is spent on LLM runs.
