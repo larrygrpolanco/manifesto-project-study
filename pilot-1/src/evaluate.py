@@ -157,7 +157,9 @@ def direction_consistency(mc):
 def write_summary(metrics, cochran, mc, consist):
     L = ["# Pilot-1 evaluation summary\n"]
     L.append("## Metrics (per model × condition)\n")
-    L.append(metrics.round(3).to_markdown(index=False))
+    md = metrics.round(3)
+    md.columns = [c.replace("|", "\\|") for c in md.columns]  # escape pipe so markdown table doesn't split the column
+    L.append(md.to_markdown(index=False))
     L.append("\n## Cochran's Q (omnibus across conditions, per model)\n")
     L.append(cochran.round(4).to_markdown(index=False) if len(cochran) else "_n/a_")
     L.append("\n## Pairwise McNemar (Holm-corrected, exact-category correctness)\n")
