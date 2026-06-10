@@ -1,0 +1,58 @@
+code,title,domain,count,pct
+000,No other category applies,Uncoded,0,0.0
+101,Foreign Special Relationships: Positive,External Relations,10,1.67
+102,Foreign Special Relationships: Negative,External Relations,3,0.5
+103,Anti-Imperialism,External Relations,0,0.0
+104,Military: Positive,External Relations,26,4.33
+105,Military: Negative,External Relations,3,0.5
+106,Peace,External Relations,6,1.0
+107,Internationalism: Positive,External Relations,20,3.33
+108,European Community/Union: Positive,External Relations,2,0.33
+109,Internationalism: Negative,External Relations,1,0.17
+110,European Community/Union: Negative,External Relations,10,1.67
+201,Freedom and Human Rights,Freedom and Democracy,9,1.5
+202,Democracy,Freedom and Democracy,21,3.5
+203,Constitutionalism: Positive,Freedom and Democracy,6,1.0
+204,Constitutionalism: Negative,Freedom and Democracy,0,0.0
+301,Decentralization,Political System,12,2.0
+302,Centralisation,Political System,0,0.0
+303,Governmental and Administrative Efficiency,Political System,17,2.83
+304,Political Corruption,Political System,2,0.33
+305,Political Authority,Political System,18,3.0
+401,Free Market Economy,Economy,10,1.67
+402,Incentives: Positive,Economy,17,2.83
+403,Market Regulation,Economy,32,5.33
+404,Economic Planning,Economy,7,1.17
+405,Corporatism/Mixed Economy,Economy,2,0.33
+406,Protectionism: Positive,Economy,2,0.33
+407,Protectionism: Negative,Economy,1,0.17
+408,Economic Goals,Economy,7,1.17
+409,Keynesian Demand Management,Economy,0,0.0
+410,Economic Growth: Positive,Economy,9,1.5
+411,Technology and Infrastructure: Positive,Economy,36,6.0
+412,Controlled Economy,Economy,2,0.33
+413,Nationalisation,Economy,0,0.0
+414,Economic Orthodoxy,Economy,5,0.83
+415,Marxist Analysis,Economy,0,0.0
+416,Anti-Growth Economy: Positive,Economy,14,2.33
+501,Environmental Protection,Welfare and Quality of Life,21,3.5
+502,Culture: Positive,Welfare and Quality of Life,7,1.17
+503,Equality: Positive,Welfare and Quality of Life,39,6.5
+504,Welfare State Expansion,Welfare and Quality of Life,45,7.5
+505,Welfare State Limitation,Welfare and Quality of Life,6,1.0
+506,Education Expansion,Welfare and Quality of Life,30,5.0
+507,Education Limitation,Welfare and Quality of Life,0,0.0
+601,National Way of Life: Positive,Fabric of Society,23,3.83
+602,National Way of Life: Negative,Fabric of Society,1,0.17
+603,Traditional Morality: Positive,Fabric of Society,11,1.83
+604,Traditional Morality: Negative,Fabric of Society,1,0.17
+605,Law and Order: Positive,Fabric of Society,36,6.0
+606,Civic Mindedness: Positive,Fabric of Society,6,1.0
+607,Multiculturalism: Positive,Fabric of Society,9,1.5
+608,Multiculturalism: Negative,Fabric of Society,3,0.5
+701,Labour Groups: Positive,Social Groups,16,2.67
+702,Labour Groups: Negative,Social Groups,1,0.17
+703,Agriculture and Farmers: Positive,Social Groups,7,1.17
+704,Middle Class and Professional Groups,Social Groups,3,0.5
+705,Underprivileged Minority Groups,Social Groups,9,1.5
+706,Non-economic Demographic Groups,Social Groups,16,2.67

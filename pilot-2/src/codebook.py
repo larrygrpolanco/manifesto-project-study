@@ -1,18 +1,14 @@
-"""Parse the Manifesto codebook and render the per-condition prompt blocks.
+"""Parse the Manifesto codebook and render the codebook block the model sees.
 
-This is the single source of truth for *what codebook text the model sees* in
-each condition. Keeping it here (rather than inline in the runner) makes the
-information/structure manipulation auditable: run this file directly to dump the
-exact blocks to reports/ and eyeball them.
+This is the single source of truth for *what codebook text the model sees*.
+Pilot-2 holds the codebook presentation constant across every condition: the
+model always sees the full set of MARPOR main categories grouped by policy
+domain (render_hier1), each with its full definition. Only the document context
+around the target sentence changes between conditions (see config.py). Keeping
+the block here (rather than inline in the runner) makes it auditable: run this
+file directly to dump the exact block to reports/ and eyeball it.
 
     python src/codebook.py            # writes reports/prompt_blocks_preview.md
-
-Conditions:
-    LABELS  flat, "code: title" only                       (information: minimal)
-    FULL    flat, "code: title" + full description          (information: full)
-    HIER1   full descriptions grouped under domain headers  (structure: presentation)
-    HIER2   two stages -> render_domain_menu() then          (structure: decomposition)
-            render_domain_categories(domain_code)
 """
 
 import csv
@@ -24,43 +20,6 @@ csv.field_size_limit(min(sys.maxsize, 2**31 - 1))
 
 # Order domains by code 1..7, then the uncoded "domain" (code 0) last.
 UNCODED_DOMAIN_CODE = 0
-
-# Domain-level scope statements for HIER2 stage 1. The first hierarchical call
-# decides a domain, and in HIER2 a cross-domain error (E1) can ONLY originate
-# here -- so this call must be an informed semantic decision, not a match on
-# category titles alone. These describe each domain's scope and flag the known
-# cross-domain confusions (e.g. education -> Welfare, not Economy). Keyed by
-# domain_code; sourced from the MARPOR domain definitions.
-DOMAIN_DESCRIPTIONS = {
-    1: ("Foreign policy and the country's relations with the outside world: "
-        "military and defense, war and peace, foreign alliances and special "
-        "relationships, internationalism, the European Union, anti-imperialism, "
-        "and foreign aid."),
-    2: ("Civil liberties, human rights, democratic institutions and procedures, "
-        "and the constitutional framework -- including freedom from state "
-        "coercion and arguments for or against the existing constitution."),
-    3: ("How domestic government is structured and run: centralization versus "
-        "decentralization of power, governmental and administrative efficiency, "
-        "political corruption, and the authority and stability of government."),
-    4: ("Economic policy and management: free markets and incentives, "
-        "regulation, planning, nationalisation, protectionism versus free trade, "
-        "economic growth and goals, technology and infrastructure, and the "
-        "controlled economy. (Education and the welfare state belong to Welfare, "
-        "not here; technical/vocational training for the economy does belong "
-        "here.)"),
-    5: ("Social services and quality of life: the welfare state and social "
-        "services, health care, education, the environment, culture, and social "
-        "equality."),
-    6: ("National identity and social cohesion: the national way of life, "
-        "traditional morality, law and order, civic-mindedness and social "
-        "solidarity, and multiculturalism."),
-    7: ("Appeals to or statements about specific social and demographic groups: "
-        "labour, agriculture and farmers, the middle class and professional "
-        "groups, minorities, and other non-economic demographic groups such as "
-        "those defined by age, gender, or region."),
-    UNCODED_DOMAIN_CODE: ("None of the substantive domains applies -- purely "
-                          "procedural, ambiguous, or off-topic statements."),
-}
 
 
 @dataclass
@@ -106,26 +65,9 @@ class Codebook:
     def categories_in_domain(self, domain_code):
         return [c for c in self.categories if c.domain_code == domain_code]
 
-    def domain_name(self, domain_code):
-        for dc, dn in self.domains:
-            if dc == domain_code:
-                return dn
-        return None
-
-    def domain_description(self, domain_code):
-        return DOMAIN_DESCRIPTIONS.get(domain_code, "")
-
-    # --- prompt blocks ------------------------------------------------------
-    def render_labels(self):
-        """LABELS condition: code + title only."""
-        return "\n".join(f"{c.code}: {c.title}" for c in self.categories)
-
-    def render_full(self):
-        """FULL condition: code + title + full description, flat."""
-        return "\n\n".join(self._entry(c) for c in self.categories)
-
+    # --- prompt block -------------------------------------------------------
     def render_hier1(self):
-        """HIER1: full descriptions grouped under domain headers (single call)."""
+        """The codebook block: full descriptions grouped under domain headers."""
         blocks = []
         for dc, dn in self.domains:
             cats = self.categories_in_domain(dc)
@@ -133,23 +75,6 @@ class Codebook:
             body = "\n\n".join(self._entry(c, indent="  ") for c in cats)
             blocks.append(f"{header}\n{body}")
         return "\n\n".join(blocks)
-
-    def render_domain_menu(self):
-        """HIER2 stage 1: each domain as code + name + scope definition, with its
-        category titles as concrete examples. Leading with the definition makes
-        the domain choice a semantic decision rather than a title match."""
-        blocks = []
-        for dc, dn in self.domains:
-            titles = "; ".join(c.title for c in self.categories_in_domain(dc))
-            desc = self.domain_description(dc)
-            head = f"{dc} — {dn}: {desc}" if desc else f"{dc} — {dn}"
-            blocks.append(f"{head}\n   Includes: {titles}")
-        return "\n\n".join(blocks)
-
-    def render_domain_categories(self, domain_code):
-        """HIER2 stage 2: full entries for one domain's categories."""
-        cats = self.categories_in_domain(domain_code)
-        return "\n\n".join(self._entry(c) for c in cats)
 
     @staticmethod
     def _entry(c: Category, indent=""):
@@ -188,14 +113,14 @@ def _preview():
     cb = load_codebook(config.CODEBOOK_CSV, config.VALENCE_PAIRS_CSV)
     out = config.REPORTS_DIR / "prompt_blocks_preview.md"
     out.parent.mkdir(parents=True, exist_ok=True)
+    block = cb.render_hier1()
     parts = [
         "# Prompt block preview\n",
         f"{len(cb.categories)} categories, {len(cb.domains)} domains, "
-        f"{len(cb.valence_pairs)} valence pairs.\n",
-        "## LABELS\n```\n" + cb.render_labels() + "\n```",
-        "## FULL (first 2 entries)\n```\n"
-        + "\n\n".join(cb._entry(c) for c in cb.categories[:2]) + "\n```",
-        "## HIER2 stage-1 domain menu\n```\n" + cb.render_domain_menu() + "\n```",
+        f"{len(cb.valence_pairs)} valence pairs. "
+        f"Codebook block: {len(block)} chars (~{len(block) // 4} tokens).\n",
+        "## CATEGORIES BY DOMAIN (the constant block shown in every condition)\n"
+        "```\n" + block + "\n```",
     ]
     out.write_text("\n\n".join(parts))
     print(f"wrote {out}")

@@ -35,7 +35,10 @@ def main():
     args = ap.parse_args()
 
     cb = load_codebook(config.CODEBOOK_CSV, config.VALENCE_PAIRS_CSV)
-    items = load_items(args.input, config.COLUMNS, config.ID_COLUMNS, cb)
+    # Profile the *sampled* items actually scored (not the whole corpus), so the
+    # distribution and power note match the experiment.
+    items = load_items(args.input, config.COLUMNS, config.ID_COLUMNS, cb,
+                       n_per_manifesto=config.N_PER_MANIFESTO, seed=config.SEED)
     n = len(items)
 
     code_counts = Counter(it.gold_code for it in items)

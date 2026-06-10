@@ -1,0 +1,4 @@
+comparison,models,b>a,b<a,significant(Holm)
+context: BASE vs FULLDOC,2,2,0,1
+context: BASE vs WINDOW,2,2,0,2
+context: WINDOW vs FULLDOC,2,1,1,1
