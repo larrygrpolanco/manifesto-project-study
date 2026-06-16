@@ -1,0 +1,4 @@
+# Pilot dependencies. Install into a venv before running probe_models/run.
+#   python -m venv .venv && source .venv/bin/activate && pip install -r src/pilot/requirements.txt
+openai>=1.40          # OpenRouter client (OpenAI-compatible API)
+matplotlib>=3.7       # optional: q1_scatter.png in analyze; analysis degrades gracefully without it

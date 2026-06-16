@@ -2,6 +2,7 @@
 # One file per API call. predictions.csv (the tidy long table) IS tracked.
 runs/raw/
 !runs/raw/.gitkeep
+runs/pilot/raw/
 
 # --- Archived prior work: heavy/regenerable subdirs --------------------------
 archive/early-experiment/data/

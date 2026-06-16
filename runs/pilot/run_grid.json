@@ -1,0 +1,214 @@
+{
+  "configs": [
+    {
+      "config_id": "deepseek__deepseek-v4-flash__on",
+      "model": "deepseek/deepseek-v4-flash",
+      "reasoning_mode": "on",
+      "capability": "toggleable",
+      "reasoning_param": {
+        "enabled": true
+      },
+      "logprobs_supported": false
+    },
+    {
+      "config_id": "deepseek__deepseek-v4-flash__off",
+      "model": "deepseek/deepseek-v4-flash",
+      "reasoning_mode": "off",
+      "capability": "toggleable",
+      "reasoning_param": {
+        "enabled": false
+      },
+      "logprobs_supported": false
+    },
+    {
+      "config_id": "deepseek__deepseek-v4-pro__on",
+      "model": "deepseek/deepseek-v4-pro",
+      "reasoning_mode": "on",
+      "capability": "always_on",
+      "reasoning_param": null,
+      "logprobs_supported": false
+    },
+    {
+      "config_id": "qwen__qwen3.6-35b-a3b__on",
+      "model": "qwen/qwen3.6-35b-a3b",
+      "reasoning_mode": "on",
+      "capability": "toggleable",
+      "reasoning_param": {
+        "enabled": true
+      },
+      "logprobs_supported": false
+    },
+    {
+      "config_id": "qwen__qwen3.6-35b-a3b__off",
+      "model": "qwen/qwen3.6-35b-a3b",
+      "reasoning_mode": "off",
+      "capability": "toggleable",
+      "reasoning_param": {
+        "enabled": false
+      },
+      "logprobs_supported": false
+    },
+    {
+      "config_id": "qwen__qwen3.6-plus__on",
+      "model": "qwen/qwen3.6-plus",
+      "reasoning_mode": "on",
+      "capability": "toggleable",
+      "reasoning_param": {
+        "enabled": true
+      },
+      "logprobs_supported": false
+    },
+    {
+      "config_id": "qwen__qwen3.6-plus__off",
+      "model": "qwen/qwen3.6-plus",
+      "reasoning_mode": "off",
+      "capability": "toggleable",
+      "reasoning_param": {
+        "enabled": false
+      },
+      "logprobs_supported": false
+    },
+    {
+      "config_id": "google__gemma-4-26b-a4b-it__on",
+      "model": "google/gemma-4-26b-a4b-it",
+      "reasoning_mode": "on",
+      "capability": "toggleable",
+      "reasoning_param": {
+        "enabled": true
+      },
+      "logprobs_supported": true
+    },
+    {
+      "config_id": "google__gemma-4-26b-a4b-it__off",
+      "model": "google/gemma-4-26b-a4b-it",
+      "reasoning_mode": "off",
+      "capability": "toggleable",
+      "reasoning_param": {
+        "enabled": false
+      },
+      "logprobs_supported": true
+    },
+    {
+      "config_id": "google__gemma-4-31b-it__on",
+      "model": "google/gemma-4-31b-it",
+      "reasoning_mode": "on",
+      "capability": "toggleable",
+      "reasoning_param": {
+        "enabled": true
+      },
+      "logprobs_supported": false
+    },
+    {
+      "config_id": "google__gemma-4-31b-it__off",
+      "model": "google/gemma-4-31b-it",
+      "reasoning_mode": "off",
+      "capability": "toggleable",
+      "reasoning_param": {
+        "enabled": false
+      },
+      "logprobs_supported": false
+    },
+    {
+      "config_id": "anthropic__claude-3.5-haiku__off",
+      "model": "anthropic/claude-3.5-haiku",
+      "reasoning_mode": "off",
+      "capability": "always_off",
+      "reasoning_param": null,
+      "logprobs_supported": false
+    },
+    {
+      "config_id": "anthropic__claude-haiku-4.5__on",
+      "model": "anthropic/claude-haiku-4.5",
+      "reasoning_mode": "on",
+      "capability": "toggleable",
+      "reasoning_param": {
+        "enabled": true
+      },
+      "logprobs_supported": false
+    },
+    {
+      "config_id": "anthropic__claude-haiku-4.5__off",
+      "model": "anthropic/claude-haiku-4.5",
+      "reasoning_mode": "off",
+      "capability": "toggleable",
+      "reasoning_param": {
+        "enabled": false
+      },
+      "logprobs_supported": false
+    }
+  ],
+  "probe_detail": {
+    "deepseek/deepseek-v4-flash": {
+      "reachable": true,
+      "capability": "toggleable",
+      "logprobs_supported": false,
+      "base_reasoning": true,
+      "on_reasoning": true,
+      "off_reasoning": false,
+      "note": ""
+    },
+    "deepseek/deepseek-v4-pro": {
+      "reachable": true,
+      "capability": "always_on",
+      "logprobs_supported": false,
+      "base_reasoning": true,
+      "on_reasoning": true,
+      "off_reasoning": true,
+      "note": ""
+    },
+    "qwen/qwen3.6-35b-a3b": {
+      "reachable": true,
+      "capability": "toggleable",
+      "logprobs_supported": false,
+      "base_reasoning": true,
+      "on_reasoning": true,
+      "off_reasoning": false,
+      "note": ""
+    },
+    "qwen/qwen3.6-plus": {
+      "reachable": true,
+      "capability": "toggleable",
+      "logprobs_supported": false,
+      "base_reasoning": true,
+      "on_reasoning": true,
+      "off_reasoning": false,
+      "note": ""
+    },
+    "google/gemma-4-26b-a4b-it": {
+      "reachable": true,
+      "capability": "toggleable",
+      "logprobs_supported": true,
+      "base_reasoning": false,
+      "on_reasoning": true,
+      "off_reasoning": false,
+      "note": ""
+    },
+    "google/gemma-4-31b-it": {
+      "reachable": true,
+      "capability": "toggleable",
+      "logprobs_supported": false,
+      "base_reasoning": false,
+      "on_reasoning": true,
+      "off_reasoning": false,
+      "note": ""
+    },
+    "anthropic/claude-3.5-haiku": {
+      "reachable": true,
+      "capability": "always_off",
+      "logprobs_supported": false,
+      "base_reasoning": false,
+      "on_reasoning": false,
+      "off_reasoning": false,
+      "note": ""
+    },
+    "anthropic/claude-haiku-4.5": {
+      "reachable": true,
+      "capability": "toggleable",
+      "logprobs_supported": false,
+      "base_reasoning": false,
+      "on_reasoning": true,
+      "off_reasoning": false,
+      "note": ""
+    }
+  }
+}
