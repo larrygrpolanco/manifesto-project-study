@@ -10,12 +10,93 @@
       {
         "id": "GB",
         "name": "United Kingdom — The Liberal/SDP Alliance 1983 ('Working together for Britain')",
-        "n_units": 107
+        "n_units": 107,
+        "sections": [
+          {
+            "heading": "Working together for Britain",
+            "level": "title",
+            "first_unit": "GB-001",
+            "last_unit": "GB-022"
+          },
+          {
+            "heading": "THE IMMEDIATE CRISIS: JOBS AND PRICES",
+            "level": "section",
+            "first_unit": "GB-023",
+            "last_unit": "GB-044"
+          },
+          {
+            "heading": "STRATEGY FOR INDUSTRIAL SUCCESS",
+            "level": "section",
+            "first_unit": "GB-045",
+            "last_unit": "GB-058"
+          },
+          {
+            "heading": "PARTNERSHIP IN INDUSTRY",
+            "level": "section",
+            "first_unit": "GB-059",
+            "last_unit": "GB-063"
+          },
+          {
+            "heading": "PARTICIPATION AT WORK",
+            "level": "section",
+            "first_unit": "GB-064",
+            "last_unit": "GB-070"
+          },
+          {
+            "heading": "GOVERNMENT AND INDUSTRY",
+            "level": "section",
+            "first_unit": "GB-071",
+            "last_unit": "GB-098",
+            "subsections": [
+              {
+                "heading": "Priority for Industry",
+                "first_unit": "GB-071",
+                "last_unit": "GB-081"
+              },
+              {
+                "heading": "New and Small Business",
+                "first_unit": "GB-082",
+                "last_unit": "GB-091"
+              },
+              {
+                "heading": "Agriculture and Fisheries",
+                "first_unit": "GB-092",
+                "last_unit": "GB-098"
+              }
+            ]
+          },
+          {
+            "heading": "Education and training",
+            "level": "section",
+            "first_unit": "GB-099",
+            "last_unit": "GB-107"
+          }
+        ]
       },
       {
         "id": "NZ",
         "name": "New Zealand — National Party 1972 ('A Guide to what the next National Government will do for New Zealand')",
-        "n_units": 72
+        "n_units": 72,
+        "sections": [
+          {
+            "heading": "THE ECONOMY",
+            "level": "section",
+            "first_unit": "NZ-001",
+            "last_unit": "NZ-021"
+          },
+          {
+            "heading": "SUPERANNUATION",
+            "level": "section",
+            "first_unit": "NZ-022",
+            "last_unit": "NZ-045"
+          },
+          {
+            "heading": "WOMEN'S RIGHTS",
+            "level": "section",
+            "first_unit": "NZ-046",
+            "last_unit": "NZ-072"
+          }
+        ]
       }
     ],
     "rile_legend": {
@@ -23,7 +104,9 @@
       "right": "one of the 13 CMP rile-right categories",
       "none": "not part of the rile index"
     },
-    "handbook_divergences_note": "The 3rd-edition coding-manual exercise prints margin codes that differ from the study's master at three points. These are documented here for reference but are NOT carried in the unit records, which use the master coding only. (1) GB-015: handbook 605 (Law and Order) vs master 606 (Social Harmony) — both rile-right. (2) GB-067: handbook 201 (Freedom/Human Rights, rile-right) vs master 701 (Labour Groups, rile-left) — rile-flipping. (3) NZ-030: the handbook splits the pension rate-schedule into two quasi-sentences (both 504); the master treats it as one unit — a unitization difference only."
+    "handbook_divergences_note": "The 3rd-edition coding-manual exercise prints margin codes that differ from the study's master at three points. These are documented here for reference but are NOT carried in the unit records, which use the master coding only. (1) GB-015: handbook 605 (Law and Order) vs master 606 (Social Harmony) — both rile-right. (2) GB-067: handbook 201 (Freedom/Human Rights, rile-right) vs master 701 (Labour Groups, rile-left) — rile-flipping. (3) NZ-030: the handbook splits the pension rate-schedule into two quasi-sentences (both 504); the master treats it as one unit — a unitization difference only.",
+    "section_note": "Section headings come from the coding manual's printed exercise (Werner & Volkens 2010, section 5; Klingemann et al. 2006, Appendix II), matched to units by text anchor and carried for the in-context condition (Decision Rules 2 and 11 make the surrounding paragraph and section heading coding cues). NOTE: the GB unit sequence — which matches the master-coder files and the codes.log columns, i.e. the order coders actually coded in — places THE IMMEDIATE CRISIS (GB-023..044) before STRATEGY FOR INDUSTRIAL SUCCESS (GB-045..058), the reverse of the manual's print order. The 'Working together for Britain' span is the untitled introduction (the document title is its only heading).",
+    "category_scheme_note": "The inline 'categories' object lists only codes present in the master/gold coding, as a coverage aid. The full instruction-parity option space — all 56 standard categories + 000 uncoded, with handbook definitions and rile mapping — lives in categories.json and is what both the human coders and the models are offered."
   },
   "categories": {
     "000": {
@@ -119,7 +202,8 @@
       "text": "The General Election on June 9th, 1983 will be seen as a watershed in British politics.",
       "master_code": "000",
       "master_label": "Uncoded",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-002",
@@ -128,7 +212,8 @@
       "text": "It may be recalled as the fateful day when depression became hopelessness and the slide of the post-war years accelerated into the depths of decline.",
       "master_code": "000",
       "master_label": "Uncoded",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-003",
@@ -137,7 +222,8 @@
       "text": "Alternatively it may be remembered as the turning point when the people of this country, at the eleventh hour, decided to turn their backs on dogma and bitterness and chose a new road of partnership and progress.",
       "master_code": "000",
       "master_label": "Uncoded",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-004",
@@ -146,7 +232,8 @@
       "text": "It is to offer real hope of a fresh start for Britain that the Alliance between our two parties has been created.",
       "master_code": "305",
       "master_label": "Political Authority: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-005",
@@ -155,7 +242,8 @@
       "text": "What we have done is unique in the history of British parliamentary democracy.",
       "master_code": "305",
       "master_label": "Political Authority: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-006",
@@ -164,7 +252,8 @@
       "text": "Two parties, one with a proud history, and one born only two years ago out of a frustration with the old systems of politics, have come together to offer an alternative government pledged to bring the country together again.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-007",
@@ -173,7 +262,8 @@
       "text": "The Conservative and Labour parties between them have made an industrial wasteland out of a country which was once the workshop of the world.",
       "master_code": "305",
       "master_label": "Political Authority: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-008",
@@ -182,7 +272,8 @@
       "text": "Manufacturing output from Britain is back to the level of nearly 20 years ago.",
       "master_code": "410",
       "master_label": "Productivity: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-009",
@@ -191,7 +282,8 @@
       "text": "Unemployment is still rising and there are now generations of school-leavers who no longer even hope for work.",
       "master_code": "408",
       "master_label": "Economic Goals",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-010",
@@ -200,7 +292,8 @@
       "text": "Mrs Thatcher's government stands idly by, hoping that the blind forces of the marketplace will restore the jobs and factories that its indifference has destroyed.",
       "master_code": "305",
       "master_label": "Political Authority: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-011",
@@ -209,7 +302,8 @@
       "text": "The Labour Party's response is massive further nationalisation, a centralised state socialist economy and rigid controls over enterprise.",
       "master_code": "305",
       "master_label": "Political Authority: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-012",
@@ -218,7 +312,8 @@
       "text": "The choice which Tories and socialists offer at this election is one between neglect and interference.",
       "master_code": "305",
       "master_label": "Political Authority: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-013",
@@ -227,7 +322,8 @@
       "text": "Neither of them understands that it is only by working together in the companies and communities of Britain that we can overcome the economic problems which beset us.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-014",
@@ -236,7 +332,8 @@
       "text": "Meanwhile the very fabric of our common life together deteriorates.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-015",
@@ -245,7 +342,8 @@
       "text": "The record wave of violence and crime and increased personal stress are all signs of a society at war with itself.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-016",
@@ -254,7 +352,8 @@
       "text": "Rundown cities and declining rural services alike tell a story of a warped sense of priorities by successive governments.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-017",
@@ -263,7 +362,8 @@
       "text": "Mrs Thatcher promised 'to bring harmony where there is discord'.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-018",
@@ -272,7 +372,8 @@
       "text": "Instead her own example of confrontation has inflamed the bitterness so many people feel at what has happened to their own lives and local communities.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-019",
@@ -281,7 +382,8 @@
       "text": "Our Alliance wants to call a halt to confrontation politics.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-020",
@@ -290,7 +392,8 @@
       "text": "We believe we have set an example by working together as two separate parties within an alliance of principle.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-021",
@@ -299,7 +402,8 @@
       "text": "Our whole approach is based on co-operation: not just between our parties but between management and workers, between people of different races and above all between government and people.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-022",
@@ -308,7 +412,8 @@
       "text": "Because we are not prisoners of ideology we shall listen to the people we represent and ensure that the good sense of the voters is allowed to illuminate the corridors of Westminster and Whitehall.",
       "master_code": "202",
       "master_label": "Democracy: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "Working together for Britain"
     },
     {
       "unit_id": "GB-023",
@@ -317,7 +422,8 @@
       "text": "Our economic crisis demands tough immediate action.",
       "master_code": "305",
       "master_label": "Political Authority: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-024",
@@ -326,7 +432,8 @@
       "text": "It also requires a Government with the courage to implement those strategic and structural reforms which alone can end the civil war between the two sides of industry.",
       "master_code": "305",
       "master_label": "Political Authority: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-025",
@@ -335,7 +442,8 @@
       "text": "The immediate priority is to reduce unemployment. Why?",
       "master_code": "408",
       "master_label": "Economic Goals",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-026",
@@ -344,7 +452,8 @@
       "text": "To the Alliance unemployment is a scandal;",
       "master_code": "408",
       "master_label": "Economic Goals",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-027",
@@ -353,7 +462,8 @@
       "text": "robbing men and women of their careers;",
       "master_code": "701",
       "master_label": "Labour Groups: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-028",
@@ -362,7 +472,8 @@
       "text": "blighting the prospects for a quarter of all our young people,",
       "master_code": "706",
       "master_label": "Non-economic Demographic Groups: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-029",
@@ -371,7 +482,8 @@
       "text": "wasting our national resources,",
       "master_code": "410",
       "master_label": "Productivity: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-030",
@@ -380,7 +492,8 @@
       "text": "aborting our chances of industrial recovery,",
       "master_code": "408",
       "master_label": "Economic Goals",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-031",
@@ -389,7 +502,8 @@
       "text": "dividing our nation",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-032",
@@ -398,7 +512,8 @@
       "text": "and fuelling hopelessness and crime.",
       "master_code": "605",
       "master_label": "Law and Order: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-033",
@@ -407,7 +522,8 @@
       "text": "Much of the present unemployment is a direct result of the civil war in British industry, of restrictive practices and low investment.",
       "master_code": "408",
       "master_label": "Economic Goals",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-034",
@@ -416,7 +532,8 @@
       "text": "But in addition, conservative Government policies have caused unemployment to rise.",
       "master_code": "408",
       "master_label": "Economic Goals",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-035",
@@ -425,7 +542,8 @@
       "text": "An Alliance Government would cause unemployment to fall. How?",
       "master_code": "408",
       "master_label": "Economic Goals",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-036",
@@ -434,7 +552,8 @@
       "text": "Can it be done without releasing a fresh wave of inflation?",
       "master_code": "414",
       "master_label": "Economic Orthodoxy: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-037",
@@ -443,7 +562,8 @@
       "text": "We believe it can.",
       "master_code": "414",
       "master_label": "Economic Orthodoxy: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-038",
@@ -452,7 +572,8 @@
       "text": "We propose a carefully devised and costed jobs programme aimed at reducing unemployment by 1 million over two years.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-039",
@@ -461,7 +582,8 @@
       "text": "This programme will be supported by immediate measures to help those hardest hit by the slump - the disadvantaged, the pensioners, the poor.",
       "master_code": "503",
       "master_label": "Social Justice: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-040",
@@ -470,7 +592,8 @@
       "text": "Ours is a programme of mind, heart and will.",
       "master_code": "404",
       "master_label": "Economic Planning: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-041",
@@ -479,7 +602,8 @@
       "text": "It is a programme that will work! The Programme has three points:",
       "master_code": "404",
       "master_label": "Economic Planning: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-042",
@@ -488,7 +612,8 @@
       "text": "Fiscal and Financial Policies for Growth;",
       "master_code": "410",
       "master_label": "Productivity: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-043",
@@ -497,7 +622,8 @@
       "text": "Direct Action to provide jobs;",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-044",
@@ -506,7 +632,8 @@
       "text": "An Incomes Strategy that will stick.",
       "master_code": "701",
       "master_label": "Labour Groups: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "THE IMMEDIATE CRISIS: JOBS AND PRICES"
     },
     {
       "unit_id": "GB-045",
@@ -515,7 +642,8 @@
       "text": "The Alliance is alone in recognising that Britain's industrial crisis cannot be solved by short-term measures such as import controls or money supply targets.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "STRATEGY FOR INDUSTRIAL SUCCESS"
     },
     {
       "unit_id": "GB-046",
@@ -524,7 +652,8 @@
       "text": "Our crisis goes deep.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "STRATEGY FOR INDUSTRIAL SUCCESS"
     },
     {
       "unit_id": "GB-047",
@@ -533,7 +662,8 @@
       "text": "Its roots lie in the class divisions of our society,",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "STRATEGY FOR INDUSTRIAL SUCCESS"
     },
     {
       "unit_id": "GB-048",
@@ -542,7 +672,8 @@
       "text": "in the vested interests of the Tory and Labour parties,",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "STRATEGY FOR INDUSTRIAL SUCCESS"
     },
     {
       "unit_id": "GB-049",
@@ -551,7 +682,8 @@
       "text": "in the refusal of management and unions to wide democracy in industry,",
       "master_code": "202",
       "master_label": "Democracy: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "STRATEGY FOR INDUSTRIAL SUCCESS"
     },
     {
       "unit_id": "GB-050",
@@ -560,7 +692,8 @@
       "text": "in the way profits and risks are shared.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "STRATEGY FOR INDUSTRIAL SUCCESS"
     },
     {
       "unit_id": "GB-051",
@@ -569,7 +702,8 @@
       "text": "The policies offered by the two class-based parties will further divide the nation North v South, Management v Labour.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "STRATEGY FOR INDUSTRIAL SUCCESS"
     },
     {
       "unit_id": "GB-052",
@@ -578,7 +712,8 @@
       "text": "Our greatest need is to build a sense of belonging to one community.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "STRATEGY FOR INDUSTRIAL SUCCESS"
     },
     {
       "unit_id": "GB-053",
@@ -587,7 +722,8 @@
       "text": "We are all in it together.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "STRATEGY FOR INDUSTRIAL SUCCESS"
     },
     {
       "unit_id": "GB-054",
@@ -596,7 +732,8 @@
       "text": "It is impossible for one side or the other in Britain to 'win'.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "STRATEGY FOR INDUSTRIAL SUCCESS"
     },
     {
       "unit_id": "GB-055",
@@ -605,7 +742,8 @@
       "text": "Conflict in industrial relations means that we all lose.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "STRATEGY FOR INDUSTRIAL SUCCESS"
     },
     {
       "unit_id": "GB-056",
@@ -614,7 +752,8 @@
       "text": "The Alliance is committed to policies which will invest resources in the high-technology industries of the future.",
       "master_code": "411",
       "master_label": "Technology and Infrastructure: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "STRATEGY FOR INDUSTRIAL SUCCESS"
     },
     {
       "unit_id": "GB-057",
@@ -623,7 +762,8 @@
       "text": "We are committed to a major new effort in education and training.",
       "master_code": "506",
       "master_label": "Education Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "STRATEGY FOR INDUSTRIAL SUCCESS"
     },
     {
       "unit_id": "GB-058",
@@ -632,7 +772,8 @@
       "text": "We are pledged to trade union reform to tough anti-monopoly measures.",
       "master_code": "403",
       "master_label": "Market Regulation: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "STRATEGY FOR INDUSTRIAL SUCCESS"
     },
     {
       "unit_id": "GB-059",
@@ -641,7 +782,8 @@
       "text": "Britain has made little progress towards industrial democracy, yet several of our European partners have long traditions of participation and co-operation backed by legislation.",
       "master_code": "202",
       "master_label": "Democracy: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "PARTNERSHIP IN INDUSTRY"
     },
     {
       "unit_id": "GB-060",
@@ -650,7 +792,8 @@
       "text": "They do not face the obstacles to progress with which our divisive industrial relations present us.",
       "master_code": "606",
       "master_label": "Social Harmony: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "PARTNERSHIP IN INDUSTRY"
     },
     {
       "unit_id": "GB-061",
@@ -659,7 +802,8 @@
       "text": "To be fully effective, proposals for participation in industry need to be buttressed by action on two fronts:",
       "master_code": "202",
       "master_label": "Democracy: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "PARTNERSHIP IN INDUSTRY"
     },
     {
       "unit_id": "GB-062",
@@ -668,7 +812,8 @@
       "text": "a major extension of profit sharing and worker share-ownership to give people a real stake where they work as well as the ability to participate in decision-taking,",
       "master_code": "701",
       "master_label": "Labour Groups: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "PARTNERSHIP IN INDUSTRY"
     },
     {
       "unit_id": "GB-063",
@@ -677,7 +822,8 @@
       "text": "and reform of the trade unions to make them genuinely representative institutions.",
       "master_code": "202",
       "master_label": "Democracy: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "PARTNERSHIP IN INDUSTRY"
     },
     {
       "unit_id": "GB-064",
@@ -686,7 +832,8 @@
       "text": "We propose enabling legislation that will offer a flexible and sensible approach:",
       "master_code": "202",
       "master_label": "Democracy: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "PARTICIPATION AT WORK"
     },
     {
       "unit_id": "GB-065",
@@ -695,7 +842,8 @@
       "text": "An Industrial Democracy Act to provide for the introduction of employee participation at all levels,",
       "master_code": "202",
       "master_label": "Democracy: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "PARTICIPATION AT WORK"
     },
     {
       "unit_id": "GB-066",
@@ -704,7 +852,8 @@
       "text": "incentives for employee share-ownership,",
       "master_code": "701",
       "master_label": "Labour Groups: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "PARTICIPATION AT WORK"
     },
     {
       "unit_id": "GB-067",
@@ -713,7 +862,8 @@
       "text": "employee rights to information,",
       "master_code": "701",
       "master_label": "Labour Groups: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "PARTICIPATION AT WORK"
     },
     {
       "unit_id": "GB-068",
@@ -722,7 +872,8 @@
       "text": "and an Industrial Democracy Agency (IDA) to advise on and monitor the introduction of these measures:",
       "master_code": "202",
       "master_label": "Democracy: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "PARTICIPATION AT WORK"
     },
     {
       "unit_id": "GB-069",
@@ -731,7 +882,8 @@
       "text": "Employee Councils covering each place of work (subject to exemption for small units) for all companies employing over 1,000 people.",
       "master_code": "202",
       "master_label": "Democracy: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "PARTICIPATION AT WORK"
     },
     {
       "unit_id": "GB-070",
@@ -740,7 +892,8 @@
       "text": "Smaller companies would also be encouraged to introduce Employee Councils.",
       "master_code": "202",
       "master_label": "Democracy: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "PARTICIPATION AT WORK"
     },
     {
       "unit_id": "GB-071",
@@ -749,7 +902,8 @@
       "text": "The role of an Alliance government in relation to private industry will be to provide selective assistance taking a number of forms:",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "GOVERNMENT AND INDUSTRY — Priority for Industry"
     },
     {
       "unit_id": "GB-072",
@@ -758,7 +912,8 @@
       "text": "an industrial credit scheme to provide low-interest, long-term finance for projects directed at modernising industry;",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "GOVERNMENT AND INDUSTRY — Priority for Industry"
     },
     {
       "unit_id": "GB-073",
@@ -767,7 +922,8 @@
       "text": "A national innovation policy, to provide selective assistance for high-risk projects,",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "GOVERNMENT AND INDUSTRY — Priority for Industry"
     },
     {
       "unit_id": "GB-074",
@@ -776,7 +932,8 @@
       "text": "particularly involving the development of new technologies",
       "master_code": "411",
       "master_label": "Technology and Infrastructure: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "GOVERNMENT AND INDUSTRY — Priority for Industry"
     },
     {
       "unit_id": "GB-075",
@@ -785,7 +942,8 @@
       "text": "and for research and development in potential growth industries;",
       "master_code": "410",
       "master_label": "Productivity: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "GOVERNMENT AND INDUSTRY — Priority for Industry"
     },
     {
       "unit_id": "GB-076",
@@ -794,7 +952,8 @@
       "text": "Public purchasing policies to stimulate innovation,",
       "master_code": "411",
       "master_label": "Technology and Infrastructure: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "GOVERNMENT AND INDUSTRY — Priority for Industry"
     },
     {
       "unit_id": "GB-077",
@@ -803,7 +962,8 @@
       "text": "encourage the introduction of crucial technologies",
       "master_code": "411",
       "master_label": "Technology and Infrastructure: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "GOVERNMENT AND INDUSTRY — Priority for Industry"
     },
     {
       "unit_id": "GB-078",
@@ -812,7 +972,8 @@
       "text": "and aid small businesses;",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "GOVERNMENT AND INDUSTRY — Priority for Industry"
     },
     {
       "unit_id": "GB-079",
@@ -821,7 +982,8 @@
       "text": "we will establish a Cabinet Committee chaired by the Prime Minster at the centre of decision-taking on all policies with a bearing on the performance of industry.",
       "master_code": "303",
       "master_label": "Governmental and Administrative Efficiency: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "GOVERNMENT AND INDUSTRY — Priority for Industry"
     },
     {
       "unit_id": "GB-080",
@@ -830,7 +992,8 @@
       "text": "The Alliance will strengthen the Monopolies' and Mergers' Commission to ensure its ability to prevent monopoly and unhealthy concentrations of industrial and commercial power.",
       "master_code": "403",
       "master_label": "Market Regulation: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "GOVERNMENT AND INDUSTRY — Priority for Industry"
     },
     {
       "unit_id": "GB-081",
@@ -839,7 +1002,8 @@
       "text": "The aim is to guarantee fair competition and to protect the interests of employers, consumers and shareholders.",
       "master_code": "403",
       "master_label": "Market Regulation: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "GOVERNMENT AND INDUSTRY — Priority for Industry"
     },
     {
       "unit_id": "GB-082",
@@ -848,7 +1012,8 @@
       "text": "To encourage the growth of new and small businesses, we will attack red tape and provide further financial and management assistance by:",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "GOVERNMENT AND INDUSTRY — New and Small Business"
     },
     {
       "unit_id": "GB-083",
@@ -857,7 +1022,8 @@
       "text": "Extending the Loan Guarantee Scheme, in the first instance raising the maximum permitted loan to £150,000;",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "GOVERNMENT AND INDUSTRY — New and Small Business"
     },
     {
       "unit_id": "GB-084",
@@ -866,7 +1032,8 @@
       "text": "and the Business Start-Up Scheme, raising the upper limit for investment to £75,000;",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "GOVERNMENT AND INDUSTRY — New and Small Business"
     },
     {
       "unit_id": "GB-085",
@@ -875,7 +1042,8 @@
       "text": "and introducing Small Firm Investment Companies to provide financial and management help;",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "GOVERNMENT AND INDUSTRY — New and Small Business"
     },
     {
       "unit_id": "GB-086",
@@ -884,7 +1052,8 @@
       "text": "zero-rating building repairs and maintenance for VAT purposes",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "GOVERNMENT AND INDUSTRY — New and Small Business"
     },
     {
       "unit_id": "GB-087",
@@ -893,7 +1062,8 @@
       "text": "and reducing commercial rates by 10 per cent;",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "GOVERNMENT AND INDUSTRY — New and Small Business"
     },
     {
       "unit_id": "GB-088",
@@ -902,7 +1072,8 @@
       "text": "making sure the Department of Industry co-ordinates and publicises schemes for small businesses",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "GOVERNMENT AND INDUSTRY — New and Small Business"
     },
     {
       "unit_id": "GB-089",
@@ -911,7 +1082,8 @@
       "text": "and that government aid ceases to discriminate against small businesses;",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "GOVERNMENT AND INDUSTRY — New and Small Business"
     },
     {
       "unit_id": "GB-090",
@@ -920,7 +1092,8 @@
       "text": "Tailoring national legislation such as the Health and Safety Regulations to the needs of small businesses",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "GOVERNMENT AND INDUSTRY — New and Small Business"
     },
     {
       "unit_id": "GB-091",
@@ -929,7 +1102,8 @@
       "text": "and amending the statutory sick pay scheme to exclude small businesses.",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "GOVERNMENT AND INDUSTRY — New and Small Business"
     },
     {
       "unit_id": "GB-092",
@@ -938,7 +1112,8 @@
       "text": "Agriculture is an important industry and employer.",
       "master_code": "703",
       "master_label": "Farmers: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "GOVERNMENT AND INDUSTRY — Agriculture and Fisheries"
     },
     {
       "unit_id": "GB-093",
@@ -947,7 +1122,8 @@
       "text": "To encourage its further development we will:",
       "master_code": "703",
       "master_label": "Farmers: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "GOVERNMENT AND INDUSTRY — Agriculture and Fisheries"
     },
     {
       "unit_id": "GB-094",
@@ -956,7 +1132,8 @@
       "text": "Increase Government support for effective agricultural marketing at home and abroad",
       "master_code": "703",
       "master_label": "Farmers: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "GOVERNMENT AND INDUSTRY — Agriculture and Fisheries"
     },
     {
       "unit_id": "GB-095",
@@ -965,7 +1142,8 @@
       "text": "and continue support for 'Food from Britain';",
       "master_code": "703",
       "master_label": "Farmers: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "GOVERNMENT AND INDUSTRY — Agriculture and Fisheries"
     },
     {
       "unit_id": "GB-096",
@@ -974,7 +1152,8 @@
       "text": "ensure that agriculture has access like other industries to the industrial credit scheme we propose;",
       "master_code": "703",
       "master_label": "Farmers: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "GOVERNMENT AND INDUSTRY — Agriculture and Fisheries"
     },
     {
       "unit_id": "GB-097",
@@ -983,7 +1162,8 @@
       "text": "encourage greater access to farming, especially by young entrants.",
       "master_code": "703",
       "master_label": "Farmers: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "GOVERNMENT AND INDUSTRY — Agriculture and Fisheries"
     },
     {
       "unit_id": "GB-098",
@@ -992,7 +1172,8 @@
       "text": "The Alliance is determined to safeguard the future of our fishing industry which needs help to re-build after years of uncertainty and the drastic consequences for the deep-sea fleet of 200-mile limits in the waters they used to fish.",
       "master_code": "703",
       "master_label": "Farmers: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "GOVERNMENT AND INDUSTRY — Agriculture and Fisheries"
     },
     {
       "unit_id": "GB-099",
@@ -1001,7 +1182,8 @@
       "text": "The third basic condition for industrial success is a people with the skills and self- confidence that will be needed for the challenges of new technology.",
       "master_code": "411",
       "master_label": "Technology and Infrastructure: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "Education and training"
     },
     {
       "unit_id": "GB-100",
@@ -1010,7 +1192,8 @@
       "text": "The education and training systems are not providing enough people with the skills necessary to make them employable and the country successful in competition with its rivals.",
       "master_code": "411",
       "master_label": "Technology and Infrastructure: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "Education and training"
     },
     {
       "unit_id": "GB-101",
@@ -1019,7 +1202,8 @@
       "text": "We are falling further behind.",
       "master_code": "411",
       "master_label": "Technology and Infrastructure: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "Education and training"
     },
     {
       "unit_id": "GB-102",
@@ -1028,7 +1212,8 @@
       "text": "Japan on present plans will be educating all its young people to the age of 18 by 1990.",
       "master_code": "506",
       "master_label": "Education Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "Education and training"
     },
     {
       "unit_id": "GB-103",
@@ -1037,7 +1222,8 @@
       "text": "More than 90 per cent of the 16-19 age group in Germany gain recognised technical qualifications.",
       "master_code": "411",
       "master_label": "Technology and Infrastructure: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "Education and training"
     },
     {
       "unit_id": "GB-104",
@@ -1046,7 +1232,8 @@
       "text": "And it is not just a matter of school-leavers.",
       "master_code": "506",
       "master_label": "Education Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "Education and training"
     },
     {
       "unit_id": "GB-105",
@@ -1055,7 +1242,8 @@
       "text": "Our managers are less professionally qualified than our main competitors.",
       "master_code": "411",
       "master_label": "Technology and Infrastructure: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "Education and training"
     },
     {
       "unit_id": "GB-106",
@@ -1064,7 +1252,8 @@
       "text": "From the bottom to top we are underskilled, and this has to be put right if we are to prosper in future.",
       "master_code": "411",
       "master_label": "Technology and Infrastructure: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "Education and training"
     },
     {
       "unit_id": "GB-107",
@@ -1073,7 +1262,8 @@
       "text": "To do this, to raise standards in education and training and to improve their effectiveness is the object of proposals set out in the next Section.",
       "master_code": "411",
       "master_label": "Technology and Infrastructure: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "Education and training"
     },
     {
       "unit_id": "NZ-001",
@@ -1082,7 +1272,8 @@
       "text": "In 1972 New Zealand had, for the first time, more overseas reserves than total overseas debt.",
       "master_code": "414",
       "master_label": "Economic Orthodoxy: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-002",
@@ -1091,7 +1282,8 @@
       "text": "Labour has dissipated these reserves, borrowed about $2,00 million overseas and incurred annual interest charges mortgaging almost our total export earnings from butter and cheese.",
       "master_code": "414",
       "master_label": "Economic Orthodoxy: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-003",
@@ -1100,7 +1292,8 @@
       "text": "Inflation in 1972 was about 5 per cent, the second lowest of the Organisation for Economic Co-operation and Development (OECD) nations.",
       "master_code": "414",
       "master_label": "Economic Orthodoxy: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-004",
@@ -1109,7 +1302,8 @@
       "text": "Today it is about 15 per cent, well above the OECD average,",
       "master_code": "414",
       "master_label": "Economic Orthodoxy: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-005",
@@ -1118,7 +1312,8 @@
       "text": "and New Zealand has an external deficit per head of population second only to Iceland.",
       "master_code": "414",
       "master_label": "Economic Orthodoxy: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-006",
@@ -1127,7 +1322,8 @@
       "text": "The first three years of the coming National Government will be very largely devoted to restoring New Zealand's shattered economy.",
       "master_code": "408",
       "master_label": "Economic Goals",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-007",
@@ -1136,7 +1332,8 @@
       "text": "Continuous attention to economic trends and problems will replace stop-go and panic measures.",
       "master_code": "408",
       "master_label": "Economic Goals",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-008",
@@ -1145,7 +1342,8 @@
       "text": "And the taxation system will be used to give incentives for desirable economic activity.",
       "master_code": "402",
       "master_label": "Incentives: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-009",
@@ -1154,7 +1352,8 @@
       "text": "We will take steps to stimulate savings.",
       "master_code": "414",
       "master_label": "Economic Orthodoxy: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-010",
@@ -1163,7 +1362,8 @@
       "text": "Savings accounts, limited as to amount, will be established.",
       "master_code": "414",
       "master_label": "Economic Orthodoxy: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-011",
@@ -1172,7 +1372,8 @@
       "text": "The deposits of individuals will earn an interest rate at least equal to the annual rate of inflation thus preserving the purchasing power of savings.",
       "master_code": "414",
       "master_label": "Economic Orthodoxy: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-012",
@@ -1181,7 +1382,8 @@
       "text": "We believe that continued double-figure inflation will destroy the basis of the New Zealand economy and cause untold misery.",
       "master_code": "414",
       "master_label": "Economic Orthodoxy: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-013",
@@ -1190,7 +1392,8 @@
       "text": "The fight against increases in the cost of living is the most important single issue in economic management.",
       "master_code": "414",
       "master_label": "Economic Orthodoxy: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-014",
@@ -1199,7 +1402,8 @@
       "text": "People without jobs represent waste of productive effort:",
       "master_code": "410",
       "master_label": "Productivity: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-015",
@@ -1208,7 +1412,8 @@
       "text": "National supports a policy of full employment",
       "master_code": "408",
       "master_label": "Economic Goals",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-016",
@@ -1217,7 +1422,8 @@
       "text": "and the dignity of labour.",
       "master_code": "701",
       "master_label": "Labour Groups: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-017",
@@ -1226,7 +1432,8 @@
       "text": "We do not accept unemployment as a balancing factor in economic management.",
       "master_code": "701",
       "master_label": "Labour Groups: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-018",
@@ -1235,7 +1442,8 @@
       "text": "Finally, the National Development Council will be restored and consultation resumed between Government departments, academic specialists and private industry, including farming and organised labour.",
       "master_code": "405",
       "master_label": "Corporatism: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-019",
@@ -1244,7 +1452,8 @@
       "text": "The vital role of every section of productive industry will be recognised.",
       "master_code": "405",
       "master_label": "Corporatism: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-020",
@@ -1253,7 +1462,8 @@
       "text": "It is these moves which will put New Zealand on the way to economic recovery.",
       "master_code": "408",
       "master_label": "Economic Goals",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-021",
@@ -1262,7 +1472,8 @@
       "text": "And reduce the spiraling rate of inflation.",
       "master_code": "414",
       "master_label": "Economic Orthodoxy: Positive",
-      "master_rile": "right"
+      "master_rile": "right",
+      "section": "THE ECONOMY"
     },
     {
       "unit_id": "NZ-022",
@@ -1271,7 +1482,8 @@
       "text": "Seldom has any policy released by an opposition party had the impact that the National Superannuation scheme has had.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-023",
@@ -1280,7 +1492,8 @@
       "text": "It is designed to give every New Zealander dignity and a decent income in retirement.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-024",
@@ -1289,7 +1502,8 @@
       "text": "Here's how it will operate:",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-025",
@@ -1298,7 +1512,8 @@
       "text": "Anyone who is 60 years old, or more, and who has lived in New Zealand for at least ten years will receive National Superannuation, starting next year.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-026",
@@ -1307,7 +1522,8 @@
       "text": "And with three big annual jumps in the rate of benefit it will be fully operating by 1978.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-027",
@@ -1316,7 +1532,8 @@
       "text": "To guarantee our elderly retired folk a decent minimum income, the full rate of National Superannuation, for a married couple, will be 80% of the average weekly ordinary time wage.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-028",
@@ -1325,7 +1542,8 @@
       "text": "It will be recalculated every six months.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-029",
@@ -1334,7 +1552,8 @@
       "text": "In 1976, to start the scheme, the rate will be 65% of the average wage;",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-030",
@@ -1343,7 +1562,8 @@
       "text": "in 1977 it will be raised to 70% / and in 1978 to the full 80%.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-031",
@@ -1352,7 +1572,8 @@
       "text": "The rate for single persons, at all times, will be 60% of the married rate.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-032",
@@ -1361,7 +1582,8 @@
       "text": "The present average weekly wage is $99 and so, if there is no increase at all in wage rates in the next three years, the rates of National Superannuation will be shown in the box* below (*box not shown).",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-033",
@@ -1370,7 +1592,8 @@
       "text": "Next year, under National, the age and universal superannuation benefits will merge to form National Superannuation.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-034",
@@ -1379,7 +1602,8 @@
       "text": "At present both these benefits pay $51.26 to a married couple and $30.75 to a single person, so even in the first year of National Superannuation, a married couple over 60 who have no other income will have $6.18 a week more to spend than they do now and a single beneficiary will receive, after tax, $3.15 a week more than he now gets by way of age benefits, or universal superannuation.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-035",
@@ -1388,7 +1612,8 @@
       "text": "Of course those with other income will receive the benefit too, but they will pay more tax on their bigger incomes.",
       "master_code": "503",
       "master_label": "Social Justice: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-036",
@@ -1397,7 +1622,8 @@
       "text": "By 1978 a married couple will receive a net $18.06 a week more than the present age benefit or universal annuation and a single person will be receiving a net $10.17 a week more.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-037",
@@ -1406,7 +1632,8 @@
       "text": "For the single person, that is a pay rise of more than 33%.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-038",
@@ -1415,7 +1642,8 @@
       "text": "The big and comforting thing about National Superannuation is that everyone gets it, just so long as they have lived in New Zealand for ten years or more and are aged 60 or over.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-039",
@@ -1424,7 +1652,8 @@
       "text": "They will not, nor will anyone, be expected to make special contributions over a period of years, in order to qualify.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-040",
@@ -1433,7 +1662,8 @@
       "text": "The scheme is financed out of ordinary taxation so there is nothing to be deducted from wages; no special payments of any kind.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-041",
@@ -1442,7 +1672,8 @@
       "text": "This means that the present age beneficiary will receive National Superannuation next year.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-042",
@@ -1451,7 +1682,8 @@
       "text": "So will the retired Government servant (in addition to the pension from the Government superannuation fund which he had paid for).",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-043",
@@ -1460,7 +1692,8 @@
       "text": "And so will all the people who are drawing pensions from company and other private superannuation schemes.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-044",
@@ -1469,7 +1702,8 @@
       "text": "In recent weeks, the Government has been making moves to compensate for the weaknesses revealed in their own scheme, when compared with National's.",
       "master_code": "503",
       "master_label": "Social Justice: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-045",
@@ -1478,7 +1712,8 @@
       "text": "But the fact remains that National's is the only superannuation scheme that offers a fair deal to everyone in their years of retirement.",
       "master_code": "503",
       "master_label": "Social Justice: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "SUPERANNUATION"
     },
     {
       "unit_id": "NZ-046",
@@ -1487,7 +1722,8 @@
       "text": "Since 1975 is International Women's Year, it can be expected that all political parties will talk a great deal about their 'women's policies'.",
       "master_code": "706",
       "master_label": "Non-economic Demographic Groups: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-047",
@@ -1496,7 +1732,8 @@
       "text": "Unfortunately most will be little more than window dressing.",
       "master_code": "706",
       "master_label": "Non-economic Demographic Groups: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-048",
@@ -1505,7 +1742,8 @@
       "text": "National's plans go far beyond this.",
       "master_code": "706",
       "master_label": "Non-economic Demographic Groups: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-049",
@@ -1514,7 +1752,8 @@
       "text": "We will begin by introducing legislation to remove existing legal discrimination relating to women,",
       "master_code": "503",
       "master_label": "Social Justice: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-050",
@@ -1523,7 +1762,8 @@
       "text": "and to prohibit discrimination against any person by reason of sex.",
       "master_code": "503",
       "master_label": "Social Justice: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-051",
@@ -1532,7 +1772,8 @@
       "text": "We will also establish a Human Rights Commission which will ensure that equal rights legislation is enforced and that women have an effective and inexpensive means of redress.",
       "master_code": "503",
       "master_label": "Social Justice: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-052",
@@ -1541,7 +1782,8 @@
       "text": "The Commission will investigate cases of discrimination presented to it and recommend civil action to the Attorney-General.",
       "master_code": "503",
       "master_label": "Social Justice: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-053",
@@ -1550,7 +1792,8 @@
       "text": "Full consideration will be given to the recommendations of the Select Committee on Women's Rights.",
       "master_code": "706",
       "master_label": "Non-economic Demographic Groups: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-054",
@@ -1559,7 +1802,8 @@
       "text": "We will set priorities for implementation, in consultation with women's organisations.",
       "master_code": "706",
       "master_label": "Non-economic Demographic Groups: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-055",
@@ -1568,7 +1812,8 @@
       "text": "We will legislate to ensure that all areas of discrimination in employment are removed",
       "master_code": "503",
       "master_label": "Social Justice: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-056",
@@ -1577,7 +1822,8 @@
       "text": "and that merit is the sole criterion in respect of job applications, selection and promotion.",
       "master_code": "503",
       "master_label": "Social Justice: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-057",
@@ -1586,7 +1832,8 @@
       "text": "To encourage women who wish to enter, return to or remain in employment, National will encourage employers to establish flexible working patterns, such as glide time, part-time, job sharing, and multi-shift work.",
       "master_code": "706",
       "master_label": "Non-economic Demographic Groups: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-058",
@@ -1595,7 +1842,8 @@
       "text": "Thus assisting women who undertake the dual role of worker and mother.",
       "master_code": "706",
       "master_label": "Non-economic Demographic Groups: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-059",
@@ -1604,7 +1852,8 @@
       "text": "We will give special attention to the problems associated with re-entry to the work force and ensure that greater job retraining opportunities are available.",
       "master_code": "706",
       "master_label": "Non-economic Demographic Groups: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-060",
@@ -1613,7 +1862,8 @@
       "text": "Maternity leave without pay will be available to women for a period of up to 12 weeks, without loss of job security, promotion or superannuation rights, providing this does not cause undue disruption to a business enterprise.",
       "master_code": "706",
       "master_label": "Non-economic Demographic Groups: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-061",
@@ -1622,7 +1872,8 @@
       "text": "The new National Government will appoint women to boards, commissions and tribunals and will give consideration to the appointment of women as industrial mediators.",
       "master_code": "706",
       "master_label": "Non-economic Demographic Groups: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-062",
@@ -1631,7 +1882,8 @@
       "text": "We will also support increased participation of women in the judicial system and recognise no sex barriers in the exercise of any judicial office.",
       "master_code": "503",
       "master_label": "Social Justice: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-063",
@@ -1640,7 +1892,8 @@
       "text": "Suitably qualified women will be given exactly the same consideration as men.",
       "master_code": "503",
       "master_label": "Social Justice: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-064",
@@ -1649,7 +1902,8 @@
       "text": "National will ensure that early childhood education is generally available (where feasible) as an integral part of the education system.",
       "master_code": "506",
       "master_label": "Education Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-065",
@@ -1658,7 +1912,8 @@
       "text": "Priority will be given to such areas as new housing suburbs and regenerated inner city areas.",
       "master_code": "411",
       "master_label": "Technology and Infrastructure: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-066",
@@ -1667,7 +1922,8 @@
       "text": "Financial assistance will be provided through approved voluntary agencies to establish centres for those children who need day care but whose parents cannot afford to pay the full cost.",
       "master_code": "504",
       "master_label": "Welfare State Expansion: Positive",
-      "master_rile": "left"
+      "master_rile": "left",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-067",
@@ -1676,7 +1932,8 @@
       "text": "National will also promote and encourage job training and retraining, \"second chance\" education",
       "master_code": "411",
       "master_label": "Technology and Infrastructure: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-068",
@@ -1685,7 +1942,8 @@
       "text": "and promote a policy of life-long education for women.",
       "master_code": "706",
       "master_label": "Non-economic Demographic Groups: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-069",
@@ -1694,7 +1952,8 @@
       "text": "We will tackle the problems women face with housing.",
       "master_code": "706",
       "master_label": "Non-economic Demographic Groups: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-070",
@@ -1703,7 +1962,8 @@
       "text": "Under National the Housing Corporation will not differentiate between men and women borrowers on grounds of sex.",
       "master_code": "503",
       "master_label": "Social Justice: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-071",
@@ -1712,7 +1972,8 @@
       "text": "We will introduce a flexible principal repayment plan to meet those cases where the wife works, leaves the work force to raise a family and then returns to work.",
       "master_code": "706",
       "master_label": "Non-economic Demographic Groups: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     },
     {
       "unit_id": "NZ-072",
@@ -1721,7 +1982,8 @@
       "text": "The National Party believes all women must have the opportunity to participate on the basis of full equality in the social, cultural, economic and political spheres of New Zealand society.",
       "master_code": "503",
       "master_label": "Social Justice: Positive",
-      "master_rile": "none"
+      "master_rile": "none",
+      "section": "WOMEN'S RIGHTS"
     }
   ]
 }

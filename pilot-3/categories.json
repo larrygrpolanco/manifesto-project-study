@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "title": "CMP/MARPOR standard coding scheme — full instruction-parity option space",
+    "source": "Werner, Annika & Volkens, Andrea (2010). Manifesto Coding Instructions, 3rd fully revised edition (MARPOR/WZB), sections 4.2 and 8.",
+    "scope": "56 standard categories + 000 uncoded. Subcategories (handbook section 9, four-digit codes) are NOT used: the reliability study and this experiment restrict to the standard 56 + uncoded scheme (Mikhaylov, Laver & Benoit 2008, fn. 4).",
+    "purpose": "This is the category list, definitions, and rile mapping offered to the models, mirroring what the MLB human coders selected from. It is the authoritative option space; the reduced 'categories' object inside cmp_coding_sample.json is a gold-coverage aid only.",
+    "rile_mapping_source": "Mikhaylov, Laver & Benoit (2008) replication R (CMP_reliability_replication.R, lines 191-242). 13 left + 13 right + 31 none (000 = none).",
+    "rile_left": [103, 105, 106, 107, 202, 403, 404, 406, 412, 413, 504, 506, 701],
+    "rile_right": [104, 201, 203, 305, 401, 402, 407, 414, 505, 601, 603, 605, 606],
+    "domains": {
+      "1": "External Relations",
+      "2": "Freedom and Democracy",
+      "3": "Political System",
+      "4": "Economy",
+      "5": "Welfare and Quality of Life",
+      "6": "Fabric of Society",
+      "7": "Social Groups"
+    }
+  },
+  "categories": {
+    "000": {"label": "Uncoded", "domain": 0, "rile": "none", "definition": "No category of the coding frame applies; the quasi-sentence cannot be fitted into the present scheme. 'Uncoded' does not mean the sentence is devoid of meaning. Code a sentence if at all possible; only use 000 after re-reading the definitions of categories in the relevant policy domains (Decision Rule 4)."},
+
+    "101": {"label": "Foreign Special Relationships: Positive", "domain": 1, "rile": "none", "definition": "Favourable mentions of particular countries with which the manifesto country has a special relationship (e.g. for Britain: former colonies); need for co-operation with and/or aid to such countries."},
+    "102": {"label": "Foreign Special Relationships: Negative", "domain": 1, "rile": "none", "definition": "Negative mentions of particular countries with which the manifesto country has a special relationship; otherwise as 101, but negative."},
+    "103": {"label": "Anti-Imperialism", "domain": 1, "rile": "left", "definition": "Negative references to exerting strong influence (political, military or commercial) over other states; negative references to controlling other countries as if part of an empire; favourable mentions of de-colonisation and of greater self-government/independence for colonies."},
+    "104": {"label": "Military: Positive", "domain": 1, "rile": "right", "definition": "Need to maintain or increase military expenditure; modernising armed forces; rearmament and self-defence; keeping military treaty obligations; adequate military manpower; importance of external security."},
+    "105": {"label": "Military: Negative", "domain": 1, "rile": "left", "definition": "Favourable mentions of decreasing military expenditures; disarmament; 'evils of war'; promises to reduce conscription; otherwise as 104, but negative."},
+    "106": {"label": "Peace", "domain": 1, "rile": "left", "definition": "Peace as a general goal; belief in peace and peaceful means of solving crises; desirability of negotiations with hostile countries."},
+    "107": {"label": "Internationalism: Positive", "domain": 1, "rile": "left", "definition": "Need for international co-operation; co-operation with countries other than those in 101; aid to developing countries; world planning of resources; international courts; support for the UN or any international goal/world state."},
+    "108": {"label": "European Community/Union: Positive", "domain": 1, "rile": "none", "definition": "Favourable mentions of the EC/EU in general; desirability of expanding it or its competences, or of the manifesto country joining/remaining a member."},
+    "109": {"label": "Internationalism: Negative", "domain": 1, "rile": "none", "definition": "Favourable mentions of national independence and sovereignty as opposed to internationalism; otherwise as 107, but negative."},
+    "110": {"label": "European Community/Union: Negative", "domain": 1, "rile": "none", "definition": "Hostile mentions of the EC/EU; opposition to specific European policies or to the manifesto country's net contribution; otherwise as 108, but negative."},
+
+    "201": {"label": "Freedom and Human Rights", "domain": 2, "rile": "right", "definition": "Favourable mentions of personal freedom and civil rights; freedom from bureaucratic control; freedom of speech; freedom from coercion in the political and economic spheres; individualism."},
+    "202": {"label": "Democracy", "domain": 2, "rile": "left", "definition": "Favourable mentions of democracy as a method or goal in national and other organisations; involvement of all citizens in decision-making; generalised support for the manifesto country's democracy."},
+    "203": {"label": "Constitutionalism: Positive", "domain": 2, "rile": "right", "definition": "Support for specific aspects of the constitution; use of constitutionalism as an argument for policy; general approval of the constitutional way of doing things."},
+    "204": {"label": "Constitutionalism: Negative", "domain": 2, "rile": "none", "definition": "Opposition to the constitution in general or to specific aspects; otherwise as 203, but negative."},
+
+    "301": {"label": "Decentralisation", "domain": 3, "rile": "none", "definition": "Support for federalism or devolution; more regional autonomy for policy or economy; keeping up local/regional customs and symbols; special consideration for local areas; deference to local expertise; territorial subsidiarity."},
+    "302": {"label": "Centralisation", "domain": 3, "rile": "none", "definition": "Opposition to political decision-making at lower levels; support for more centralisation in political and administrative procedures; otherwise as 301, but negative."},
+    "303": {"label": "Governmental and Administrative Efficiency", "domain": 3, "rile": "none", "definition": "Need for efficiency and economy in government and administration; cutting down the civil service; improving governmental procedures; making government cheaper and more effective. (Decision Rule 7: a specific policy position beats 303.)"},
+    "304": {"label": "Political Corruption", "domain": 3, "rile": "none", "definition": "Need to eliminate corruption, and associated abuse, in political and public life."},
+    "305": {"label": "Political Authority", "domain": 3, "rile": "right", "definition": "Favourable mentions of strong government and government stability; the manifesto party's competence to govern and/or another party's lack of such competence. (Decision Rule 8: a specific policy position beats 305.)"},
+
+    "401": {"label": "Free Enterprise", "domain": 4, "rile": "right", "definition": "Favourable mentions of free enterprise capitalism; superiority of individual enterprise over state and control systems; private property rights, personal enterprise and initiative; unhampered individual enterprise."},
+    "402": {"label": "Incentives", "domain": 4, "rile": "right", "definition": "Need for wage and tax policies to induce enterprise; encouragement to start enterprises; need for financial and other incentives such as subsidies."},
+    "403": {"label": "Market Regulation", "domain": 4, "rile": "left", "definition": "Need for regulations to make private enterprise work better; actions against monopolies and trusts and in defence of consumers and small business; encouraging economic competition; social market economy."},
+    "404": {"label": "Economic Planning", "domain": 4, "rile": "left", "definition": "Favourable mentions of long-standing economic planning of a consultative or indicative nature; need for government to create such a plan."},
+    "405": {"label": "Corporatism", "domain": 4, "rile": "none", "definition": "Favourable mentions of the collaboration of employers and trade unions in overall economic planning through tripartite bodies of government, employers and trade unions."},
+    "406": {"label": "Protectionism: Positive", "domain": 4, "rile": "left", "definition": "Favourable mentions of extension or maintenance of tariffs to protect internal markets; other domestic protectionism such as quota restrictions; export subsidies."},
+    "407": {"label": "Protectionism: Negative", "domain": 4, "rile": "right", "definition": "Support for the concept of free trade; otherwise as 406, but negative."},
+    "408": {"label": "Economic Goals", "domain": 4, "rile": "none", "definition": "Statements of intent to pursue economic goals not covered by other Domain 4 categories; a catch for overall interest in economics. Non-positional. (Decision Rule 10: a more specific policy position beats 408.)"},
+    "409": {"label": "Keynesian Demand Management", "domain": 4, "rile": "none", "definition": "Favourable mentions of demand-oriented economic policy; reducing depressions and/or increasing private demand through increased public demand or social expenditures."},
+    "410": {"label": "Economic Growth", "domain": 4, "rile": "none", "definition": "Need to encourage or facilitate greater production; measures to aid this; importance of productivity to the economy; the paradigm of growth."},
+    "411": {"label": "Technology and Infrastructure", "domain": 4, "rile": "none", "definition": "Importance of modernising industry, transport and communication; science and technological development in industry; need for training and research (not general education, see 506); public spending on infrastructure such as streets and harbours."},
+    "412": {"label": "Controlled Economy", "domain": 4, "rile": "left", "definition": "General need for direct government control of the economy; control over prices, wages, rents, etc.; state intervention into the economic system."},
+    "413": {"label": "Nationalisation", "domain": 4, "rile": "left", "definition": "Favourable mentions of government ownership, partial or complete, including government ownership of land."},
+    "414": {"label": "Economic Orthodoxy", "domain": 4, "rile": "right", "definition": "Need for traditional economic orthodoxy (reduction of budget deficits, retrenchment in crisis, thrift and savings); support for traditional economic institutions such as the stock market and banking system; support for a strong currency."},
+    "415": {"label": "Marxist Analysis", "domain": 4, "rile": "none", "definition": "Positive references (typically by communist parties) to the specific use of Marxist-Leninist terminology and analysis of situations that are otherwise uncodable."},
+    "416": {"label": "Anti-Growth Economy", "domain": 4, "rile": "none", "definition": "Favourable mentions of anti-growth politics and steady-state economy; sustainable development."},
+
+    "501": {"label": "Environmental Protection", "domain": 5, "rile": "none", "definition": "Preservation of countryside, forests, etc.; general preservation of natural resources against selfish interests; proper use of national parks; soil banks; environmental improvement."},
+    "502": {"label": "Culture", "domain": 5, "rile": "none", "definition": "Need to provide cultural and leisure facilities including arts and sport; spending on museums, art galleries, etc.; encouraging worthwhile leisure activities and cultural mass media."},
+    "503": {"label": "Social Justice", "domain": 5, "rile": "none", "definition": "Concept of equality; fair treatment of all people; special protection for the underprivileged; fair distribution of resources; removal of class barriers; end of discrimination (e.g. racial or sexual)."},
+    "504": {"label": "Welfare State Expansion", "domain": 5, "rile": "left", "definition": "Favourable mentions of need to introduce, maintain or expand any social service or social security scheme; support for social services such as health service or social housing. Excludes education."},
+    "505": {"label": "Welfare State Limitation", "domain": 5, "rile": "right", "definition": "Limiting expenditure on social services or social security; favourable mentions of the social subsidiarity principle; otherwise as 504, but negative."},
+    "506": {"label": "Education Expansion", "domain": 5, "rile": "left", "definition": "Need to expand and/or improve educational provision at all levels. Excludes technical training (coded 411)."},
+    "507": {"label": "Education Limitation", "domain": 5, "rile": "none", "definition": "Limiting expenditure on education; otherwise as 506, but negative."},
+
+    "601": {"label": "National Way of Life: Positive", "domain": 6, "rile": "right", "definition": "Appeals to patriotism and/or nationalism; suspension of some freedoms to protect the state against subversion; support for established national ideas."},
+    "602": {"label": "National Way of Life: Negative", "domain": 6, "rile": "none", "definition": "Against patriotism and/or nationalism; opposition to the existing national state; otherwise as 601, but negative."},
+    "603": {"label": "Traditional Morality: Positive", "domain": 6, "rile": "right", "definition": "Favourable mentions of traditional moral values; prohibition, censorship and suppression of immorality and unseemly behaviour; maintenance and stability of family; religion."},
+    "604": {"label": "Traditional Morality: Negative", "domain": 6, "rile": "none", "definition": "Opposition to traditional moral values; support for divorce, abortion, etc.; otherwise as 603, but negative."},
+    "605": {"label": "Law and Order", "domain": 6, "rile": "right", "definition": "Enforcement of all laws; actions against crime; support and resources for police; tougher attitudes in courts; importance of internal security."},
+    "606": {"label": "Social Harmony", "domain": 6, "rile": "right", "definition": "Appeal for national effort and solidarity; need for society to see itself as united; appeal for public spiritedness; decrying anti-social attitudes in times of crisis; support for the public interest; favourable mention of civil society. (Captures what you can do for your fellow citizens.)"},
+    "607": {"label": "Multiculturalism: Positive", "domain": 6, "rile": "none", "definition": "Favourable mentions of cultural diversity, communalism, cultural plurality and pillarization; preservation of autonomy of religious and linguistic heritages, including special educational provisions."},
+    "608": {"label": "Multiculturalism: Negative", "domain": 6, "rile": "none", "definition": "Enforcement or encouragement of cultural integration; otherwise as 607, but negative."},
+
+    "701": {"label": "Labour Groups: Positive", "domain": 7, "rile": "left", "definition": "Favourable references to labour groups, working class, the unemployed; support for trade unions; good treatment of manual and other employees."},
+    "702": {"label": "Labour Groups: Negative", "domain": 7, "rile": "none", "definition": "Negative references to trade unions such as 'abuse of power'; otherwise as 701, but negative."},
+    "703": {"label": "Agriculture and Farmers", "domain": 7, "rile": "none", "definition": "Support for agriculture and farmers; any policy aimed specifically at benefiting these. (Decision Rule 9 exception: ALL quasi-sentences devoted to agriculture are coded 703, even when a specific policy position such as 402 Incentives or 410 Economic Growth is used to further farmers' interests.)"},
+    "704": {"label": "Middle Class and Professional Groups", "domain": 7, "rile": "none", "definition": "Favourable references to the middle class and professional groups such as physicians or lawyers; old and new middle class."},
+    "705": {"label": "Underprivileged Minority Groups", "domain": 7, "rile": "none", "definition": "Favourable references to underprivileged minorities defined neither in economic nor demographic terms, e.g. the handicapped, homosexuals, immigrants."},
+    "706": {"label": "Non-economic Demographic Groups", "domain": 7, "rile": "none", "definition": "Favourable mentions of, or need for, assistance to women, old people, young people, linguistic groups, etc.; special interest groups of all kinds."}
+  }
+}

@@ -1,0 +1,2199 @@
+Annika Werner, Andrea Volkens
+Manifesto Coding Instructions (3. fully revised edition),
+2010
+1. Introduction ................................................................................................................................. 3
+2. Selection of Parties ..................................................................................................................... 4
+3. Selection of Election Programs ................................................................................................. 4
+4. The Coding Procedure ................................................................................................................. 6
+4.1. Quantification: The Coding Unit ............................................................................................................. 7
+4.2. Classification: The Standard Coding Frame........................................................................................ 9
+4.2.1 Categories with Country-Specific Meanings ................................................................................... 3
+4.2.2 Subcategories for Transitional Democracies .................................................................................. 3
+4.2.3 Coding Problems and Difficulties ........................................................................... 2
+4.2.3.1 Problems with Unitising ....................................................................................... 2
+4.2.3.2 Problems with Scoring .......................................................................................... 3
+4.3 Coding Sheet .................................................................................................................................................... 8
+Coding Sheet for 56 Standard Categories .................................................................................... 9
+Coding Sheet for 56 Standard Categories plus Subcategories ................................................ 10
+5. Coding Exercise .......................................................................................................................... 11
+6. Training Test .............................................................................................................................. 20
+7. Entry Test .................................................................................................................................... 26
+8. Definition of Standard Categories .......................................................................................... 32
+9. Definition of Subcategories ..................................................................................................... 38
+10. Literature ................................................................................................................................. 44
+Abstract
+Since 1979, the Manifesto Research Group (MRG) has been collecting and
+coding election programs with the aim of estimating policy preferences of
+political parties. Detailed descriptions of the Manifesto Project can be found in
+Budge et al. (1987, 2001), Laver and Budge (1992), and Klingemann et al. (1994,
+2006). During the first phase of the project, while the classification scheme was
+being developed, the data was collected by individual MRG members. The second
+phase of the project was launched in 1989. In the context of its ‘Comparative
+Manifestos Project’ (CMP), the Social Science Research Center Berlin (WZB)
+provided resources for updating and expanding the MRG data. The third phase
+started in 2009 when the German Science Foundation (DFG) admitted the
+‘Manifesto Research on Political Representation’
+project (MARPOR) to its long-
+term funding infrastructure scheme to update the CMP data collection, extend it
+to 75 countries up until 2021, and raise the quality of raw data as well as its
+position index estimates. This handbook describes how to select the documents,
+to identify the coding units, and to apply the classification scheme. Hired local
+coders conduct the content analysis accordingly, under central supervision.
+After a training test, an entry test serves as basis for choosing coders.
+Zusammenfassung
+Seit 1979 sammelt und analysiert die Manifesto Research Group (MRG)
+Wahlprogramme, um politische Parteienpositionen komparativ zu messen.
+Detaillierte Darstellungen des Gesamtprojekts finden sich in Budge et al. (1987,
+2001), Laver/Budge (1992) und Klingemann et al. (1994, 2006). Während der
+ersten Phase des Projektes wurde das Klassifikationsschema entwickelt und
+jedes Gruppenmitglied brachte die Daten eines Landes ein. 1989 begann die
+zweite Phase, in der das Wissenschaftszentrum Berlin für Sozialforschung (WZB)
+die Vervollständigung und Erweiterung der Datensammlung ermöglichte. Die
+dritte Phase wurde 2009 mit der Aufnahme von MARPOR (Manifesto Research on
+Political Representation) in das langfristiges Infrastrukturprogramm der
+Deutsche Forschungsgemeinschaft (DFG) eingeleitet, in dessen Rahmen die CMP
+Daten aktualisiert, die Datensammlung auf 75 Länder ausgeweitet und die
+Qualität der Rohdaten sowie der Positionsindizes erhöht wird. Die
+Inhaltsanalysen werden von einheimischen Codern anhand des vorliegenden
+Handbuches unter zentraler Aufsicht vorgenommen. Das Handbuch führt die
+Coder in die Selektion der Programme, die Identifikation der Codiereinheiten
+und die Anwendung des Klassifikationsschemas ein. Ein beigefügter
+Trainingstest dient der Schulung von Codern, ein Eingangstest der
+abschließenden Coderauswahl.
+2
+1. Introduction
+The object of analysing election programs is to measure parties’ policy
+positions preferences across countries and elections within a common
+framework. Election programs are taken as indicators of the parties’ policy
+preferences at a certain point in time. Therefore, election programs are
+subjected to quantitative content analysis. A classification scheme was designed
+to allow for the coding of all the content of election programs for the post
+World-War-II period in a variety of countries.
+A first version of the classification scheme was developed by David
+Robertson (1976:73-75) for analysing modes of party competition in Britain and
+the USA. In 1979, the ‘Manifesto Research Group’ (MRG) was constituted as a
+research group of the European Consortium for Political Research (ECPR) by
+scholars interested in a comparative content-analytic approach on policy
+preferences of parties. During their work, the classification scheme was
+extended and revised to fit additional countries.
+Since 1989 the Social Science Research Centre Berlin (WZB) provides
+resources for updating and expanding the MRG data set in the context of its
+‘Comparative Manifestos Project’ (CMP).
+In 2009 the German Science Foundation (DFG) admitted the ‘Manifesto
+Research on Political Representation’ (MARPOR) project to its long-term funding
+infrastructure scheme. Until 2021 the CMP data collection is updated and
+extended to 75 countries including Latin America and South-East Asia.
+This handbook is an introduction into the application of the coding
+scheme. It provides coders who do not have the background knowledge of the
+MRG-members and investigators in countries not covered by the MRG/CMP with
+all the relevant information, definitions, and sources to apply the coding
+scheme to their respective countries. This third version of the handbook,
+updating the second version (Volkens 2002) with the considerations indicated in
+Volkens, Alonso and Gómez (2009), provides further commandments, rules, and
+examples to enhance the data quality by ensuring comparability between the
+coders.
+2. Selection of Parties
+The project started at the beginning of the 1970s with the idea of
+comparing parties’ programmatic strategies in Britain and the United States
+during the post-World War II period (Robertson 1976). Since then, the data
+collection has been continually updated for all new national elections and
+extended to 29 members of the Organisation of Economic Cooperation and
+Development (OECD) and all member states of the European Union (EU).
+During the first phase of the Manifesto project, the coders decided which
+parties to include into the coding process. The collection ought to have covered
+all the significant parties which are represented in the national assembly. The
+significance of parties was defined as the coalition (governmental) or blackmail
+potential of a party in a given party system (Sartori 1976:121-125). Coalition
+potential is defined as 1. the actual or former membership in a government or 2.
+the possibility (feasibility) of becoming a government party. Blackmail potential
+is defined as the party’s impact on ‘the tactics of party competition particularly
+when it alters the direction of the competition - by determining a switch from
+centripetal to centrifugal competition either leftward, rightward, or in both
+directions - of the governing-oriented parties.’ (Sartori 1976:123) These criteria
+for selection need consideration whether small parties, especially new ones like
+the Green Parties, affect party competition despite their small size.
+In the second phase, CMP additionally documented 23 Central and Eastern
+European (CEE) party systems in the making, including the Visegrad countries
+and Baltic states which all joined the EU, as well as the Balkan countries and the
+successor states to the Soviet Union. All CEE parties were included that won two
+or more seats in the national parliaments.
+With the MARPOR project, the democratic countries of Latin America and
+South-East Asia are also introduced into the database. All coders hired by
+MARPOR receive a list of parties for which manifestos or their substitutes have
+to be coded.
+3. Selection of Election Programs
+Programmatic statements are central features of parties. In party
+programs, the political ideas and goals of parties are put on record. Although
+only few voters actually read party programs, they are spread commonly
+through the mass media.
+Among the different kinds of programs which are issued in many
+countries, the bases for this research are manifestos. The British label
+‘manifesto’ refers to what the rest of the world dubs ‘election program,’ i.e., a
+text issued by political actors on the occasion of elections in order to raise
+internal and/or external support. In this manual, the term is used to define a
+text with an average length of 50 pages published by a political party in order to
+compete for votes in national or supra-national level elections.
+4
+The advantages of taking election programs as a source for identifying
+political goals of parties are manifold:
+1) Election programs cover a wide range of political positions and themes
+and, therefore, can be seen as a ’set of key central statements of party
+positions’ (Budge, Robertson, Hearl 1987:18).
+2) Election programs are authoritative statements of party policies
+because the programs are usually ratified in party conventions.
+3) Election programs are representative statements for the whole party,
+not just statements of one faction or group within the party or of
+individual party members.
+4) Election programs are published before every election. Thus, changes
+of policy preferences of parties over time can be studied.
+Nevertheless, some scholars are suspicious about election programs. They
+argue that no voter ever reads a program, that election programs are mere
+shopping lists to attract voters, or that they are too vaguely formulated to
+assume any binding character for decision-taking of parties in parliament
+(Hofferbert/Klingemann/Volkens 1995). However, the mass media communicate
+the contents of programs during election campaigns and inform voters on
+subsequent actions deviating from programmatic pledges. Quantitative analyses
+of election programs reveal that programs usually contain quite a number of
+concrete pledges and that, on average across parties, elections, countries, and
+policy areas, about 70 percent of the concrete pledges of government parties are
+put into effect (Rallings 1987; Thomson 2001).
+While the definition of ‘manifesto’ presented above may seem
+straightforward at first sight, many variations can occur across parties,
+elections, countries, levels, and times. The title of a manifesto can vary
+considerably, from
+‘Election Program of Party X’
+, ‘Program’, ‘Platform’ or ‘Action
+Intentions’ to statements like ‘We will make Australia prosper’, and is a key
+component of documenting the coding process. The same is true for the number
+of pages. The sources of gathering the programs may be the parties themselves
+and in particular their websites, special election newspapers of parties but also
+regular newspapers. Furthermore, associated research and training institutes or
+publications, e.g. books with collections of programs, might be sources.
+Specificities are especially important in those instances, when there is
+not one easily identifiable election manifesto available. Some parties issue more
+than one program, e.g. one long and one short version or specific programs for
+their first 100 days in office. Alliances and electoral blocks might issue one joint
+program or each party may keep its own programmatic statements. Some
+parties may also compete on the basis of a general program, containing long-
+term goals and ideological principles of parties, instead of a specific election
+programme. Should parties provide more than one version of an election
+program, be it a long and a short version or a machine-readable version via the
+webpage and a colourful hard-copy including many pictures, all versions need
+to be collected and send to the supervisor.
+In some countries parties do not distribute ideal type election programs.
+The only texts available may be newspaper summaries as a condensed form of
+the parties’ election pledges. In others, only reports of party spokesmen about
+policy preferences and goals for the upcoming legislature may be available. In
+such cases, these sources and all the available information on them need to be
+collected just as carefully. In any case the ideal type of a document which
+summarises authoritative statements of the party’s policy preferences for
+electioneering should be retrieved if at all possible.
+All users of the data strongly depend on the information they get from
+the coders, which needs to be as complete as possible. Hence, Commandment
+No. 1 is crucial: Document titles, sources, number of pages and all
+specificities of texts and do so in a readily comprehensible way. While only
+country coders as the country specialists can provide all these information,
+decisions on which programs are to be selected for coding will be taken by the
+supervisor based on recommendations of the coder.
+Whenever there is machine-readable version of the texts available, they
+should be used for the documentation and coding. In these cases, the coders only
+need to send the coded text to the supervisor. If only hard copies of the
+manifestos are at hand, the coding and any information on the document must
+be legible in a scanned version. Furthermore, the coders need to count the codes
+and fill in the coding sheet (section 4.3).
+4. The Coding Procedure
+Central concern of any coding procedure is the comparability of its
+results. Hence, in principle, every coder should make the same decisions on the
+quantification and classification of any given manifesto. Therefore, the
+instructions in this handbook have to be studied thoroughly and followed to the
+core. The included training test is a crucial element in the training of the coders
+and provides valuable feedback to them. Thus, this test has to be taken before
+the actual coding can start. Equally important is to highlight that it is not
+sufficient to look at this handbook only once. Coders must read the manual
+several times and try to memorize all commandments, rules, and definitions of
+categories as far as possible. The more a coder can memorize the rules and
+definitions, the faster the production coding will be. Thus, Commandment 2 is
+to read trough the whole manual before starting any work and to memorize
+commandments, rules, and definitions as far as possible.
+The specific kind of internal, quantitative analysis is derived from the
+question as to what ideas, policies, issues, and concerns parties stress in their
+manifestos. The methods of coding are designed to be comparable over a wide
+range of countries irrespective of cultural and socio-economic differences.
+Therefore, a classification scheme with invariant general categories is used to
+cover the total content of election programs by identifying the statements of
+preference expressed in the programs. In comparative perspective, specific
+issues and claims vary between parties, countries, and over time because all
+party systems differ to some degree in their status quo. Therefore, not all given
+6
+concepts play a role everywhere all the time. And in case of such broad
+comparative concepts, their definitions can never cover every possible specific
+issue and claim coming up somewhere someplace.
+The CMP classification scheme captures policy preferences of parties as
+taken in their election programs (Budge 2001a, 2001b, 2002). Deductive
+(Budge/Farlie 1977) as well as inductive considerations (Budge 1993a, 1993b)
+have produced 56 Standard Categories covering all relevant policy areas and an
+average of 98 percent of program contents (Volkens 2001). Each of the 56
+categories sums up related issues in a way that changes over time can be
+measured across parties and cross-culturally. Thus, the coding procedure
+comprises a quantification (how many statements do parties make?) and a
+classification (what kind of statements do parties make?) of election programs.
+4.1. Quantification: The Coding Unit
+The coding unit in any given program is the ‘quasi-sentence,’ defined as
+an argument. An argument is the verbal expression of one political idea or
+issue. In its simplest form, a sentence is the basic unit of meaning. Therefore,
+punctuation is used as the most important guideline for identifying arguments.
+In its shortest form, a sentence contains a subject, a verb, and an attribute or
+adjective:
+We want worldwide peace.
+We will reduce our military forces.
+Obviously, these two sentences contain two different arguments which
+are easy to identify and to distinguish. But unfortunately, languages are more
+complex, and it is a question of style how to express the same political ideas:
+We want worldwide peace and will reduce our military forces.
+In this case, the two statements are combined into one sentence but for
+our purposes they should be still treated as two different arguments. Whether
+parties use simple, short sentences or combine arguments into one long
+sentence is largely a matter of style. Because the results of our content analysis
+must be independent of style, long sentences are decomposed into ‘quasi-
+sentences’ if the argument changes within the sentence. In most cases, one
+sentence that covers two (or more) arguments can be easily transformed into
+two (or more) quasi-sentences by repeating substantives and/or verbs as shown
+by the two examples above. Thus, Commandment No. 3 defines the coding unit
+as the quasi-sentence, given by a set of words containing one and only one
+political argument. It stops either at the end of an argument or at a full stop
+(period).
+A list of arguments, sometimes marked with hyphens or dots, is treated
+as if separated by full stops:
+In international policy we shall take new initiatives. We will:
+- promote peace;
+- ban chemical weapons;
+- begin discussions for the removal of nuclear bases;
+- increase aid to developing countries;
+- take action to protect the status of refugees.
+This text contains six quasi-sentences. Two of the arguments (1. ban
+chemical weapons; 2. begin discussions for the removal of nuclear bases)
+express the same general idea, i.e., disarmament, but different issues in this
+policy field. Because distinct policies are mentioned, two different quasi-
+sentences are identified. This list of policies may be given in the following way
+for which the same number of quasi-sentences is coded as for the list given
+above:
+In international policy we shall take new initiatives. We will promote
+peace, ban chemical weapons, begin discussions for the removal of nuclear
+bases, increase aid to developing countries, and take action to protect the status
+of refugees.
+If different issues – however short – are dealt with in the same sentence
+they constitute different quasi-sentences even if they apply to the same policy
+field. However, the aim of identifying coding units is NOT to cut each and every
+sentence in as many quasi-sentences as there are categories or sub-categories
+given, which cover a part or one word of the sentence. The goal is to identify
+the overall argument in a sentence. Only unique new arguments may be cut into
+quasi-sentences. The following is an example for a very long sentence.
+“Now a new historical period has begun – a period in which Russia should
+be cleansed from obscurantism and evil foreign and inner forces, a period of its
+revival as a great superpower, strong and peaceful, and democratic, free and
+prosperous, setting the whole world an example of real civilization and strong
+spirituality.“(Russia, LDPR 2003)
+At first sight, this sentence seems to contain arguments about peace,
+democracy, freedom, prosperity and various others. However, the overall
+argument here is patriotism. Accordingly, this sentence is not cut up.
+These convoluted sentences are often found at the beginning and the end
+of a program, when parties summarize their ideas and preferences. If this is the
+case, leave the tricky parts to the end of the coding procedure. The main parts of
+the programs usually provide you with ideas on how to deal with long sentences
+without cutting them up into as many quasi-sentences as there are words.
+8
+Decision Rule No 1: Identifying Quasi- Sentences
+1. Copy the respective party program into the left column of a table with 2
+columns, leave the right column for the codings (see section 5). Then, 2. start
+with reading the first paragraph, 3. look at each sentence of the first paragraph,
+4. identify the number of arguments and transform them into (quasi-)sentences,
+and 5. mark all (quasi-)sentences in the first paragraph as shown in sample
+texts in section 5. Always think twice before you cut a sentence into several
+quasi-sentences. Always read the sentence again and consider whether there is
+a comprehensive argument that catches the meaning of those aspects that could
+be considered separately.
+Some parts of the manifesto, like statistics, tables of content and section
+headings are not considered as text to be coded and, therefore, do not count as
+quasi-sentences. Introductory remarks by party leaders are equally ignored
+since the ideal-type of a manifesto is defined as authoritative statements of
+parties. All the other parts of a manifesto constitute the basis of analysis. The
+total number of units of analysis equals the total number of quasi-sentences
+identified for the relevant text of a given manifesto.
+4.2. Classification: The Standard Coding Frame
+In this project three types of comparisons are possible: a) comparisons of
+changes in policy preferences or in emphases over time within specific parties;
+b) differences in policy preferences or in emphases across parties; and, c)
+differences across countries. The basic data sought to support such comparisons
+are the shares of election programs devoted to each category in a set of
+standardised issue areas. Comparison requires standardisation. The Manifesto
+project, after much experimentation and discussion, developed a coding system,
+whereby each quasi-sentence of every election program is coded into one, and
+only one, of 56 standard categories. The 56 categories are grouped into seven
+major policy areas. The coding categories are designed, as far as possible, to be
+comparable between parties, countries and over time.
+Party manifestos, however, differ tremendously between countries,
+parties, and over time. When trying to attribute specific policy issues to general
+categories attention should be paid to the fact that not every category is
+mentioned in every manifesto and that in the case of such broad comparative
+concepts, their definitions can never cover every possible specific issue coming
+up somewhere someplace. Therefore, Commandment No. 4 is to have the
+handbook at hand at any time and use it whenever having the slightest
+doubt about unitising or scoring. In case of any remaining doubt, check with
+the supervisor. Only they can decide where an issue not covered in a definition
+fits in.
+Some manifestos may be easy to interpret because parties state clear
+arguments, i.e., those fitting easily to given definitions of categories, in simple
+sentences. Parties often repeat positions by treating lasting problems and hot
+topics in some detail. In these cases, a quick check of the definition may suffice
+for handling large parts of texts. But Commandment No. 5 reads ‘beware of
+your expectations.’ Publicly known positions of party elites may deviate from
+party program majorities. Although this difference may be small in elite-
+steered parties, even these parties can state opposite positions, even within one
+and the same sentence, when weighting the pros and cons of some topic.
+The goal is to measure the policy preferences of parties in all policy
+areas, i.e., welfare, education, economy, environment, etc. In all of these cases,
+policy preferences are defined as the currently held views, either positive or
+negative, on goals, positions, tasks, and issues of the political debate about
+material and ideational interests and conflicts. This type of statement is covered
+by the CMP Standard Classification scheme for policy preferences of national
+manifestos, made up of 56 Standard Categories in three-digit codes. Some of
+these 56 categories cover bipolar positions, such as (504) ‘Welfare State
+Expansion’ and (505) ‘Welfare State Limitation’, others are unipolar, such as (501)
+‘Environmental Protection: Positive’ because no party openly opposes these
+valence issues.
+10
+Table 1: 56 Standard Policy Preferences in Seven Policy Domains
+Domain 1: External Relations
+101 Foreign Special
+Relationships: Positive
+102 Foreign Special
+Relationships: Negative
+103 Anti-Imperialism: Positive
+104 Military: Positive
+105 Military: Negative
+106 Peace: Positive
+107 Internationalism: Positive
+108 European Integration:
+Positive
+109 Internationalism: Negative
+110 European Integration:
+Negative
+Domain 2: Freedom and Democracy
+201 Freedom and Human Rights:
+Positive
+202 Democracy: Positive
+203 Constitutionalism: Positive
+204 Constitutionalism: Negative
+Domain 3: Political System
+301 Decentralisation: Positive
+302 Centralisation: Positive
+303 Governmental and
+Administrative Efficiency:
+Positive
+304 Political Corruption: Negative
+305 Political Authority: Positive
+Domain 4: Economy
+401 Free Enterprise: Positive
+402 Incentives: Positive
+403 Market Regulation: Positive
+404 Economic Planning: Positive
+405 Corporatism: Positive
+406 Protectionism: Positive
+407 Protectionism: Negative
+408 Economic Goals
+409 Keynesian Demand
+Management: Positive
+410 Economic Growth
+411 Technology and
+Infrastructure: Positive
+412 Controlled Economy: Positive
+413 Nationalisation: Positive
+414 Economic Orthodoxy:
+Positive
+415 Marxist Analysis: Positive
+416 Anti-Growth Economy:
+Positive
+Domain 5: Welfare and Quality of Life
+501 Environmental Protection:
+Positive
+502 Culture: Positive
+503 Social Justice: Positive
+504 Welfare State Expansion
+505 Welfare State Limitation
+506 Education Expansion
+507 Education Limitation
+Domain 6: Fabric of Society
+601 National Way of Life: Positive
+602 National Way of Life:
+Negative
+603 Traditional Morality: Positive
+604 Traditional Morality:
+Negative
+605 Law and Order: Positive
+606 Social Harmony: Positive
+607 Multiculturalism: Positive
+608 Multiculturalism: Negative
+Domain 7: Social Groups
+701 Labour Groups: Positive
+702 Labour Groups: Negative
+703 Agriculture: Positive
+704 Middle Class and Professional
+Groups: Positive
+705 Minority Groups: Positive
+706 Non-Economic Demographic
+Groups: Positive
+The coding categories are designed, as far as possible, to be comparable
+between parties, countries, and over time. Policy preferences range from pledges for
+action taking after the election during the upcoming legislative period to statements
+of some concern over the election campaign. Parties in government also include
+evaluations of their former deeds. Commandment No. 6 defines such a preference
+for a policy, long- or short-term, as constituting the main emphasis of a
+sentence.
+After identifying the quasi-sentences in the first paragraph, the next stage of
+the coding procedure is to decide which of the 56 categories of the Standard Coding
+Frame a respective quasi-sentence expresses. Each category of the Standard Coding
+Frame is specified by a set of typical issues and political ideas which are given in
+section 8 of this handbook. Before starting the coding procedure, the coder should
+read through the Standard Coding Frame and its defining ideas and issues several
+times.
+For the example given above, the category numbers (105) ‘Military: Negative’,
+(106) Peace, (107) ‘Internationalism: Positive’ and (201) ‘Freedom and Human Rights’,
+are noted down at the margin of the copied election program:
+107 In international policy we shall take new initiatives. We will:
+106 - promote peace;
+105 - ban chemical weapons;
+105 - begin discussions for the removal of nuclear bases;
+107 - increase aid to developing countries;
+201 - take action to protect the status of refugees.
+Decision Rule No 2: Classifying the Quasi-Sentences
+Read the whole of the first paragraph before you start coding the first quasi-
+sentence because the context may give you hints how to code an otherwise
+ambiguous argument. Look to see whether one of the 56 categories definitely
+captures the sense of the first identified quasi-sentence and note down the
+respective number of the category in the right column of the table or at the margin
+of the page. Repeat this procedure for all the quasi-sentences of the first paragraph.
+Then proceed with the next paragraph by repeating step no 1.
+Not all coders may be familiar with all the terms used in this handbook or in
+the manifestos. Commandment No. 7 is to check terms whenever the coder is in
+doubt about the meaning of a term. In most cases, Wikipedia provides quick
+explanations, comprehensive enough for most purposes.
+2
+4.2.1 Categories with Country-Specific Meanings
+In most of the cases, the categories have clear-cut meanings which are
+applicable to all countries. But some categories have country-specific contents or
+require country-specific definitions. The categories (101) ‘Foreign Special Relations:
+Positive’ and (102) ‘Foreign Special Relations: Negative’ are such cases. Here, the
+coder has to decide in advance with which other country or countries the manifesto
+country (i.e. the country he or she is coding) has a ‘special foreign relationship’; for
+example, in the British case: former colonies, in the Swedish case: the rest of
+Scandinavia. Equally, the category (705) ‘Minorities’ requires a definition of what
+groups are considered as underprivileged in the manifesto country. The specific
+content of these categories must be spelled out as notes in a coding protocol. Thus,
+Commandment 8 reads: Note down definitions for all country-specific categories
+in a coding protocol.
+The coding has to be done in as uniform a way as possible. For comparative
+reasons, the greatest possible standardisation has to be achieved. Therefore, the
+coder must note down every coding decision he or she made if the procedure is not
+particularly mentioned in this handbook.
+4.2.2 Subcategories for Transitional Democracies
+Some quasi-sentences may contain country-specific issues which are not
+particularly mentioned in the definition of the category but can nonetheless be
+subsumed under it. Other quasi-sentences may have a country-specific bias too
+strong to be subsumed under one of the 56 Standard Categories. For these quasi-
+sentences a new subcategory may be developed to capture the content of these
+otherwise uncodable sentences. Subcategories are divisions of the Standard
+Categories for analysing some details that are otherwise hidden or merged in the
+broader categories. They can be attached to standard categories without destroying
+the overall comparability as long as they are subsumed under and can be aggregated
+into one of the standard categories. The typical three-digit code of the Standard
+Manifesto Coding Scheme takes on a four-digit structure in the subcategory. The last
+digit is telling us that we are dealing with a subcategory. The precedent three-digits
+are just the same as those of the standard categories. Subcategories must always be
+nested into the 56 Standard Categories so that they can be aggregated up to one of
+the 56 Standard Categories. For instance 1011 is nested into 101, 2011 is nested into
+201.
+For content analysing the election programs of the developing East European
+party systems the following subcategories have been used:
+Table 2: Subcategories to be Used for Parties in Transitional Democracies
+Domain 1: External Relations
+1011 Russia/USSR/CIS: Positive
+1012 Western States: Positive
+1013 Eastern European Countries:
+positive
+1014 Baltic States: Positive
+1015 Nordic Council: Positive
+1016 SFR Yugoslavia: Positive
+1021 Russia/USSR/CIS: Negative
+1022 Western States: Negative
+1023 East European Countries:
+Negative
+1024 Baltic States: Negative
+1025 Nordic Council: Negative
+1026 SFR Yugoslavia: Negative
+1031 Russian Army: Negative
+1032 Independence: Positive
+1033 Rights of Nations: Positive
+Domain 2: Freedom and Democracy
+2021 Transition to Democracy
+2022 Restrictive Citizenship
+2023 Lax Citizenship
+2031 Presidential Regime: Positive
+2032 Republic: Positive
+2041 Monarchy: Positive
+Domain 3: Political System
+3011 Republican Powers: Positive
+3051 Public Situation: Negative
+3052 Communist: Positive
+3053 Communist: Negative
+3054 Rehabilitation and
+Compensation
+3055 Political Coalitions
+Domain 4: Economy
+4011 Privatisation: Positive
+4012 Control of Economy: Negative
+4013 Property-Restitution:
+Positive
+4014 Privatisation Vouchers:
+Positive
+4121 Social Ownership: Positive
+4122 Mixed Economy: Positive
+4123 Publicly-Owned Industry:
+Positive
+4124 Socialist Property: Positive
+4131 Property-Restitution:
+Negative
+4132 Privatisation: Negative
+Domain 5: Welfare and Quality of Life
+5021 Private-Public Mix in Culture
+5031 Private-Public Mix in Social
+Justice
+5041 Private-Public Mix in Welfare
+5061 Private-Public Mix in
+Education
+Domain 6: Fabric of Society
+6011 The Karabakh Issue
+6012 Rebuilding the USSR
+6013 National Security
+6061 General Crisis
+6071 Cultural Autonomy: Positve
+6072 Multiculturalism pro Roma
+6081 Multiculturalism against
+Roma
+Domain 7: Social Groups
+7051 Minorities Inland
+7052 Minorities Abroad
+7061 War Participants
+7062 Refugees
+For Cyprus, the subcategory 6014 ‘Cyprus Issue’ was created, for Mexico, the
+subcategory 2033 ‘Checks and Balances’ was introduced. Definitions of all
+subcategories are given in Section 9.
+Up to now, subcategories have been mainly created for East European parties
+to allow studying party systems in the making. For some party systems,
+subcategories were also coded for a more country-specific analysis of programmatic
+4
+party competition. As such, subcategories are part of the standard classification of
+policy preferences. But creating new subcategories should be avoided as far as
+possible, because the overall comparability of the manifesto data is reduced to the
+standard categories.
+Decision Rule No 3: Creating Subcategories
+Look at all uncoded sentences a second time and try to figure out whether some of
+these statements have an equivalent meaning. Make sure that there really is no
+related Standard Category that captures the sense of these quasi-sentences. Should
+many quasi-sentences contain the same arguments which are not subsumable under
+one of the 56 Standard Categories, note down a temporary 4-digit code and a
+temporary definition for a new subcategory and contact the supervisor. Do not
+create subcategories for each and every single issue because this is useless even
+when comparing parties from the same party system. Never create new categories
+without checking with the supervisor because you may destroy the
+comparability of the data.
+To check with the supervisor before creating a sub-category is crucial since
+coders tend to diversify the existing standard categories into subcategories. Even
+trained coders tend to create too many subcategories, i.e. subcategories containing
+only one or two quasi-sentences. From more than 80 subcategories that had been
+created for transitional countries, 30 were re-aggregated into the main Standard
+Categories because they were almost empty and fitted to one the Standard
+Categories.
+4.2.3 Coding Problems and Difficulties
+Coding problems may concern unitizing or/and scoring. As with uncodable
+sentences, all unclear statements should be marked and reread at the end of the
+coding procedure.
+4.2.3.1 Problems with Unitising
+To prevent unitising mistakes, Commandment No. 9 spells out that whenever
+coding units are in doubt, the respective sentence must be coded twice, in two
+logically different rounds, and the two solutions for unitising have to be cross-
+checked before a final decision is taken on breaking up a sentence into quasi-
+sentences. In a first round, coders should choose one code for the overarching
+preference of the whole sentence and finish the coding of all the sentences of the
+whole paragraph or section. In the second round, a separate row of codes for the
+quasi-sentences will be added. The inference from both rows of codes should then be
+compared to the qualitative arguments. For example, let us suppose that a sentence-
+based coding of a paragraph or section produces 6 codes, 3 for welfare state
+expansion and 3 for environmental protection, whereas a quasi-sentence-based
+2
+coding of the same paragraph or section produces 12 codes with 3 for welfare state
+expansion and 9 for environmental protection. The sentence-based coding paints the
+picture of a party that is equally in favour of welfare and environment, whereas the
+quasi-sentence-based coding leaves the impression of a party overwhelmingly
+concerned with the environment. These different impressions can then be compared
+to the arguments given in the whole section. The quantitative codes should give a
+balanced view; they should ‘mirror’ the qualitative arguments as far as possible.
+In case of remaining doubts, ask the supervisor!
+4.2.3.2 Problems with Scoring
+a. No category seems to apply
+The coding frame was created to capture the total manifesto content.
+Nonetheless, it may be that no category is available for a particular problem in a
+particular country. These quasi-sentences are treated as uncodable (000). It is
+important to realize that ‘uncoded’ does not necessarily mean that a sentence is
+devoid of meaning (although of course it may be); only that it cannot be fitted into
+the present coding frame. However, Commandment No. 10 is that sentences should
+be coded if at all possible. To follow this there are a number of specific decision
+rules on how to tackle with difficult coding decisions.
+In many countries some of the categories are not much used (for instance
+(405) ‘Corporatism’ and (409) ‘Keynesian Demand Management’), but are vital for
+comparative reasons. Therefore, some categories may be left empty at the end of the
+coding procedure. On the other hand seldom used categories are the most difficult to
+handle.
+Decision Rule No 4: Checking Definitions of all Categories in Policy Domains
+Whenever tempted to treat a quasi-sentence as uncodable, read the definitions of
+categories in the relevant policy domains once again because it might well be that
+the quasi-sentence contains a policy position that is taken only seldom. Therefore,
+the specific definition of the respective category may just have been forgotten.
+A quasi-sentence may be without meaning but may nevertheless be part of
+the discussion of a problem and have a stylistic or linking function, for example:
+‘The next government will do everything in its power to defend the interests
+of the farmers. To this end, we envisage several measures. Firstly, we will
+increase payments of all kinds to farmers. ...’
+These are three quasi-sentences. The middle sentence itself is devoid of any
+policy-content but is a part of the same argument. Therefore, category (703)
+‘Agriculture’ is coded three times.
+Decision Rule No 5: Identifying Connecting Sentences
+Some sentences, which may otherwise be uncodable, may just be connecting
+sentences between two arguments (for instance: Therefore, we are going to do three
+things.) These connecting sentences themselves do not constitute meaningful
+arguments but are part of an ongoing argument. Therefore, connecting sentences
+should be coded in the same category as surrounding sentences or as the bulk of the
+paragraph they appear in.
+Because of the general commandment to classify quasi-sentences if at all
+possible, all quasi-sentences treated as uncodable must be checked again after coding
+the total program.
+b. More than one category seems to apply
+The opposite difficulty arises if more than one category seems to apply. The
+Standard Classification Scheme was developed to cover the whole content of election
+programs. Election programs do not only mention policy preferences, but also
+include preferences about the polity and the politics of the country. The term ‘polity’
+refers to the institutional dimension of political systems, covering all political
+institutions such as electoral rules and principles of decision making as well as the
+organisations of interest intermediation and governance. The term ‘politics’ refers to
+all processes of interest intermediation and governance. A classification scheme
+covering the whole content of national election programs should also allow for
+coding these polity and politics preferences. Some categories such as (203)
+‘Constitutionalism: Positive’ and (204) ‘Constitutionalism: Negative’ address the
+polity, others such as (303) ‘Governmental and Administrative Efficiency: Positive’
+address politics, still others such as (301) ‘Decentralisation: Positive’ and (302)
+‘Centralisation: Positive’ include polity, politics, as well as policy issues.
+The problem of multiple coding solutions occurs when polity, politics, and/or
+policy arguments are combined into one sentence:
+‘Because we want worldwide peace, we will add this goal to our constitution.’
+In this case, the polity is merely a means to achieve a policy goal. This
+difficulty can be dealt with by applying the following decision rules:
+4
+Decision Rule No 6: Policy Goals “Beat” Politics, Polity, and Policy Means
+Whenever a sentence combines the means with the achievement of a policy goal, the
+policy goal is to be chosen.
+These general decision rules often apply to the following specific choices:
+Decision Rule No 7: Specific Policy Positions “Beat” (303) ‘Efficiency’
+Whenever there is a choice between category (303) ‘Governmental and
+Administrative Efficiency: Positive’, defined as the need for efficiency and economy
+in government and administration, and another policy category from Domains 1 to 7,
+the specific policy position is to be chosen.
+Decision Rule No 8: Specific Policy Positions ‘Beat’ (305) ‘Political Authority’
+Whenever there is a choice between category (305) ‘Political Authority’, defined as
+the party’s general competence to govern or the general critique of opponent parties’
+competence, on the one hand and another category from Policy Domains 1 to 7, the
+specific policy position is to be chosen.
+And example for the rule that policy goals beat policy means is provided by
+the following sentence:
+“We will achieve world wide peace by disarmament.”
+The argument in this sentence is ‘Peace’ (106), not ‘Military Negative’ (105)
+The problem of choosing between two categories also occurs with respect to
+group politics, for instance: ‘We want more social security for workers’. In this case,
+category (701) ‘Labour Groups’ or category (504) ‘Welfare State Expansion’ may apply.
+Decision Rule No 9: Specific Policy Positions ‘Beat’ Group Politics except Group
+(703) ‘Agriculture’
+Whenever there is a choice between a specific policy position given in Policy
+Domains 1, 2, 3, 4, 5, or 6 on the one hand and a social group from Domain 7 on the
+other hand, take the specific policy position. This rule does not apply to category
+(703) ‘Agriculture’. All quasi-sentences devoted to agriculture are to be coded into
+category 703, even if a specific policy position such as (402) ‘Incentives’ or (410)
+‘Economic Growth’ is taken to further the interests of farmers. Whenever agriculture
+is positively mentioned, code 703 has to be used.
+In addition to the aforementioned cases of choice, there is one category, (408)
+‘General Economic Goals’, which is non-positional and should, therefore, be avoided if
+possible.
+Decision Rule No 10: Specific Policy Positions ‘Beat’ (408) ‘General Economic
+Goals’
+Whenever there is a choice between a more specific policy position given in Policy
+Domains 1 to 7 and category (408) ‘General Economic Goals’, the specific policy
+positions (for instance (410) ‘Economic Growth’) is to be chosen instead of 408.
+Even after applying these decision rules, one may still not be sure where an
+argument is leading. In many cases, section headings can be used to make a decision:
+Decision Rule No 11: Section Headings as Guidelines
+Look at the section heading of the quasi-sentence in question. Then, take the
+category which covers the topic of the section or the heading. Thus, section headings
+are taken as guidelines for coding although section headings themselves are not to
+be coded.
+Many of these problems may be solved by taking the context of the ambiguous
+quasi-sentence into account. Coders should first of all study the sentences that follow
+because the first quasi-sentence may be part of an argument explicated in the next
+sentences. Therefore, it is always useful to start the coding procedure by reading the
+whole paragraph.
+For all other cases in which more than one category seems to apply, the coder
+has to decide what the most important concern of the argument is since one, and
+only one, category has to be chosen for each argument. There is only one exception
+to the ‘one-and only one’ rule:
+Decision Rule No 12: European Level and National Level
+Policies at the European level may be discussed with respect to their impact at the
+national level. In these cases, (108) ‘European Community: positive’ or (110)
+‘European Community: negative’ as well as the specific national position in Policy
+Domains 2 to 7 have to be coded.
+Just as with unitising (see p. 8), scoring problems often occur with the
+introductory parts and the summary of long programs as well as with short
+programs. In both cases, many arguments are typically condensed into very few
+6
+sentences, often containing numerous commas and semicolons. In case of such
+difficulties, the rest of the manifesto should be coded before the introductory part is
+tackled as this will give hints on how to solve the riddles of the introductory
+sentences.
+In case of very short programs with just one to five pages, unitising and
+scoring decisions concerning a few sentences can change the result of the content
+analysis. Therefore, the following decision rule should be applied:
+Decision Rule No 13: Double-check each Code Chosen for Short Manifestos
+Short manifestos have to be coded twice because each coding decision is particularly
+crucial. In case of short programs, make sure that no argument is neglected due to
+decision rules 6 to 10. Make sure that the numerical coding solution mirrors all
+qualitative arguments given in such short programs, even if they are hidden in
+subordinate clauses.
+c. The statement seems unclear
+Even after applying Decision Rules No 1 to 13, one may still not be sure where
+an argument is leading. Many of these problems may be solved by taking the context
+of the ambiguous quasi-sentence into account. Coders should first of all take into
+account the following sentences because the first (quasi-) sentence may be part of an
+argument which is explicated in the next sentences. Therefore, it is always useful to
+start the coding procedure by reading the whole paragraph.
+In some cases, crucial decisions have to be made with respect to the manifest
+or latent content of statements. No inferences should be made with respect to the
+meaning of statements. The coder has to code what the statement says, not what he
+or she thinks it may lead to in the end. Thus, if a party claims that a measure favours
+employees, (701) ‘Labour Groups: Positive’ has to be coded although you may feel sure
+that it is to their detriment.
+As with uncodable sentences, all unclear statements should be marked and
+reread at the end of coding. The reason is that many statements which may be
+uncodable at first sight may become clear in the context of the whole program.
+Some of the coding problems will be solved with growing experience.
+However, whenever the coder is unsure about which category is to be taken, the
+sentence in question should be translated into English and the supervisor should be
+contacted. From 1989 to 2009 Andrea Volkens (volkens@wzb.eu) served as the
+central supervisor. From 01.11.2009 onwards Annika Werner takes this position
+(werner@wzb.eu).
+4.3 Coding Sheet
+After finishing the coding of a manifesto, a tally is kept on a coding sheet
+given in this section. The coding sheet shows the respective country, party, and
+election year and gives the absolute number of quasi-sentences coded into each
+standard category of the standard coding frame as well as the total number of quasi-
+sentences. However, before even starting with Decision Rule No 1, first of all take the
+following step:
+Rule No 14: Do not start with production coding before having done the training
+and entry tests given in section 6 and 7 of the handbook because both tests are
+used for identifying coding mistakes. Thus, wait for the reply of the supervisor
+or you might have to do it all over again!
+8
+Coding Sheet for 56 Standard Categories
+COUNTRY: PARTY: YEAR:
+000: 410:
+101: 411:
+102: 412:
+103: 413:
+104: 414:
+105: 415:
+106: 416:
+107: 501:
+108: 502:
+109: 503:
+110: 504:
+201: 505:
+202: 506:
+203: 507:
+204: 601:
+301: 602:
+302: 603:
+303: 604:
+304: 605:
+305: 606:
+401: 607:
+402: 608:
+403: 701:
+404: 702:
+405: 703:
+406: 704:
+407: 705:
+408: 706:
+409: Total N:
+Coding Sheet for 56 Standard Categories plus Subcategories
+COUNTRY: PARTY: YEAR:
+000 409: 706: 3055:
+101: 410: 1011: 4011:
+102: 411: 1012: 4012:
+103: 412: 1013: 4013:
+104: 413: 1014: 4014:
+105: 414: 1015: 4121:
+106: 415: 1016: 4122:
+107: 416: 1021: 4123:
+108: 501: 1022: 4124:
+109: 502: 1023: 4131:
+110: 503: 1024: 4132:
+201: 504: 1025: 5021:
+202: 505: 1026: 5031:
+203: 506: 1031: 5041:
+204: 507: 1032: 5061:
+301: 601: 1033: 6011:
+302: 602: 2021: 6012:
+303: 603: 2022: 6013:
+304: 604: 2023: 6014:
+305: 605: 2031: 6061:
+401: 606: 2032: 6071:
+402: 607: 2033: 6072:
+403: 608: 2041: 6081:
+404: 701: 3011: 7051:
+405: 702: 3051: 7052:
+406: 703: 3052: 7061:
+407: 704: 3053: 7062:
+408: 705: 3054: Total N:
+10
+5. Coding Exercise
+The following sample texts with solutions for the identification of quasi-
+sentences and categories serve as exercises of coding.
+Country: Great Britian
+Name of the Party/Alliance: The Liberal/SDP Alliance
+Year: 1983
+Title: ‘Working together for Britain'
+(Extracts)
+The General Election on June 9th, 1983 will be seen as a watershed in
+British politics.
+It may be recalled as the fateful day when depression became
+hopelessness and the slide of the post-war years accelerated into the depths of
+decline. Alternatively it may be remembered as the turning point when the
+people of this country, at the eleventh hour, decided to turn their backs on
+dogma and bitterness and chose a new road of partnership and progress. 
+It is to offer real hope of a fresh start for Britain that the Alliance
+between our two parties has been created. What we have done is unique in the
+history of British parliamentary democracy.  Two parties, one with a proud
+history, and one born only two years ago out of a frustration with the old
+systems of politics, have come together to offer an alternative government
+pledged to bring the country together again. 
+The Conservative and Labour parties between them have made an
+industrial wasteland out of a country which was once the workshop of the
+world.  Manufacturing output from Britain is back to the level of nearly 20
+years ago.  Unemployment is still rising and there are now generations of
+school-leavers who no longer even hope for work.  Mrs Thatcher's
+government stands idly by, hoping that the blind forces of the marketplace will
+restore the jobs and factories that its indifference has destroyed.  The Labour
+Party's response is massive further nationalisation, a centralised state socialist
+economy and rigid controls over enterprise. The choice which Tories and
+socialists offer at this election is one between neglect and interference. 
+Neither of them understands that it is only by working together in the
+companies and communities of Britain that we can overcome the economic
+problems which beset us.  Meanwhile the very fabric of our common life
+together deteriorates.  The record wave of violence and crime and increased
+personal stress are all signs of a society at war with itself.  Rundown cities and
+declining rural services alike tell a story of a warped sense of priorities by
+successive governments.  Mrs Thatcher promised 'to bring harmony where
+there is discord'.  Instead her own example of confrontation has inflamed the
+bitterness so many people feel at what has happened to their own lives and local
+communities. 
+Our Alliance wants to call a halt to confrontation politics.  We believe 000
+000
+000
+305
+305
+606
+305
+410
+408
+305
+305
+305
+606
+606
+605
+606
+606
+606
+606
+we have set an example by working together as two separate parties within an
+alliance of principle.  Our whole approach is based on co-operation: not just
+between our parties but between management and workers, between people of
+different races and above all between government and people.  Because we
+are not prisoners of ideology we shall listen to the people we represent and
+ensure that the good sense of the voters is allowed to illuminate the corridors of
+Westminster and Whitehall. 
+STRATEGY FOR INDUSTRIAL SUCCESS
+The Alliance is alone in recognising that Britain's industrial crisis cannot
+be solved by short-term measures such as import controls or money supply
+targets.  Our crisis goes deep.  Its roots lie in the class divisions of our
+society,  in the vested interests of the Tory and Labour parties, in the refusal
+of management and unions to wide democracy in industry,  in the way profits
+and risks are shared. 
+The policies offered by the two class-based parties will further divide the
+nation North v South, Management v Labour.  Our greatest need is to build a
+sense of belonging to one community.  We are all in it together.  It is
+impossible for one side or the other in Britain to 'win'.  Conflict in industrial
+relations means that we all lose. 
+The Alliance is committed to policies which will invest resources in the
+high-technology industries of the future.  We are committed to a major new
+effort in education and training.  We are pledged to trade union reform to
+tough anti-monopoly measures. 
+THE IMMEDIATE CRISIS: JOBS AND PRICES
+Our economic crisis demands tough immediate action.  It also requires
+a Government with the courage to implement those strategic and structural
+reforms which alone can end the civil war between the two sides of industry. 
+The immediate priority is to reduce unemployment. Why?  To the
+Alliance unemployment is a scandal; robbing men and women of their careers;
+ blighting the prospects for a quarter of all our young people,  wasting our
+national resources, aborting our chances of industrial recovery,  dividing
+our nation and fuelling hopelessness and crime. 
+Much of the present unemployment is a direct result of the civil war in
+British industry, of restrictive practices and low investment.  But in addition,
+conservative Government policies have caused unemployment to rise.  An
+Alliance Government would cause unemployment to fall. How?  Can it be done
+without releasing a fresh wave of inflation? 
+We believe it can.  We propose a carefully devised and costed jobs
+programme aimed at reducing unemployment by 1 million over two years. 
+606
+606
+202
+606
+606
+606
+606
+202
+606
+606
+606
+606
+606
+606
+411
+506
+403
+305
+305
+408
+408
+701
+706
+410
+408
+606
+605
+408
+408
+408
+414
+414
+504
+12
+This programme will be supported by immediate measures to help those hardest
+hit by the slump - the disadvantaged, the pensioners, the poor. 
+Ours is a programme of mind, heart and will.  It is a programme that
+will work! The Programme has three points:  Fiscal and Financial Policies for
+Growth;  Direct Action to provide jobs;  An Incomes Strategy that will stick.
+
+PARTERNSHIP IN INDUSTRY
+Britain has made little progress towards industrial democracy, yet
+several of our European partners have long traditions of participation and co-
+operation backed by legislation.  They do not face the obstacles to progress
+with which our divisive industrial relations present us. To be fully effective,
+proposals for participation in industry need to be buttressed by action on two
+fronts:  a major extension of profit sharing and worker share-ownership to
+give people a real stake where they work as well as the ability to participate in
+decision-taking,  and reform of the trade unions to make them genuinely
+representative institutions. 
+PARTICIPATION AT WORK
+We propose enabling legislation that will offer a flexible and sensible
+approach: 
+An Industrial Democracy Act to provide for the introduction of employee
+participation at all levels,  incentives for employee share-ownership, 
+employee rights to information, and an Industrial Democracy Agency (IDA) to
+advise on and monitor the introduction of these measures: 
+Employee Councils covering each place of work (subject to exemption for
+small units) for all companies employing over 1,000 people.  Smaller
+companies would also be encouraged to introduce Employee Councils. 
+GOVERNMENT AND INDUSTRY
+Priority for Industry
+The role of an Alliance government in relation to private industry will be
+to provide selective assistance taking a number of forms: 
+an industrial credit scheme to provide low-interest, long-term finance for
+projects directed at modernising industry; 
+A national innovation policy, to provide selective assistance for high-risk
+projects,  particularly involving the development of new technologies 
+and for research and development in potential growth industries; 
+Public purchasing policies to stimulate innovation,  encourage the
+introduction of crucial technologies and aid small businesses; 
+503
+404
+404
+410
+504
+701
+202
+606
+202
+701
+202
+202
+202
+701
+201
+202
+202
+202
+402
+402
+402
+411
+410
+411
+411
+we will establish a Cabinet Committee chaired by the Prime Minster at the
+centre of decision-taking on all policies with a bearing on the performance of
+industry. 
+The Alliance will strengthen the Monopolies' and Mergers' Commission to
+ensure its ability to prevent monopoly and unhealthy concentrations of
+industrial and commercial power. The aim is to guarantee fair competition
+and to protect the interests of employers, consumers and shareholders. 
+New and Small Business
+To encourage the growth of new and small businesses, we will attack red
+tape and provide further financial and management assistance by: 
+Extending the Loan Guarantee Scheme, in the first instance raising the
+maximum permitted loan to £150,000;  and the Business Start-Up Scheme,
+raising the upper limit for investment to £75,000;  and introducing Small
+Firm Investment Companies to provide financial and management help; 
+zero-rating building repairs and maintenance for VAT purposes and
+reducing commercial rates by 10 per cent; 
+making sure the Department of Industry co-ordinates and publicises
+schemes for small businessesand that government aid ceases to discriminate
+against small businesses; 
+Tailoring national legislation such as the Health and Safety Regulations to
+the needs of small businesses and amending the statutory sick pay scheme to
+exclude small businesses. 
+Agriculture and Fisheries
+Agriculture is an important industry and employer. To encourage its
+further development we will: 
+Increase Government support for effective agricultural marketing at home
+and abroad and continue support for 'Food from Britain'; 
+ensure that agriculture has access like other industries to the industrial
+credit scheme we propose; 
+encourage greater access to farming, especially by young entrants.  The Alliance is determined to safeguard the future of our fishing industry
+which needs help to re-build after years of uncertainty and the drastic
+consequences for the deep-sea fleet of 200-mile limits in the waters they used
+to fish. 
+402
+303
+403
+403
+402
+402
+402
+402
+402
+402
+402
+402
+402
+402
+703
+703
+703
+703
+703
+703
+703
+14
+Education and training
+The third basic condition for industrial success is a people with the skills
+and self-confidence that will be needed for the challenges of new technology. 
+The education and training systems are not providing enough people with the
+skills necessary to make them employable and the country successful in
+competition with its rivals.  We are falling further behind. Japan on present
+plans will be educating all its young people to the age of 18 by 1990. More
+than 90 per cent of the 16-19 age group in Germany gain recognised technical
+qualifications.  And it is not just a matter of school-leavers.  Our managers
+are less professionally qualified than our main competitors.  From the bottom
+to top we are underskilled, and this has to be put right if we are to prosper in
+future.  To do this, to raise standards in education and training and to improve
+their effectiveness is the object of proposals set out in the next Section. 
+411
+411
+411
+506
+411
+506
+411
+411
+411
+Country: New Zealand
+Name of the Party/Alliance: National Party
+Year: 1972
+Title: A Guide to what the next National Government will do for
+New Zealand
+(Extracts)
+THE ECONOMY
+In 1972 New Zealand had, for the first time, more overseas reserves than
+total overseas debt.  Labour has dissipated these reserves, borrowed about
+$2,00 million overseas and incurred annual interest charges mortgaging almost
+our total export earnings from butter and cheese. 
+Inflation in 1972 was about 5 per cent, the second lowest of the
+Organisation for Economic Co-operation and Development (OECD) nations. 
+Today it is about 15 per cent, well above the OECD average,  and New Zealand
+has an external deficit per head of population second only to Iceland. 
+The first three years of the coming National Government will be very
+largely devoted to restoring New Zealand's shattered economy. 
+Continuous attention to economic trends and problems will replace stop-
+go and panic measures.  And the taxation system will be used to give
+incentives for desirable economic activity. 
+We will take steps to stimulate savings.  Savings accounts, limited as
+to amount, will be established.  The deposits of individuals will earn an
+interest rate at least equal to the annual rate of inflation thus preserving the
+purchasing power of savings. 
+We believe that continued double-figure inflation will destroy the basis
+of the New Zealand economy and cause untold misery.  The fight against
+increases in the cost of living is the most important single issue in economic
+management. 
+People without jobs represent waste of productive effort:  National
+supports a policy of full employment  and the dignity of labour.  We do not
+accept unemployment as a balancing factor in economic management. 
+414
+414
+414
+414
+414
+408
+408
+402
+414
+414
+414
+414
+414
+410
+408
+701
+701
+405
+405
+Finally, the National Development Council will be restored and
+consultation resumed between Government departments, academic specialists
+and private industry, including farming and organised labour.  The vital role
+of every section of productive industry will be recognised. 
+It is these moves which will put New Zealand on the way to economic
+recovery.  And reduce the spiraling rate of inflation. 
+408
+414
+16
+SUPERANNUATION
+Seldom has any policy released by an opposition party had the impact
+that the National Superannuation scheme has had.  It is designed to give every
+New Zealander dignity and a decent income in retirement.  Here's how it will
+operate: 
+Anyone who is 60 years old, or more, and who has lived in New Zealand
+for at least ten years will receive National Superannuation, starting next year.
+ And with three big annual jumps in the rate of benefit it will be fully
+operating by 1978. 
+To guarantee our elderly retired folk a decent minimum income, the full
+rate of National Superannuation, for a married couple, will be 80% of the
+average weekly ordinary time wage.  It will be recalculated every six months.
+
+In 1976, to start the scheme, the rate will be 65% of the average wage; 
+in 1977 it will be raised to 70%  and in 1978 to the full 80%. The rate for
+single persons, at all times, will be 60% of the married rate. 
+504
+504
+504
+504
+504
+504
+504
+504
+504
+504
+504
+504
+The present average weekly wage is $99 and so, if there is no increase at
+all in wage rates in the next three years, the rates of National Superannuation
+will be shown in the box* below (*box not shown). 
+Next year, under National, the age and universal superannuation
+benefits will merge to form National Superannuation. 
+At present both these benefits pay $51.26 to a married couple and $30.75
+to a single person, so even in the first year of National Superannuation, a
+married couple over 60 who have no other income will have $6.18 a week more
+to spend than they do now and a single beneficiary will receive, after tax, $3.15
+a week more than he now gets by way of age benefits, or universal
+superannuation. 
+Of course those with other income will receive the benefit too, but they
+will pay more tax on their bigger incomes. 
+By 1978 a married couple will receive a net $18.06 a week more than the
+present age benefit or universal annuation and a single person will be receiving
+a net $10.17 a week more.  For the single person, that is a pay rise of more
+than 33%.
+504
+504
+503
+504
+504
+The big and comforting thing about National Superannuation is that
+504
+everyone gets it, just so long as they have lived in New Zealand for ten years or
+more and are aged 60 or over. 
+They will not, nor will anyone, be expected to make special contributions
+over a period of years, in order to qualify.  The scheme is financed out of
+504
+504
+ordinary taxation so there is nothing to be deducted from wages; no special
+payments of any kind. 
+This means that the present age beneficiary will receive National 504
+Superannuation next year.  So will the retired Government servant (in
+addition to the pension from the Government superannuation fund which he
+had paid for).  And so will all the people who are drawing pensions from
+company and other private superannuation schemes. 
+In recent weeks, the Government has been making moves to compensate
+for the weaknesses revealed in their own scheme, when compared with
+National's.  But the fact remains that National's is the only superannuation
+scheme that offers a fair deal to everyone in their years of retirement. 
+WOMEN'S RIGHTS
+Since 1975 is International Women's Year, it can be expected that all political
+parties will talk a great deal about their 'women's policies'.  Unfortunately
+most will be little more than window dressing.  National's plans go far
+beyond this. 
+We will begin by introducing legislation to remove existing legal
+discrimination relating to women,  and to prohibit discrimination against any
+person by reason of sex. 
+We will also establish a Human Rights Commission which will ensure
+that equal rights legislation is enforced and that women have an effective and
+inexpensive means of redress.  The Commission will investigate cases of
+discrimination presented to it and recommend civil action to the Attorney-
+General. 
+Full consideration will be given to the recommendations of the Select
+Committee on Women's Rights.  We will set priorities for implementation, in
+consultation with women's organisations. 
+We will legislate to ensure that all areas of discrimination in
+employment are removed  and that merit is the sole criterion in respect of job
+applications, selection and promotion. 
+To encourage women who wish to enter, return to or remain in
+employment, National will encourage employers to establish flexible working
+patterns, such as glide time, part-time, job sharing, and multi-shift work. 
+Thus assisting women who undertake the dual role of worker and mother. 
+We will give special attention to the problems associated with re-entry
+to the work force and ensure that greater job retraining opportunities are
+available. 
+Maternity leave without pay will be available to women for a period of
+up to 12 weeks, without loss of job security, promotion or superannuation
+rights, providing this does not cause undue disruption to a business enterprise.
+
+The new National Government will appoint women to boards,
+commissions and tribunals and will give consideration to the appointment of
+women as industrial mediators. 
+We will also support increased participation of women in the judicial 504
+504
+503
+503
+706
+706
+706
+503
+503
+503
+503
+706
+706
+503
+503
+706
+706
+706
+706
+706
+503
+18
+system and recognise no sex barriers in the exercise of any judicial office. 
+Suitably qualified women will be given exactly the same consideration as men.
+
+National will ensure that early childhood education is generally
+available (where feasible) as an integral part of the education system.  Priority
+will be given to such areas as new housing suburbs and regenerated inner city
+areas. 
+Financial assistance will be provided through approved voluntary
+agencies to establish centres for those children who need day care but whose
+parents cannot afford to pay the full cost. 
+National will also promote and encourage job training and retraining,
+"second chance" education  and promote a policy of life-long education for
+women. 
+We will tackle the problems women face with housing.  Under National
+the Housing Corporation will not differentiate between men and women
+borrowers on grounds of sex. 
+We will introduce a flexible principal repayment plan to meet those
+cases where the wife works, leaves the work force to raise a family and then
+returns to work. 
+The National Party believes all women must have the opportunity to
+participate on the basis of full equality in the social, cultural, economic and
+political spheres of New Zealand society. 
+503
+506
+411
+504
+411
+706
+706
+503
+706
+503
+6. Training Test
+The following pages have to be coded as a training test. A copy of this text with the
+marked quasi-sentences and the number of identified categories in the margin of the
+pages has to be send to the supervisor. The supervisor evaluates the test and sends a
+comprehensive reply to the coder, giving feedback on mistakes and general
+problems. Thereby, the coder is able to learn about the pitfalls of manifesto coding
+intensively. The coder should be aware that this training test is based on a very
+difficult text. No coder is expected to code without any mistakes and hardly any
+coder is ever going to come across such a difficult manifesto in his or her actual
+manifesto coding. The purpose is simply to trigger mistakes so that these mistakes
+can be avoided in the production coding.
+After the training test is completed, sent to the supervisor and their feedback
+received and intensively studied, a final entry test has to be taken, which can be
+found in section 7. This entry test has to be checked by the supervisor before the
+actual coding is started to check whether the correspondence in coding is sufficiently
+high.
+Country: Australia
+Name of the Party/Alliance: National Country Party
+Year: 1966
+Title: We will grow, prosper
+(extracts)
+‘WE WILL GROW, PROSPER’
+The Deputy Prime Minister (Mr McEwen) said last night all the Government’s policies
+were aimed at building an Australia respected and trusted throughout the world. Mr
+McEwen, delivering the Country party policy speech at Sheparton, said: The country
+party, the Government, has one constant and continuing policy objective - to make
+Australia strong, safe, prosperous; to build a modern Australia, with equal
+opportunity for all:
+where the aged, and the infirm, are looked after;
+where the young are well educated, properly trained, to play their part in making the
+greater Australia of the future;
+where every man, woman and child - native-born Australians and migrants alike -
+can live in freedom, enjoying the rewards of their own efforts, obtaining their just
+share of the wealth of the community.
+Under our coalition Government’s policies, Australia’s advance has been remarkable.
+Here are the results of the 17 years of our responsibility in Government:
+3.5 million more people since we came to office - half of them migrants;
+1.25 million new jobs (1.6 million new homes built);
+20
+tremendous increases in wool production; wheat, meat, sugar, dairy products, fruit
+and so on - with fewer workers.
+The volume of exports more than doubled.
+More than 20,000 new factories; factory production increased two and a half times.
+Mineral production more than doubled.
+2,5 million more vehicles on the road - a car for every four people;
+unprecedented developments in community services; roads, dams, power houses,
+hospitals, schools.
+Industries everywhere are creating new wealth, ultimately distributed for all the
+people in better wages, social services and health, in education and defence.
+In 17 years the total production of Australia, including all primary and secondary
+industries and the service industries which go with them, has doubled.
+If in 1949, in a policy speech I had said: ‘Put the Country party and the Liberal party
+in power and our policies will double the size of the Australian economy in 17 years’,
+this would have been treated with derision. But we have done it!
+This is a story of growth; of increasing national strength; greater safety; higher
+prosperity; sharing the prosperity.
+Three years ago, we said our policies would produce 25 per cent growth over five
+years. Despite the disastrous drought, this objective is well in sight. I now say the
+next five years will see this rate continued.
+We are determined that successive generations of Australians will enjoy an even
+greater measure than we do, an Australian way of life of which we can be proud, and
+the rest of the world envy.
+ALLIANCES
+In today’s world, no country can stand alone. Safety and security demand that our
+own growing strength be allied with that of others who share our beliefs in the right
+of free people to remain free. This is the basis of our foreign policy.
+We must be sure that if our freedom is threatened we will not be left to stand alone.
+So we are concerned with the integrity of other small, free countries.
+The respect for Australia as a staunch and reliable ally has never been higher. Our
+great association with Britain and the Commonwealth have been strengthened. We
+have stood with Britain in preserving the security of Malaysia.
+Under the AZEUS Treaty we, with New England, have established a great alliance with
+the United States.
+Under SEATO we are linked with Britain, the United States and France, and with
+Asian countries from Pakistan to the Philippines.
+PRUDENCE
+We help the less-developed countries with aid, and we were the first in the world to
+give tariff preference to them.
+We strive constantly for peace, through the United Nations, and will do so
+unceasingly.
+But prudence and security demand that we work also for strong and lasting alliances.
+The most powerful country in the world - the United States - will be with us to
+protect our freedom if we are threatened with aggression, just as the United States
+today is protecting the freedom of the people of South Vietnam from communist
+aggression.
+The United States seeks no material gain, fighting this distant war. Australia seeks
+only to prove that aggression will not succeed.
+And as Australia herself would expect help if in need, we now demonstrate that we
+are willing to extend our help to a small, free people under attack.
+We want to so conduct ourselves that the United States will not hesitate to stand
+between Australia and an aggressor. America is the one country that can do this.
+Our troops in South Vietnam earn for us the right to the protection of the United
+States and our other treaty allies, should Australia be threatened.
+Voluntary recruiting has not produced the numbers of men required for the Army.
+The Government did try, long and hard, to enlist sufficient men as volunteers.
+Despite all its efforts not enough men came forward to enable us to play our present
+part with the British in Malaysia and the Americans in South Vietnam. So we have
+added to the ranks of our volunteer regular army the necessary numbers of national
+servicemen to meet the nation’s requirements.
+To say that we would honor our obligations with the United States and our other
+allies only if enough volunteers came forward would show Australia as a very
+uncertain ally.
+American conscripts have helped to save us once. No Australian would suggest that
+we were not grateful that they defended us in our day of peril.
+Surely no responsible Australian would suggest that, in the absence of sufficient
+volunteers, we should wait until war reaches Australia itself before we called
+conscripts to the protection of our homeland.
+We in the Government are sure that we have acted properly in bringing in National
+Service so that we may join with America in her stand to prevent the outward
+expansion of aggressive communism.
+Of course, safety is not secured only by modern defence forces and alliances. There
+must be great economic strength - an industrial base capable of servicing and
+maintaining today’s complex military operations; food and mineral production for
+our own needs, and to earn foreign exchange; good roads and railways; efficient
+ports.
+Defence security and economic strength go hand in hand. Our policies promote
+economic strength. Look at the primary industries.
+By 1964, before the calamitous drought total farm output was 67 per cent higher
+than when we came to office.
+Wool, still the great foreign country earner, has nearly doubled in production since
+the war. Wool has been helped by the Japanese Trade Treaty; taxation incentives;
+huge expenditure on research and technology; and Government-supported
+promotion activity.
+22
+CROP RECORD
+Wheatgrowers are about to harvest what could be an all-time record crop; double the
+average crop of the early ‘fifties’. The guaranteed price covers more than 200 million
+bushels each harvest. This has given the industry the confidence necessary for
+expansion.
+Total bounty payments provided by our Government to the dairy industry, to offset
+high costs and difficult markets, have amounted to just on 3500 million. A quarter of
+a million people depend on the dairy industry.
+The great sugar industry has a fair price in the home market; a good price for sales
+under the agreement with Britain; negotiated access for profitable sales to America.
+The Japanese Trade Treaty has made Japan our biggest sugar customer.
+In my policy speech, three years ago, I said: ‘If problems arise, we will be ready to
+help.’ We have helped.
+The sugar industry, through no fault of its own, is in serious temporary difficulty. It
+asked for, and our Government has given a loan of $19 million to augment pool
+payments from this year’s crop.
+For Australian beef producers, negotiated access to the United States market, and
+now to Japan, has been worth millions.
+We have legislated to give effect to marketing or stabilisation plans for canned and
+dried fruits, for eggs, and also for tobacco, which has been lifted from a peasant
+industry to one of high average incomes.
+Cotton is taking dramatic strides forward under the stimulus of our policies.
+There are problems - in the apple and pear industry; in dairying; the British move
+towards the European Common Market; the never-ending job of gaining access to
+markets. Much has been achieved in meeting these problems. We will never let up in
+our efforts.
+EXPANSION
+Our policies for secondary industry are policies for growth, sound expansion, jobs,
+jobs for a growing, well-paid work force, more than 100,000 new jobs a year.
+Tariff machinery is continually improved to give prompt and adequate tariff
+protection; to prevent damage by dumping and disruptive imports.
+We give efficient secondary industry a secure grip on the home market. From this
+base we encourage it to develop exports with the help of a variety of export
+incentives.
+Investment in manufacturing has risen from $120 million a year to $1000 million a
+year.
+Great new industries are providing well-paid employment for more and more
+Australians. Average earnings in real `spending-power terms`, are up 50 per cent.
+Help is provided for the aged, the infirm, the sick; health and social-service
+payments lifted from $162 million to $1020 million a year.
+Australia can and must look after the needs of the aged and the infirm. They must be
+given a full share of benefit from the nation’s growth.
+FREIGHTS
+We have initiated moves to stem overseas freight rises by rationalisation of overseas
+shipping services; for containerisation and other modern cargo-handling methods,
+and by establishment of modern port facilities.
+Industry stabilisation plans form part of the compensation to export industries for
+the burden of costs arising from fast national growth.
+So does the $28 million-a-year subsidy on superphosphate, and our new subsidy on
+nitrogenous fertilisers of $30 per ton nitrogen content.
+Petrol prices have been reduced to no higher than four pence a gallon over city
+prices. Many inland people have been saved more than a shilling a gallon. For years
+the Country party policy urged this plan.
+Special taxation allowance have been granted to primary producers; huge sums
+provided for agricultural research and extension; massive help for wool promotion.
+Suitable long-term credit at lower interest rates has been made available for rural
+and other development needs.
+The Commonwealth Development Bank, the trading banks, term loan fund of $246
+million, adds a new dimension to the array of credit facilities available to farmers.
+Decentralisation requires practical policies which make country area profitable
+locations for industry and attractive places for people to live. Housing must be
+available, so must phones and TV, air services - including freight.
+For Commonwealth Aid Roads grants we are providing $750 million in the current
+five-year period; $150 million this year, rising to $170 million the year after next
+and $126 million is being found for nearly 2000 miles of rail standardisation and
+reconstruction.
+Our Government acted through State Government to help those affected by the
+drought. So far $57 million has been provided. Ways must be found to mitigate the
+effects of drought; to reduce and alleviate the personal heartbreak and national
+losses which go with them.
+BEEF ROADS
+We have given special attention to developing the North and 4000 miles of beef roads
+have been approved. More are under study and $57 million is being provided for beef
+roads in Queensland, Western Australia and the Northern Territory.
+We have found millions of dollars for port facilities in Western Australia and
+Queensland: at Weipa in Queensland, and help at Gladstone; in Western Australia
+more than $6 million for port improvements at Derby, Wyndham and Broome.
+We have found $12 million for stage one of the Ord irrigation project.
+In Queensland vast areas - 11 million acres - are being turned into high-productive
+pastures. We are finding $23 million for this and $1 million is being provided this
+year for research into tropical pastures.
+Freight on superphosphate to Darwin will be subsidised and tax concessions allowed
+for mining with $42 million for oil search subsidies.
+24
+INDUSTRIES
+Nothing contributes more to northern development than the sound and profitable
+expansion of the industries already located in the north.
+What has been done for sugar, tobacco, beef and for mineral development is
+conscious major policy for northern development.
+These are part of the whole pattern of policies for the development of the north and
+the balanced development of the whole of Australia.
+I said at the beginning that we had a constant objective; to make Australia strong and
+safe; prosperous at home; respected and trusted throughout the world. I have spoken
+of some of the things we have done; of what we are doing.
+These are not disjointed actions, independent of one another; thought up to get some
+votes, or some credit, or to appease some group.
+They are all parts of a total; policies all designed for the one overriding purpose; to
+make Australia strong, safe, prosperous.
+We can be proud of what has been achieved; of Australia’s great and growing
+economic strength; of high and rising living standards; of the continuous
+improvements in education, housing, social services.
+Because we have honoured our obligations and are playing our part in resisting
+aggression today we can be confident of our own future safety and security, of the
+strength of our alliances, of the assured protection of the United States should we
+ever be threatened.
+The Australia of today is a base on which an even stronger, safer, more prosperous
+Australia will be built over the next decade.1
+1 Notes: The particular countries with which Australia has a special relationship are defined
+as the Commonwealth countries. ANZUS is a regional security treaty.
+7. Entry Test
+This entry test has to be completed and sent to the supervisor before the production
+coding can be started. It’s a final test of the coder’s grasp of the classification scheme
+of the Manifesto project.
+Country: USA
+Name of the Party/Alliance: The Democratic Party
+Year: 2008
+Title: Democratic National Platform
+(extracts)
+Preamble
+We come together at a defining moment in the history of our nation – the nation that
+led the 20th century, built a thriving middle class, defeated fascism and communism,
+and provided bountiful opportunity to many. We Democrats have a special
+commitment to this promise of America. We believe that every American, whatever
+their background or station in life, should have the chance to get a good education, to
+work at a good job with good wages, to raise and provide for a family, to live in safe
+surroundings, and to retire with dignity and security. We believe that each
+succeeding generation should have the opportunity, through hard work, service and
+sacrifice, to enjoy a brighter future than the last.
+Over the past eight years, our nation’s leaders have failed us. Sometimes they invited
+calamity, rushing us into an ill-considered war in Iraq. But other times, when
+calamity arrived in the form of hurricanes or financial storms, they sat back, doing
+too little too late, and too poorly. The list of failures of this Administration is historic.
+So, we come together not only to replace this President and his party –and not only
+to offer policies that will undo the damage they have wrought. Today, we pledge a
+return to core moral principles like stewardship, service to others, personal
+responsibility, shared sacrifice and a fair shot for all –values that emanate from the
+integrity and optimism of our Founders and generations of Americans since. Today,
+we Democrats offer leaders – from the White House to the State House – worthy of
+this country’s trust.
+I. Renewing the American Dream
+Jumpstart the Economy and Provide Middle Class Americans Immediate Relief
+We will provide an immediate energy rebate to American families struggling with
+the record price of gasoline and the skyrocketing cost of other necessities – to spend
+on those basic needs and energy efficient measures. We will devote $50 billion to
+26
+jumpstarting the economy, helping economic growth, and preventing another one
+million jobs from being lost.
+We support investments in infrastructure to replenish the highway trust fund, invest
+in road and bridge maintenance and fund new, fasttracked projects to repair schools.
+We believe that it is essential to take immediate steps to stem the loss of
+manufacturing jobs. Taking these immediate measures will provide good jobs and
+will help the economy today. But generating truly shared prosperity is only possible
+if we also address our most significant long-run challenges like the rising cost of
+health care, energy, and education.
+Good Jobs with Good Pay
+Democrats are committed to an economic policy that produces good jobs with good
+pay and benefits. That is why we support the right to organize. We know that when
+unions are allowed to do their job of making sure that workers get their fair share,
+they pull people out of poverty and create a stronger middle class. We will strengthen
+the ability of workers to organize unions and fight to pass the Employee Free Choice
+Act. We will fight to ban the permanent replacement of striking workers, so that
+workers can stand up for themselves without worrying about losing their
+livelihoods.
+In America, if someone is willing to work, he or she should be able to make ends
+meet and have the opportunity to prosper. To that end, we will raise the minimum
+wage and index it to inflation. We will modernize the unemployment insurance
+program to close gaps and extend benefits to the workers who now fall outside it.
+Opportunity for Women
+When women still earn 76 cents for every dollar that a man earns, it doesn’t just hurt
+women; it hurts families and children. We will pass the “Lilly Ledbetter” Act, which
+will make it easier to combat pay discrimination. We will invest in women-owned
+small businesses and remove the capital gains tax on startup small businesses. We
+recognize that women are the majority of adults who make the minimum wage, and
+are particularly hard-hit by recession and poverty; we will protect Social Security,
+increase the minimum wage, and expand programs to combat poverty and improve
+education so that parents and children can lift themselves out of poverty. We will
+work to combat violence against women.
+A World Class Education for Every Child
+The Democratic Party firmly believes that graduation from a quality public school
+and the opportunity to succeed in college must be the birthright of every child–not
+the privilege of the few. We must prepare all our students with the 21st century
+skills they need to succeed by progressing to a new era of mutual responsibility in
+education. We must set high standards for our children, but we must also hold
+ourselves accountable–our schools, our teachers, our parents, business leaders, our
+community and our elected leaders. And we must come together, form partnerships,
+and commit to providing the resources and reforms necessary to help every child
+reach their full potential.
+Creating New Jobs by Rebuilding American Infrastructure
+A century ago, Teddy Roosevelt called together leaders from business and
+government to develop a plan for the next century’s infrastructure. It falls to us to do
+the same. We will start a National Infrastructure Reinvestment Bank that can
+leverage private investment in infrastructure improvements, and create nearly two
+million new good jobs. We will undertake projects that maximize our safety and
+security and ability to compete, which we will fund as we bring the war in Iraq to a
+responsible close. We will modernize our power grid, which will help conservation
+and spur the development and distribution of clean energy. We need a national
+transportation policy, including high-speed rail and light rail. We can invest in our
+bridges, roads, and public transportation so that people have choices in how they get
+to work. We will ensure every American has access to highspeed broadband and we
+will take on special interests in order to unleash the power of the wireless spectrum.
+Support Small Business and Entrepreneurship
+Encouraging new industry and creating jobs means giving more support to American
+entrepreneurs. We will exempt all start-up companies from capital gains taxes and
+provide them a tax credit for health insurance. We will help small businesses facing
+high energy costs. We will work to remove bureaucratic barriers for small and start-
+up businesses–for example, by making the patent process more efficient and reliable.
+Real Leadership for Rural America
+Rural America is home to 60 million Americans. The agricultural sector is critical to
+the rural economy and to all Americans. We depend on those in agriculture to
+produce the food, feed, fiber, and fuel that support our society. Thankfully, American
+farmers possess an unrivaled capacity to produce an abundance of these high-quality
+products.
+All Americans, urban and rural, hold a shared interest in preserving and increasing
+the economic vitality of family farms. We will continue to develop and advance
+policies that promote sustainable and local agriculture, including funding for soil and
+water conservation programs.
+28
+Restoring Fairness to Our Tax Code
+We must reform our tax code. We’ll eliminate federal income taxes for millions of
+retirees, because all seniors deserve to live out their lives with dignity and respect.
+We will not increase taxes on any family earning under $250,000 and we will offer
+additional tax cuts for middle class families. We will dramatically simplify tax filings
+so that millions of Americans can do their taxes in less than five minutes.
+II. Renewing American Leadership
+At moments of great peril in the last century, American leaders such as Franklin
+Roosevelt, Harry Truman, and John F. Kennedy managed both to protect the American
+people and to expand opportunity for the next generation. They used our strengths to
+show people everywhere America at its best. Today, we are again called to provide
+visionary leadership. This century’s threats are at least as dangerous as, and in some
+ways more complex than, those we have confronted in the past.
+We will confront these threats head on while working with our allies and restoring
+our standing in the world. We will pursue a tough, smart, and principled national
+security strategy. It is a strategy that recognizes that we have interests not just in
+Baghdad, but in Kandahar and Karachi, in Beijing, Berlin, Brasilia and Bamako. It is a
+strategy that contends with the many disparate forces shaping this century,
+including: the fundamentalist challenge to freedom; the emergence of new powers
+like China, India, Russia, and a united Europe; and the spread of lethal weapons.
+Barack Obama will focus this strategy on seven goals: (i) ending the war in Iraq
+responsibly; (ii) defeating Al Qaeda and combating violent extremism; (iii) securing
+nuclear weapons and materials from terrorists; (iv) revitalizing and supporting our
+military; (v) renewing our partnerships to promote our common security; (vi)
+advancing democracy and development; and (vii) protecting our planet by achieving
+energy security and combating climate change.
+Recommit to an Alliance of the Americas
+We recognize that the security and prosperity of the United States is fundamentally
+tied to the future of the Americas. We believe that in the 21st century, the U.S. must
+treat Latin America and the Caribbean as full partners, just as our neighbors to the
+south should reject the bombast of authoritarian bullies. Our relationship with
+Canada, our long-time ally, should be strengthened and enhanced.
+Advancing Democracy, Development, and Respect for Human Rights
+No country in the world has benefited more from the worldwide expansion of
+democracy than the United States. Democracies are our best trading partners, our
+most valuable allies, and the nations with which we share our deepest values. The
+Democratic Party reaffirms its longstanding commitment to support democratic
+institutions and practices worldwide. A more democratic world is a more peaceful
+and prosperous place. Yet democracy cannot be imposed by force from the outside; it
+must be nurtured with moderates on the inside by building democratic institutions.
+III. Renewing the American Community
+Service
+The future of our country will be determined not only by our government and our
+policies but through the efforts of the American people. That is why we will ask all
+Americans to be actively involved in meeting the challenges of the new century. We
+will double the size of the Peace Corps, enable more to serve in the military,
+integrate service into primary education, and create new opportunities for
+experienced and retired persons to serve. And if you invest in America, America will
+invest in you: we will increase support for service-learning, establish tax incentives
+for college students who serve, and create scholarships for students who pledge to
+become teachers. We will use the Internet to better match volunteers to service
+opportunities. In these ways, we will unleash the power of service to meet America’s
+challenges in a uniquely American way.
+Federal Lands
+We will create a new vision for conservation that works with local communities to
+conserve our existing publicly-owned lands while dramatically expanding
+investments in conserving and restoring forests, grasslands, and wetlands across
+America for generations to come. Unlike the current Administration, we will reinvest
+in our nation’s forests by providing federal agencies with resources to reduce the
+threat of wildland fires and promote sustainable forest product industries for rural
+economic development. We will recognize that our parks are national treasures, and
+will ensure that they are protected as part of the overall natural system so they are
+here for generations to come. We are committed to conserving the lands used by
+hunters and anglers, and we will open millions of new acres of land to public hunting
+and fishing.
+30
+IV. Renewing American Democracy
+Open, Accountable, and Ethical Government
+In Barack Obama’s Administration, we will open up the doors of democracy. We will
+use technology to make government more transparent, accountable, and inclusive.
+Rather than obstruct people’s use of the Freedom of Information Act, we will require
+that agencies conduct significant business in public and release all relevant
+information unless an agency reasonably foresees harm to a protected interest.
+We will lift the veil of secret deals in Washington by publishing searchable, online
+information about federal grants, contracts, earmarks, loans, and lobbyist contacts
+with government officials. We will put all non-emergency bills that Congress has
+passed online for five days, to allow the American public to review and comment on
+them before they are signed into law. We will require Cabinet officials to have
+periodic national online town hall meetings to discuss issues before their agencies.
+Note: The USA has special relationships with the UK and Canada.
+8. Definition of Standard Categories
+DOMAIN 1: External Relations
+101 Foreign Special Relationships: Positive
+Favourable mentions of particular countries with which the manifesto country has a
+special relationship. For example, in the British case: former colonies; in the Swedish
+case: the rest of Scandinavia; the need for co-operation with and/or aid to such
+countries.
+102 Foreign Special Relationships: Negative
+Negative mentions of particular countries with which the manifesto country has a
+special relationship; otherwise as 101, but negative.
+103 Anti-Imperialism
+Negative references to exerting strong influence (political, military or commercial)
+over other states; negative references to controlling other countries as if they were
+part of an empire; favourable mentions of de-colonisation; favourable references to
+greater self-government and independence for colonies; negative references to the
+imperial behaviour of the manifesto and/or other countries.
+104 Military: Positive
+Need to maintain or increase military expenditure; modernising armed forces and
+improvement in military strength; rearmament and self-defence; need to keep
+military treaty obligations; need to secure adequate manpower in the military;
+importance external security.
+105 Military: Negative
+Favourable mentions of decreasing military expenditures; disarmament; ‘evils of
+war’; promises to reduce conscription; otherwise as 104, but negative.
+106 Peace
+Peace as a general goal; declarations of belief in peace and peaceful means of solving
+crises; desirability of countries joining in negotiations with hostile countries.
+107 Internationalism: Positive
+Need for international co-operation; co-operation with specific countries other than
+those coded in 101; need for aid to developing countries; need for world planning of
+resources; need for international courts; support for any international goal or world
+state; support for UN.
+108 European Community/Union: Positive
+Favourable mentions of European Community/Union in general; desirability of
+32
+expanding the European Community/Union and/or of increasing its competence;
+desirability of expanding the competences of the European Parliament; desirability
+of the manifesto country joining (or remaining a member).
+109 Internationalism: Negative
+Favourable mentions of national independence and sovereignty as opposed to
+internationalism; otherwise as 107, but negative.
+110 European Community/Union: Negative
+Hostile mentions of the European Community/Union; opposition to specific European
+policies which are preferred by European authorities; opposition to the net-
+contribution of the manifesto country to the EU budget; otherwise as 108, but
+negative.
+DOMAIN 2: Freedom and Democracy
+201 Freedom and Human Rights
+Favourable mentions of importance of personal freedom and civil rights; freedom
+from bureaucratic control; freedom of speech; freedom from coercion in the political
+and economic spheres; individualism in the manifesto country and in other
+countries.
+202 Democracy
+Favourable mentions of democracy as a method or goal in national and other
+organisations; involvement of all citizens in decision-making as well as generalised
+support for the manifesto country’s democracy.
+203 Constitutionalism: Positive
+Support for specific aspects of the constitution; use of constitutionalism as an
+argument for policy as well as general approval of the constitutional way of doing
+things.
+204 Constitutionalism: Negative
+Opposition to the constitution in general or to specific aspects; otherwise as 203, but
+negative.
+DOMAIN 3: Political System
+301 Decentralisation
+Support for federalism or devolution; more regional autonomy for policy or
+economy; support for keeping up local and regional customs and symbols; favourable
+mentions of special consideration for local areas; deference to local expertise;
+favourable mentions of the territorial subsidiary principle.
+302 Centralisation
+Opposition to political decision-making at lower political levels; support for more
+centralisation in political and administrative procedures; otherwise as 301, but
+negative.
+303 Governmental and Administrative Efficiency
+Need for efficiency and economy in government and administration; cutting down
+civil service; improving governmental procedures; general appeal to make the
+process of government and administration cheaper and more effective.
+304 Political Corruption
+Need to eliminate corruption, and associated abuse, in political and public life.
+305 Political Authority
+Favourable mentions of strong government, including government stability;
+manifesto party’s competence to govern and/or other party’s lack of such
+competence.
+DOMAIN 4: Economy
+401 Free Enterprise
+Favourable mentions of free enterprise capitalism; superiority of individual
+enterprise over state and control systems; favourable mentions of private property
+rights, personal enterprise and initiative; need for unhampered individual
+enterprises.
+402 Incentives
+Need for wage and tax policies to induce enterprise; encouragement to start
+enterprises; need for financial and other incentives such as subsidies.
+403 Market Regulation
+Need for regulations designed to make private enterprises work better; actions
+against monopolies and trusts, and in defence of consumer and small business;
+encouraging economic competition; social market economy.
+404 Economic Planning
+Favourable mentions of long-standing economic planning of a consultative or
+indicative nature, need for government to create such a plan.
+405 Corporatism
+Favourable mentions of the need for the collaboration of employers and trade union
+organisations in overall economic planning and direction through the medium of
+tripartite bodies of government, employers, and trade unions.
+34
+406 Protectionism: Positive
+Favourable mentions of extension or maintenance of tariffs to protect internal
+markets; other domestic economic protectionism such as quota restrictions; in
+favour of export subsidies.
+407 Protectionism: Negative
+Support for the concept of free trade; otherwise as 406, but negative.
+408 Economic Goals
+Statements of intent to pursue any economic goals not covered by other categories in
+Domain 4. This category is created to catch an overall interest of parties in economics
+and, therefore, covers a variety of economic goals.
+409 Keynesian Demand Management
+Favourable mentions of demand-oriented economic policy; economic policy devoted
+to the reduction of depressions and/or to increase private demand through
+increasing public demand and/or through increasing social expenditures.
+410 Economic Growth
+Need to encourage or facilitate greater production; need to take measures to aid this;
+appeal for greater production and importance of productivity to the economy; the
+paradigm of growth.
+411 Technology and Infrastructure
+Importance of modernisation of industry and methods of transport and
+communication; importance of science and technological developments in industry;
+need for training and research. This does not imply education in general (see
+category 506). This also covers public spending on infrastructure such as streets and
+harbours.
+412 Controlled Economy
+General need for direct government control of economy; control over prices, wages,
+rents, etc.; state intervention into the economic system.
+413 Nationalisation
+Favourable mentions of government ownership, partial or complete, including
+government ownership of land.
+414 Economic Orthodoxy
+Need for traditional economic orthodoxy, e.g. reduction of budget deficits,
+retrenchment in crisis, thrift and savings; support for traditional economic
+institutions such as stock market and banking system; support for strong currency.
+415 Marxist Analysis
+Positive references (typically but not necessary by communist parties) to the specific
+use of Marxist-Leninist terminology and analysis of situations which are otherwise
+uncodable.
+416 Anti-Growth Economy
+Favourable mentions of anti-growth politics and steady state economy; sustainable
+development.
+DOMAIN 5: Welfare and Quality of Life
+501 Environmental Protection
+Preservation of countryside, forests, etc.; general preservation of natural resources
+against selfish interests; proper use of national parks; soil banks, etc; environmental
+improvement.
+502 Culture
+Need to provide cultural and leisure facilities including arts and sport; need to spend
+money on museums, art galleries etc.; need to encourage worthwhile leisure
+activities and cultural mass media.
+503 Social Justice
+Concept of equality; need for fair treatment of all people; special protection for
+underprivileged; need for fair distribution of resources; removal of class barriers;
+end of discrimination such as racial or sexual discrimination, etc.
+504 Welfare State Expansion
+Favourable mentions of need to introduce, maintain or expand any social service or
+social security scheme; support for social services such as health service or social
+housing.
+Note: This category excludes education.
+505 Welfare State Limitation
+Limiting expenditure on social services or social security; favourable mentions of the
+social subsidiary principle; otherwise as 504, but negative.
+506 Education Expansion
+Need to expand and/or improve educational provision at all levels. This excludes
+technical training which is coded under 411.
+507 Education Limitation
+Limiting expenditure on education; otherwise as 506, but negative.
+36
+DOMAIN 6: Fabric of Society
+601 National Way of Life: Positive
+Appeals to patriotism and/or nationalism; suspension of some freedoms in order to
+protect the state against subversion; support for established national ideas.
+602 National Way of Life: Negative
+Against patriotism and/or nationalism; opposition to the existing national state;
+otherwise as 601, but negative.
+603 Traditional Morality: Positive
+Favourable mentions of traditional moral values; prohibition, censorship and
+suppression of immorality and unseemly behaviour; maintenance and stability of
+family; religion.
+604 Traditional Morality: Negative
+Opposition to traditional moral values; support for divorce, abortion etc.; otherwise
+as 603, but negative.
+605 Law and Order
+Enforcement of all laws; actions against crime; support and resources for police;
+tougher attitudes in courts; importance of internal security.
+606 Social Harmony
+Appeal for national effort and solidarity; need for society to see itself as united;
+appeal for public spiritedness; decrying anti-social attitudes in times of crisis;
+support for the public interest; favourable mention of the civil society (Note: This
+category neither captures what your country can do for you nor what you can do for
+your country, but what you can do for your fellow citizens.).
+607 Multiculturalism: Positive
+Favourable mentions of cultural diversity, communalism, cultural plurality and
+pillarization; preservation of autonomy of religious, linguistic heritages within the
+country including special educational provisions.
+608 Multiculturalism: Negative
+Enforcement or encouragement of cultural integration; otherwise as 607, but
+negative.
+DOMAIN 7: Social Groups
+701 Labour Groups: Positive
+Favourable references to labour groups, working class, unemployed; support for
+trade unions; good treatment of manual and other employees.
+702 Labour Groups: Negative
+Negative references to trade unions such as ‘abuse of power’; otherwise as 701, but
+negative.
+703 Agriculture and Farmers
+Support for agriculture and farmers; any policy aimed specifically at benefiting
+these.
+704 Middle Class and Professional Groups
+Favourable references to middle class, professional groups, such as physicians or
+lawyers; old and new middle class.
+705 Underprivileged Minority Groups
+Favourable references to underprivileged minorities who are defined neither in
+economic nor in demographic terms, e.g. the handicapped, homosexuals, immigrants,
+etc.
+706 Non-economic Demographic Groups
+Favourable mentions of, or need for, assistance to women, old people, young people,
+linguistic groups, etc; special interest groups of all kinds.
+9. Definition of Subcategories
+1011 Russia/USSR/CIS: Positive
+Favourable mentions of Russia, the USSR, the CMEA bloc or the Community of
+Independent States (subcategory of 101).
+1012 Western States: Positive
+Favourable mentions of Western states, including the USA and Germany (subcategory
+of 101).
+1013 Eastern European Countries: positive
+Favourable mentions of Eastern European countries in general (subcategory of 101).
+1014 Baltic States: Positive
+Favourable mentions of the Baltic states, including other states bordering the Baltic
+Sea (subcategory of 101).
+1015 Nordic Council: Positive
+Favourable mentions of the Nordic Council (subcategory of 101).
+38
+1016 SFR Yugoslavia: Positive
+Favourable mentions of countries formerly belonging to SFR Yugoslavia including
+special relationships with Montenegro, Macedonia, Slovenia, Croatia and Bosnia-
+Herzegovina (subcategory of 101).
+1021 Russia/USSR/CIS: Negative
+Negative mentions of Russia, the USSR or the Community of Independent States
+(subcategory of 102).
+1022 Western States: Negative
+Negative mentions of Western states, including the USA and Germany (subcategory of
+102).
+1023 East European Countries: Negative
+Negative mentions of Eastern European countries in general (subcategory of 102).
+1024 Baltic States: Negative
+Negative references to the Baltic states (subcategory of 102).
+1025 Nordic Council: Negative
+Negative references to the Nordic Council (subcategory of 102).
+1026 SFR Yugoslavia: Negative
+Negative mentions of countries formerly belonging to SFR Yugoslavia including
+negative references to Montenegro, Macedonia, Slovenia, Croatia and Bosnia-
+Hercegovina (subcategory of 102).
+1031 Russian Army: Negative
+Need to withdraw the Russian army from the territory of the manifesto country;
+need to receive reparations for the damage caused by the Russian army or other
+Soviet institutions (subcategory of 103).
+1032 Independence: Positive
+Favourable mentions of the independence and sovereignty of the manifesto country
+(subcategory of 103).
+1033 Rights of Nations: Positive
+Favourable mentions of freedom, rights and interests of nations (subcategory of 103).
+2021 Transition to Democracy
+General references to the transition process of one-party states to pluralist
+democracy (subcategory of 202).
+2022 Restrictive Citizenship
+Favourable mentions of restrictions in citizenship; restrictions in enfranchisement
+with respect to (ethnic) groups (subcategory of 202).
+2023 Lax Citizenship
+Favourable mentions of lax citizenship and election laws; no or few restrictions in
+enfranchisement (subcategory of 202).
+2031 Presidential Regime: Positive
+Support for current presidential regime (subcategory of 203); statements in favour of
+a powerful presidency (subcategory of 204 for parliamentary regimes).
+2032 Republic: Positive
+Support for the republican form of government as opposed to monarchy (subcategory
+of 203).
+2033 Checks and Balances (to be coded for Mexico, only)
+Support for checks and balances and separation of powers, and specifically for
+limiting the powers of the presidency by increasing legislative/judicial powers, or
+transferring some executive powers to the legislature or judiciary (subcategory of
+203).
+2041 Monarchy: Positive
+Support for a monarchy, including conceptions of constitutional monarchy
+(subcategory of 204).
+3011 Republican Powers: Positive
+Favourable mentions of stronger republican powers (subcategory of 301).
+3051 Public Situation: Negative
+Negative references to the situation in public life after the founding elections
+(subcategory of 305).
+3052 Communist: Positive
+Co-operation with former authorities/communists in the transition period; pro-
+communist involvement in the transition process; and 'let sleeping dogs lie' in
+dealing with the nomenclature (subcategory of 305).
+3053 Communist: Negative
+Against communist involvement in democratic government; weeding out the
+collaborators from governmental service; need for political coalition except
+communist parties (subcategory of 305).
+40
+3054 Rehabilitation and Compensation
+References to civic rehabilitation of politically persecuted people in the communist
+era; references to juridical compensation concerning communist expropriations;
+moral compensation (subcategory of 305).
+3055 Political Coalitions
+References to the need of broader political coalition; need for co-operation at the
+political level; necessity of collaboration among all political forces (subcategory of
+305).
+4011 Privatisation: Positive
+Favourable references to privatisation (subcategory of 401).
+4012 Control of Economy: Negative
+Negative references to the general need for direct governmental control of the
+economy subcategory of 401).
+4013 Property-Restitution: Positive
+Favourable references to the physical restitution of property to previous owners
+(subcategory of 401).
+4014 Privatisation Vouchers: Positive
+Favourable references to privatisation vouchers (subcategory of 401).
+4121 Social Ownership: Positive
+Favourable references to the creation or preservation of co-operative or non-state
+social ownership within a market economy (subcategory of 412).
+4122 Mixed Economy: Positive
+Favourable references to mixed ownership within a market economy (subcategory of
+412).
+4123 Publicly-Owned Industry: Positive
+Positive references to the concept of publicly-owned industries (subcategory of 412).
+4124 Socialist Property: Positive
+Positive references to socialist property, including public and co-operative property;
+negative references to privatisation (subcategory of 412).
+4131 Property-Restitution: Negative
+Negative references to the physical restitution of property to previous owners
+(subcategory of 413).
+4132 Privatisation: Negative
+Negative references to the privatisation system; need to change the privatisation
+system (subcategory of 413).
+5021 Private-Public Mix in Culture
+Necessity of private provisions due to economic constraints; private funding in
+addition to public activity (subcategory of 502).
+5031 Private-Public Mix in Social Justice
+Necessity of private initiatives due to economic constraints (subcategory of 503).
+5041 Private-Public Mix in Welfare
+Necessity of private welfare provisions due to economic constraints; desirability of
+competition in welfare service provisions; private funding in addition to public
+activity (subcategory of 504).
+5061 Private-Public Mix in Education
+Necessity of private education due to economic constraints; desirability of
+competition in education (subcategory of 506).
+6011 The Karabakh Issue
+Positive references to the unity of Karabakh and Armenia or the recognition of the
+independent Republic of Karabakh; rendering assistance to Karabakh (subcategory of
+601).
+6012 Rebuilding the USSR
+Favourable mentions of the reunification of all republics and nations living on the
+former territory of the USSR into a new common (democratic) state or into a
+common economic space whereby the new union would be the guarantor of the
+manifesto country's sovereignty; negative references to the dissolution of the USSR
+and the respective treaties (subcategory of 601).
+6013 National Security
+Support for or need to maintain national security in all spheres of social life; policies
+devoted to this goal (subcategory of 601).
+6014 Cyprus Issue (to be coded for Cyprus, only)
+All references concerning the division of Cyprus in a Greek and a Turkish part
+(subcategory of 601).
+6061 General Crisis
+Identification of a general crisis in the country (subcategory of 606).
+42
+6071 Cultural Autonomy: Positive
+Favourable mentions of cultural autonomy (subcategory of 607).
+6072 Multiculturalism pro Roma
+Favourable mentions of cultural autonomy of Roma (subcategory of 607).
+6081 Multiculturalism against Roma
+Negative mentions of cultural autonomy of Roma (subcategory of 608).
+7051 Minorities Inland
+References to manifesto country minorities in foreign countries; positive references
+to manifesto country minorities (subcategory of 705).
+7052 Minorities Abroad
+References to ethnic minorities living in the manifesto country such as Latvians
+living in Estonia (subcategory of 705).
+7061 War Participants
+Favourable mentions of, or need for, assistance to people taking part in the war on
+the territory of ex-Yugoslavia (subcategory of 706).
+7062 Refugees
+Favourable mentions of, or need for, assistance to people who left their homes
+because of the war (for instance, on the territory of ex-Yugoslavia) or were forcibly
+displaced (subcategory of 706).
+10. Literature
+Berelson, Bernard, Content Analysis in Communication Research, New York: Hafner
+Publishing Company 1952.
+Budge, Ian, David Robertson, Derek Hearl (eds.), Ideology, Strategy and Party Change:
+Spatial Analysis of Post-War Election Programs in 19 Democracies, Cambridge:
+Cambridge University Press 1987.
+Budge, Ian, Hans-Dieter Klingemann, Andrea Volkens, Judith Bara, Eric Tanenbaum
+with Richard C. Fording, Derek J. Hearl, Hee Min Kim, Michael d. McDonald, Sylvia
+Mendes, Mapping Policy Preferences. Estimates for Parties, Electors and
+Governments, 1945-1998, Oxford: Oxford University Press 2001.
+Klingemann, Hans-Dieter, Richard I. Hofferbert, Ian Budge, Parties, Policies, and
+Democracy, Boulder/San Francisco/Oxford: Westview Press 1994.
+Laver, Michael, Ian Budge (eds.), Party Policy and Coalition Government, New York: St.
+Martin’s Press 1992.
+Rallings, Colin. 1987. “The Influence of Election Programmes: Britain and Canada
+1945−1979.” In: Ideology, Strategy and Party Change. Spatial Analysis of Post-War
+Election Programmes in 19 Democracies, eds. Ian Budge, David Robertson, and
+Derek Hearl. Cambridge: Cambridge University Press, pp. 1−14. Robertson, David,
+A Theory of Party Competition, London: John Wiley & Sons 1976.
+Sartori, Giovanni, Parties and Party Systems. A Framework for Analysis, Cambridge:
+Cambridge University Press 1976.
+Thomson, Robert. 2001. “The Programme to Policy Linkage: The Fulfilment of Election
+Pledges on Socio-Economic Policy in the Netherlands, 1986−1998.” European
+Journal of Political Research 40 (2): 171−197.
+Volkens, Andrea, Manifesto Coding Instructions (Second Revised Edition), Discussion
+Paper FS III 02-201, Wissenschaftszentrum Berlin für Sozialforschung (WZB) 2002.
+Volkens, Andrea, Sonja Alonso, Braulio Gómez, Content Analysing Multi-level
+Authority and Cultural Identity Claims. A Complement to the Comparative
+Manifestos Project (CMP) Exemplified for Spanish Regional Manifestos, Discussion
+Paper SP IV 2009-202, Wissenschaftszentrum Berlin für Sozialforschung (WZB)
+2009.
+44
