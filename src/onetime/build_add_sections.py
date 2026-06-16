@@ -7,11 +7,12 @@ make the surrounding paragraph and the section heading coding cues, so they are
 carried per-unit for the in-context condition.
 
 Re-runnable: it only sets fields, so running twice is a no-op.
+Already applied to data/cmp_coding_sample.json; kept for provenance.
 """
 import json
 import pathlib
 
-p = pathlib.Path("pilot-3/cmp_coding_sample.json")
+p = pathlib.Path(__file__).resolve().parents[2] / "data" / "cmp_coding_sample.json"
 data = json.loads(p.read_text())
 
 # (manifesto, start_seq, end_seq, per-unit section string)
