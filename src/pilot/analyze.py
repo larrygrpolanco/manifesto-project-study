@@ -28,6 +28,8 @@ from math import log2
 from . import config
 
 OFF = "OFF"     # pseudo-code for an off-scheme / refusal / multi-code output
+HARD_BUCKETS = ("mid-split", "high-split")   # the sentences that actually carry Q1
+BUCKETS = ("high-agreement", "mid-split", "high-split")
 
 
 # --- metrics ----------------------------------------------------------------
@@ -150,6 +152,87 @@ def q1_pulse(by_cell, cfg_meta, manifest, out_dir):
     _write_csv(out_dir / "q1_correlations.csv", summary)
     _scatter(rows, out_dir)
     return rows, summary
+
+
+# --- 1b. Q1 decomposition (the part a single correlation hides) -------------
+def q1_decompose(q1_rows, by_cell, manifest, out_dir):
+    """Three reads that a per-config Pearson r conflates:
+
+      - under-dispersion: model spread vs human spread PER BUCKET. A single r
+        can't show that model spread is compressed ~3x on the hard items.
+      - the correlation trap: pooled r over ALL sentences vs HARD+MID only. Most
+        of the apparent "model tracks human difficulty" is just the easy anchor
+        (easy-for-both); inside the hard range the tracking nearly vanishes.
+      - within- vs between-model spread: one model's 10 runs (does it waver?)
+        vs whether the models agree with EACH OTHER (manufactured consensus is
+        per-model, not shared). The pooled spread blends these two.
+    """
+    # under-dispersion by bucket
+    bucket_rows = []
+    for b in BUCKETS:
+        sub = [r for r in q1_rows if r["bucket"] == b]
+        mm = _mean([r["model_1mmodal"] for r in sub])
+        hr = _mean([r["human_ret_1mmodal"] for r in sub])
+        hf = _mean([r["human_full_1mmodal"] for r in sub])
+        bucket_rows.append({
+            "bucket": b, "n_cells": len(sub),
+            "mean_model_1mmodal": mm,
+            "mean_human_ret_1mmodal": hr,
+            "mean_human_full_1mmodal": hf,
+            "underdispersion_ratio_ret": (mm / hr) if hr else float("nan"),
+        })
+    _write_csv(out_dir / "q1_by_bucket.csv", bucket_rows)
+
+    # correlation trap: all buckets vs hard+mid only (pooled across configs)
+    all_r, all_n = pearson([r["model_1mmodal"] for r in q1_rows],
+                           [r["human_ret_1mmodal"] for r in q1_rows])
+    hard = [r for r in q1_rows if r["bucket"] in HARD_BUCKETS]
+    hard_r, hard_n = pearson([r["model_1mmodal"] for r in hard],
+                             [r["human_ret_1mmodal"] for r in hard])
+
+    # within- vs between-model spread, per sentence
+    configs = sorted({c for c, _ in by_cell})
+    per_unit = []
+    for unit_id in sorted({u for _, u in by_cell}):
+        withins, modals = [], []
+        for c in configs:
+            votes = [v for _, v in by_cell.get((c, unit_id), [])]
+            if not votes:
+                continue
+            s = spread(votes)
+            withins.append(s["one_minus_modal"])
+            modals.append(s["modal"])
+        per_unit.append({
+            "unit_id": unit_id,
+            "bucket": manifest.get(unit_id, {}).get("bucket", ""),
+            "within_model_1mmodal": _mean(withins),
+            "between_model_1mmodal": spread(modals)["one_minus_modal"],
+        })
+    _write_csv(out_dir / "q1_within_between.csv", per_unit)
+    wb = []
+    for b in BUCKETS:
+        sub = [r for r in per_unit if r["bucket"] == b]
+        wb.append({"bucket": b, "n": len(sub),
+                   "mean_within": _mean([r["within_model_1mmodal"] for r in sub]),
+                   "mean_between": _mean([r["between_model_1mmodal"] for r in sub])})
+
+    return {"bucket_rows": bucket_rows, "wb_by_bucket": wb,
+            "pooled_all_r": all_r, "pooled_all_n": all_n,
+            "pooled_hard_r": hard_r, "pooled_hard_n": hard_n}
+
+
+def offscheme_rates(by_cell):
+    """Per-config off-scheme rate. OFF is a vote bucket, so a high rate inflates
+    that config's spread with parsing failure, not uncertainty — flag it."""
+    tot, off = defaultdict(int), defaultdict(int)
+    for (config_id, _), votes in by_cell.items():
+        for _, v in votes:
+            tot[config_id] += 1
+            if v == OFF:
+                off[config_id] += 1
+    return [{"config_id": c, "n": tot[c],
+             "off_scheme_rate": off[c] / tot[c] if tot[c] else float("nan")}
+            for c in sorted(tot)]
 
 
 # --- 2. Resolution check ----------------------------------------------------
@@ -365,20 +448,67 @@ def _scatter(rows, out_dir):
     plt.close(fig)
 
 
-def write_summary(out_dir, q1_corr, res_summary, q2_summary, reasoning_rows):
+def write_summary(out_dir, q1_corr, q1_decomp, offscheme, res_summary,
+                  q2_summary, reasoning_rows):
+    bucket_rows = q1_decomp["bucket_rows"]
+    wb = q1_decomp["wb_by_bucket"]
     L = ["# Pilot summary\n",
          "Feasibility readout, mapped to RESEARCH_PLAN §4.4 pre-committed reads. "
          "Numbers are reported; the merge/reshape/park call is the researcher's.\n",
-         "## 1. Q1 pulse (model spread vs RETAINED human spread)\n",
-         "Per-config correlation of model spread (1-modal) with retained human "
-         "spread. **Signal we want: LOW/negative-ish or flat on hard items — model "
-         "spread NOT tracking human spread** (see q1_scatter.png coin-flip corner).\n",
-         "| config | n | r(model,retained) | r(model,full) | mean model 1-modal | mean human 1-modal |",
+         "## 1. Q1 pulse — read the decomposition, NOT the single correlation\n",
+         "A per-config Pearson r (table 1d) conflates three different things. "
+         "Taken alone it shows positive r and reads as 'model tracks human "
+         "difficulty -> signal absent'. The decomposition below shows that read is "
+         "an artifact of the easy sentences.\n",
+
+         "### 1a. Under-dispersion — model spread vs human spread, per bucket\n",
+         "Model spread is compressed relative to humans, and the compression is "
+         "worst on the hard items. ratio = mean model 1-modal / mean human "
+         "(retained) 1-modal; <1 means the model wavers less than the experts.\n",
+         "| bucket | n | model 1-modal | human ret | human full | model/human ratio |",
          "|---|---|---|---|---|---|"]
+    for r in bucket_rows:
+        L.append(f"| {r['bucket']} | {r['n_cells']} | "
+                 f"{r['mean_model_1mmodal']:.3f} | {r['mean_human_ret_1mmodal']:.3f} | "
+                 f"{r['mean_human_full_1mmodal']:.3f} | "
+                 f"{r['underdispersion_ratio_ret']:.2f} |")
+
+    L += ["\n### 1b. The correlation trap — pooled r, all sentences vs hard-only\n",
+          "Most of the apparent tracking is the easy anchor (easy-for-both). Drop "
+          "the high-agreement bucket and the relationship inside the range that "
+          "matters nearly vanishes.\n",
+          f"- pooled r(model, human retained), **all buckets**: "
+          f"{q1_decomp['pooled_all_r']:.3f} (n={q1_decomp['pooled_all_n']})",
+          f"- pooled r(model, human retained), **hard+mid only**: "
+          f"{q1_decomp['pooled_hard_r']:.3f} (n={q1_decomp['pooled_hard_n']})",
+
+          "\n### 1c. Within- vs between-model spread, per bucket\n",
+          "Within = one model's 10 runs (does it waver?). Between = do the models "
+          "agree with EACH OTHER? On hard items each model pins fairly hard by "
+          "itself while disagreeing across models -> manufactured consensus is "
+          "per-model, not shared.\n",
+          "| bucket | n | within-model | between-model |",
+          "|---|---|---|---|"]
+    for r in wb:
+        L.append(f"| {r['bucket']} | {r['n']} | {r['mean_within']:.3f} | "
+                 f"{r['mean_between']:.3f} |")
+
+    L += ["\n### 1d. Per-config correlation (demoted — see 1b for why)\n",
+          "| config | n | r(model,retained) | r(model,full) | mean model 1-modal | off-scheme |",
+          "|---|---|---|---|---|---|"]
+    off_by = {r["config_id"]: r["off_scheme_rate"] for r in offscheme}
     for r in q1_corr:
         L.append(f"| {r['config_id']} | {r['n_sentences']} | "
                  f"{r['r_1mmodal_vs_retained']:.3f} | {r['r_1mmodal_vs_full']:.3f} | "
-                 f"{r['mean_model_1mmodal']:.3f} | {r['mean_human_ret_1mmodal']:.3f} |")
+                 f"{r['mean_model_1mmodal']:.3f} | "
+                 f"{off_by.get(r['config_id'], float('nan')):.1%} |")
+    flagged = [r for r in offscheme if r["off_scheme_rate"] > 0.05]
+    if flagged:
+        L.append("\n**Off-scheme contamination (>5%) — these configs' spread is "
+                 "partly parsing failure, not uncertainty; treat their Q1 numbers "
+                 "as unreliable until the parser/reasoning handling is fixed:**")
+        for r in flagged:
+            L.append(f"- {r['config_id']}: {r['off_scheme_rate']:.1%}")
 
     L += ["\n## 2. Resolution check (KEY) — spread movement 10 -> 5 -> 3 runs\n",
           "Mean |spread(k) - spread(10)| across sentences. Small = 10 runs is "
@@ -408,11 +538,21 @@ def write_summary(out_dir, q1_corr, res_summary, q2_summary, reasoning_rows):
           "\n## 5. Exemplars\n",
           "See exemplars.md — three sentences read with the 32-coder receipts.\n",
           "## Map to §4.4\n",
-          "- Q1 signal present (human spread varies, model spread stays narrow) -> "
-          "merge; Q1 headline; scale up.",
-          "- Q1 signal absent (model tracks human) -> finding, reshape toward Q2 / oracle.",
+          "Read §1a-1c together, not the raw correlation in §1d. The signal is not "
+          "the clean present/absent dichotomy §4.4 anticipated:",
+          "- **Under-dispersion (1a):** model spread compressed vs humans, worst on "
+          "hard items -> the §4.4 'model fakes confidence' outcome, quantified.",
+          "- **Flattening + correlation trap (1a/1b):** models separate easy from "
+          "hard but barely separate hard from coin-flip; the pooled r is mostly the "
+          "easy anchor. Headline = 'sharply under-dispersed, barely discriminates "
+          "difficulty', NOT 'tracks human difficulty'.",
+          "- **Between > within (1c):** per-model overconfidence on DIFFERENT "
+          "answers -> manufactured consensus is per-model, not shared.",
+          "- These lean **merge; Q1 headline; scale up** — with the framing above.",
           "- Resolution bad at 10 -> full study needs deeper per-model sampling; recost.",
-          "- Q2 cells empty -> Q2 demotes to illustration.",
+          "- Q2 cells empty -> Q2 demotes to illustration (note: confusion is still "
+          "defined vs master_code; redefine vs the human distribution before "
+          "trusting the alien count).",
           "- Exemplars flat -> reconsider mixed-methods selling point."]
     (out_dir / "pilot_summary.md").write_text("\n".join(L) + "\n")
 
@@ -428,15 +568,19 @@ def main():
     human_codings = load_human_codings()
 
     q1_rows, q1_corr = q1_pulse(by_cell, cfg_meta, manifest, out_dir)
+    q1_decomp = q1_decompose(q1_rows, by_cell, manifest, out_dir)
+    offscheme = offscheme_rates(by_cell)
     res_summary = resolution(by_cell, cfg_meta, out_dir)
     q2_summary, human_pairs, _ = q2_cells(by_cell, sent_meta, human_codings,
                                           manifest, out_dir)
     reasoning_rows = reasoning_contrast(by_cell, cfg_meta, out_dir)
     exemplars(q1_rows, by_cell, cfg_meta, manifest, human_codings, human_pairs, out_dir)
-    write_summary(out_dir, q1_corr, res_summary, q2_summary, reasoning_rows)
+    write_summary(out_dir, q1_corr, q1_decomp, offscheme, res_summary,
+                  q2_summary, reasoning_rows)
 
     print(f"wrote analysis to {out_dir}/:")
-    for name in ("q1_pulse.csv", "q1_correlations.csv", "q1_scatter.png",
+    for name in ("q1_pulse.csv", "q1_correlations.csv", "q1_by_bucket.csv",
+                 "q1_within_between.csv", "q1_scatter.png",
                  "resolution_per_sentence.csv", "resolution_summary.csv",
                  "q2_confusion_pairs.csv", "reasoning_contrast.csv",
                  "exemplars.md", "pilot_summary.md"):
