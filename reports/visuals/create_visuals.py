@@ -126,18 +126,28 @@ def chart_human_landscape():
     ax.axhline(y=0.30, color=PALETTE["easy"], linestyle="--", alpha=0.5)
     ax.axhline(y=0.50, color=PALETTE["hard"], linestyle="--", alpha=0.5)
 
-    # Annotate a few anchor sentences
-    for s in all_sentences:
-        if s["uid"] in ("GB-056", "GB-033", "NZ-008", "GB-074"):
-            idx = next(i for i, ss in enumerate(all_sentences) if ss["uid"] == s["uid"])
+    # Annotate sentences spread across the landscape (~16 labels, alternating offset to reduce overlap)
+    label_uids = [
+        "NZ-064", "GB-056", "GB-074", "NZ-008", "NZ-025", "NZ-063",  # easy half
+        "GB-107", "GB-106", "GB-008", "NZ-023", "NZ-066",               # mid
+        "NZ-006", "GB-001", "NZ-047", "NZ-071", "GB-016", "GB-039",      # hard
+        "GB-033", "GB-010",                                                # hardest
+    ]
+    for i, s in enumerate(all_sentences):
+        if s["uid"] in label_uids:
+            idx = i
+            # Alternate y-offset above/below to avoid collisions; tighter offset for dense region
+            rank = label_uids.index(s["uid"])
+            y_offset = 8 if rank % 2 == 0 else -12
             ax.annotate(
                 s["uid"],
                 (idx, s["h_1m"]),
                 textcoords="offset points",
-                xytext=(0, 8),
+                xytext=(0, y_offset),
                 ha="center",
-                fontsize=7,
+                fontsize=6,
                 color=PALETTE["ink"],
+                bbox=dict(boxstyle="round,pad=0.15", facecolor="white", alpha=0.7, edgecolor="none"),
             )
 
     ax.set_ylabel("Human Disagreement (1 − modal share)")
@@ -178,14 +188,24 @@ def chart_underdispersion():
         }.get(bkt, "gray")
         ax.scatter(s["h_1m"], s["m_1m"], c=color, s=70, edgecolors="white", linewidth=0.5, zorder=5)
         # label the most notable ones
-        if s["uid"] in ("NZ-006", "GB-033", "GB-016", "GB-056", "NZ-008"):
+        # Label more sentences with staggered offsets to avoid overlap
+        label_info = {
+            "NZ-006": (8, 8),      "GB-033": (8, -10),
+            "GB-016": (-20, 4),     "GB-056": (6, -8),
+            "NZ-008": (8, 12),      "GB-074": (-18, -4),
+            "GB-050": (10, 6),      "NZ-025": (-22, 6),
+            "GB-001": (8, -14),     "NZ-071": (8, 10),
+        }
+        if s["uid"] in label_info:
             ax.annotate(
                 s["uid"],
                 (s["h_1m"], s["m_1m"]),
                 textcoords="offset points",
-                xytext=(6, 4),
-                fontsize=7,
+                xytext=label_info[s["uid"]],
+                fontsize=6.5,
                 color=PALETTE["ink"],
+                zorder=10,
+                bbox=dict(boxstyle="round,pad=0.15", facecolor="white", alpha=0.75, edgecolor="none"),
             )
 
     # y = x line
