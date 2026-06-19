@@ -346,9 +346,10 @@ companion (RQ-A), explicitly because Kim et al. / Goel et al. own that question 
   outside it ("alien" — codes no expert chose)? Compare the human confusion geometry to the
   per-model and pooled-model confusion geometry on the same items. This is where the
   qualitative close-reads are load-bearing (§7).
-  - **Binding prerequisites** (else RQ2 is not reportable): (a) **clean the off-scheme /
-    reasoning-mode parsing** — pilot configs with reasoning "on" showed 10–34% off-scheme
-    output (§8), which would inflate any "alien" count as a parser bug; (b) define the
+  - **Binding prerequisites** (else RQ2 is not reportable): (a) **raise the generation
+    token budget for reasoning-on configs** — pilot configs with reasoning "on" showed
+    10–34% off-scheme output (§8) because the 2048-token cap truncated them mid-reasoning
+    before they emitted a code; reasoning models need a budget well above 2048; (b) define the
     **code neighborhood principled-ly** from `categories.json` (shared domain, RILE class,
     and definition adjacency), not "rare" — otherwise a reviewer reads 702-vs-408 as
     adjacent and the "alien" claim collapses.
@@ -476,13 +477,17 @@ Artifacts in `reports/pilot/`.
   Enough to attempt RQ2 as a headline-supporting result, **but redefine confusion vs the
   human distribution (not master_code) and clean off-scheme first.**
 - **Off-scheme contamination (action item):** reasoning-"on" configs for
-  gemma-4-26b (33.8%), qwen3.6-35b (15.3%), gemma-4-31b (10.9%) — their Q1/Q2 numbers are
-  partly parser failure. **Fix the `<think>`/reasoning parser before the full run.**
+  gemma-4-26b (33.8%), qwen3.6-35b (15.3%), gemma-4-31b (10.9%) — these calls hit the
+  2048-token cap mid-reasoning and never emitted a code, so their Q1/Q2 numbers are thinned
+  by truncated nulls. **Raise the generation token budget above 2048 for reasoning-on
+  configs (ideally an explicit reasoning-token budget) and re-run them before the full
+  run.**
 
 **Infrastructure to port from `archive/early-experiment/pilot-2/src/` and `src/pilot/`**
 (reuse mechanics, not the old design): OpenRouter client + `.env` loader; resumable
 per-config JSONL cache; threaded worker pool with retry/backoff; `<think>`-strip + 3-digit
-regex parser (needs hardening per above); codebook renderer. **Fail loud** on any
+regex parser (raise the generation token budget above 2048 for reasoning-on configs per
+above so they don't cap out mid-reasoning); codebook renderer. **Fail loud** on any
 unreachable model ID. Run independence at temp 1 with **no fixed seed**.
 
 ## 9. Narrative arc
@@ -504,7 +509,8 @@ unreachable model ID. Run independence at temp 1 with **no fixed seed**.
 ## 10. Threats, caveats, open decisions
 
 **Binding before the full run / before claims:**
-- Fix off-scheme/reasoning parsing (else "alien" is inflated).
+- Raise the generation token budget above 2048 for reasoning-on configs (else they cap out
+  mid-reasoning and never emit a code, thinning the off-scheme bucket).
 - Define the code neighborhood from `categories.json` before any human-shaped-vs-alien
   claim.
 - Pre-flight temperature-access audit; quarantine locked models.
@@ -531,7 +537,8 @@ unreachable model ID. Run independence at temp 1 with **no fixed seed**.
 
 ## 11. Immediate next steps
 
-1. **Harden the parser** (`<think>`/reasoning handling; off-scheme bucket) — unblocks RQ2.
+1. **Raise the generation token budget** above 2048 for reasoning-on configs (ideally an
+   explicit reasoning-token budget) so they don't cap out mid-reasoning — unblocks RQ2.
 2. **Model roster as an explicit attribute grid** — ~15 real models to company × size +
    background attributes + temperature-access column; verify cells fill _before_ committing.
 3. **Finalize the parity instrument** (`coding_instrument.md` + `categories.json`); render
